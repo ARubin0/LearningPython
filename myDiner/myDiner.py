@@ -1,14 +1,14 @@
 #!/usr/bin/env python
 
 # TODO
-# XXX Need more townsfolk
-# XXX makeCustomer function should roll the randInt for us
-# XXX add random events for when there are no customers
-# XXX add random events for when there are customers
-# XXX add 2 cooking implement.   For example, riceCooker takes rawRice, returns cookedRice.  If input is not rawRice
+# XXX * Need more townsfolk
+# XXX * makeCustomer function should roll the randInt for us
+# XXX * add random events for when there are no customers (its a func)
+# XXX * add random events for when there are customers (its the same func, different argument)
+# XXX * add 2 cooking implements.   For example, riceCooker takes rawRice, returns cookedRice.  If input is not rawRice
+
 # XXX add 1 cook
 # XXX add ingredients + dish pairings that work on cooking implements.  e.g. ingredients: rawRice, makes: cookedRice
-
 # XXX add days, 24 hours, Diner closes from 1AM to 6AM.  event loop is 1 tick per hour.
 # XXX customers should only show up once, i.e. Bobby Smith does not have a clone
 # XXX add waiters
@@ -16,7 +16,6 @@
 # XXX add cooking implements 
 # XXX add tables
 # XXX one waiter can serve 1 customer per hour.
-# XXX check for user abort and end nicely
 
 
 import signal,sys               # to check for user abort
