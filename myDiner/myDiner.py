@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # TODO
-# XXX Need more customers
+# XXX Need more townsfolk
 # XXX makeCustomer function should roll the randInt for us
 # XXX add random events for when there are no customers
 # XXX add random events for when there are customers
@@ -18,8 +18,17 @@
 # XXX one waiter can serve 1 customer per hour.
 # XXX check for user abort and end nicely
 
+
+import signal,sys               # to check for user abort
 import random
-import time
+import time                     # to sleep
+
+# Abort handler
+def signal_handling(signum,frame):
+    print "The Diner is closing for remodeling."
+    sys.exit()
+
+signal.signal(signal.SIGINT,signal_handling)
 
 
 # Our first customer function just returns the first name of the customer.
@@ -87,6 +96,7 @@ def main():
         # Wait for us slow humans
         print("" )
         time.sleep(5)
+
         
         
 if __name__ == "__main__":
