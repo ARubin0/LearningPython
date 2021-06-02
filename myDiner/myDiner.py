@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # TODO
-# XXX * Need more townsfolk
+# XXX * Need more townsfolk √ ADDED 10 more. if more are needed.https://www.name-generator.org.uk/?i=nmkp5u5
 # XXX * makeCustomer function should roll the randInt for us
 # XXX * add random events for when there are no customers (its a func)
 # XXX * add random events for when there are customers (its the same func, different argument)
@@ -24,7 +24,7 @@ import time                     # to sleep
 
 # Abort handler
 def signal_handling(signum,frame):
-    print "The Diner is closing for remodeling."
+    print ("The Diner is closing for remodeling.")
     sys.exit()
 
 signal.signal(signal.SIGINT,signal_handling)
@@ -36,13 +36,68 @@ def makeCustomer( firstName, lastName ):
 
 
 
+def randCustEvent(maxNum):
+    #Get Random Number 
+    eventRandom = random.randint(0,maxNum)
+
+    #based on random number choose random event
+    if( eventRandom == 1 ):
+        print( "Where are my customers??" )
+
+    elif( eventRandom == 2 ):
+        print( "a mouse scurries across the floor" )
+
+    elif( eventRandom == 3 ):
+        print( " a cold wind passes bye" )
+
+    elif( eventRandom == 4 ):
+        print( "a car passes by the diner" )
+
+    elif( eventRandom == 5 ):
+        print( "a car speeds by the diner" )
+
+    elif( eventRandom == 6 ):
+        print( "Gordon coughs" )
+
+    elif( eventRandom == 7 ):
+        print( "Gordon scratches his head" )
+
+    elif( eventRandom == 8 ):
+       print( "Gordon coughs" )
+            
+    elif( eventRandom == 9 ):
+       print( "aCust sneezes"  )
+#XXX how to make aCust call to current customer in use √
+#XXX Pass it in as an argument
+    elif( eventRandom == 10 ):
+        print( "the jukebox changes songs" )
+
+    elif( eventRandom >=11 ):
+        print( "the lights flicker" )
+
 # The main event loop that drives myDiner.
 def main():
-
+    
     print( "Alfonso's Diner is open for business!" )
+
+    maxNum=20 
 
     townsFolk = [ ["Sally", "Jean"],
                   ["Billy", "Rae"],
+                  ["Samantha", "Johnson"],
+                  ["Jessica", "Wilson"],
+                  ["Ashley", "Williams"],
+                  ["Amber", "Moore"],
+                  ["Albert", "Hodge"],
+                  ["Benjamin", "Nash"],
+                  ["Samuel", "White"],
+                  ["James", "Torres"],
+                  ["Megan", "Rodriguez"],
+                  ["Lucky", "Miller"],
+                  ["Georgia", "Brown"],
+                  ["Charlotte", "Smith"],
+                  ["George", "Michael"],
+                  ["Carlos", "Santana"],
                   ["Goob", "Banner"],
                   ["Zack", "Felt"],
                   ["Bobby", "Smith"],
@@ -78,6 +133,7 @@ def main():
         if( serveCustomer == "---" ) :
             print( "Where are my customers??" )
             # XXX add random event, like cook scratches his head
+            randCustEvent(maxNum)
         else :
             # XXX Take an order based on cooking implements.
             print( "What can I get for you " + serveCustomer )
@@ -94,10 +150,9 @@ def main():
             
         # Wait for us slow humans
         print("" )
-        time.sleep(5)
+        time.sleep(3)
 
         
         
 if __name__ == "__main__":
     main()
-
