@@ -40,7 +40,8 @@ def makeCustomer(townPeople):
     aCust=random.randint(0, len( townPeople ) - 1)
     Cust=townPeople[aCust][0]
     return Cust
-XXX 
+
+#creates recipes and returns cookbook
 def getCookBook():
     recipes = {}
 
@@ -48,25 +49,28 @@ def getCookBook():
     riceCookerRecipes["cookedRice"] = ["rawRice", "smallWater"]
     riceCookerRecipes["porridge"]   = ["rawRice", "bigWater"]
     riceCookerRecipes["porridge"]   = ["rawRice", "bigWater"]
-    XXX
+    
     microwaveRecipes ={}
     microwaveRecipes["bugsoup"]   = ["bugs", "bigWater"]
     microwaveRecipes["tea"]   = ["teaBag", "smallWater"]
     microwaveRecipes["bugs"]   = ["bugs",]
-    microwaveRecipes["yesterdays special"]   = ["teaBag", "bugs, "smalWater"]
+    microwaveRecipes["yesterdays special"]   = ["teaBag", "bugs", "smallWater"]
 
     recipes["riceCooker"] = riceCookerRecipes
-    recipes["microwave"] = microwaverecipes
+    recipes["microwave"] = microwaveRecipes
     return recipes
 
+#customer chooses from menu 
 def pickFromMenu( menu ):
-    # XXX pick a random dish from the menu
+    print ("randomwords")
+    #XXX pick a random dish from the menu
 
+#waiter brings one of two menues to customer
 def getMenu():
     options = ["cookedRice","porridge"]
     return options
    
-
+#this is the "cook" function that is the finished product ["brown mush"] = ["rawRice", "smallWater"]
 def riceCooker( rawIngredients ):
     foodPlate = "brown mush"
 
@@ -76,11 +80,14 @@ def riceCooker( rawIngredients ):
 
 # XXX down the road, different cooks will have different menus
 def cookFood( cookBook, order ):
+    print ("randomword")
+    return "cupcake"
     # XXX use the cookbook to get the ingredients for the order, then
     # XXX use the cooking implement to make the food and return it.
 
 def waiter(Guy,Anthony):
     random.randit(1,2)
+    
 
 def randCustEvent(maxNum):
     #Get Random Number 
@@ -153,13 +160,15 @@ def main():
 
     maxNum=20 
     townsFolk = getTownsfolk()
+    cookBook  = getCookBook()
+    menu      = getMenu()
 
     # init customers with 2 random people
-    firstCust=makeCustomer(townsFolk)
-    secCust = makeCustomer(townsFolk) 
+    firstCust = makeCustomer(townsFolk)
+    secCust   = makeCustomer(townsFolk) 
     customers = [ firstCust, secCust ]
 
-
+   
     # Event loop.  The diner is always open.. loop forever
     while True:
 
@@ -182,10 +191,20 @@ def main():
             randCustEvent(maxNum)
         else :
             # XXX Take an order based on cooking implements.
-            print( "What can I get for you " + serveCustomer ("we currently have replaceme1 and replaceme2 as our specials" ))
-            
-            if pickFromMenu
+            print( "What can I get for you " + serveCustomer + "we currently have replaceme1 and replaceme2 as our specials" )
+            #
+            order = pickFromMenu(menu)
             print ("thats a great dish!") #anyting else?")
+            #time to make the food
+            hotFood=cookFood(cookBook,order)
+            print (hotFood)
+
+
+
+
+
+
+
             #XXX can another function be added ro randomly have the 
             # customer decide if they want to order anything else            
             
