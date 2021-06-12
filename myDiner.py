@@ -48,16 +48,16 @@ def getCookBook():
     riceCookerRecipes = {}
     riceCookerRecipes["cookedRice"] = ["rawRice", "smallWater"]
     riceCookerRecipes["porridge"]   = ["rawRice", "bigWater"]
-    riceCookerRecipes["porridge"]   = ["rawRice", "bigWater"]
+    riceCookerRecipes["chili"]      = ["beans", "meat","smallWater"]
     
-    microwaveRecipes ={}
-    microwaveRecipes["bugsoup"]   = ["bugs", "bigWater"]
-    microwaveRecipes["tea"]   = ["teaBag", "smallWater"]
-    microwaveRecipes["bugs"]   = ["bugs",]
-    microwaveRecipes["yesterdays special"]   = ["teaBag", "bugs", "smallWater"]
+    microwaveRecipes  = {}
+    microwaveRecipes["bugsoup"]            = ["bugs", "bigWater"]
+    microwaveRecipes["tea"]                = ["teaBag", "smallWater"]
+    microwaveRecipes["bugs"]               = ["bugs",]
+    microwaveRecipes["yesterdays special"] = ["teaBag", "bugs", "smallWater"]
 
     recipes["riceCooker"] = riceCookerRecipes
-    recipes["microwave"] = microwaveRecipes
+    recipes["microwave"]  = microwaveRecipes
     return recipes
 
 #customer chooses from menu 
@@ -70,13 +70,25 @@ def getMenu():
     options = ["cookedRice","porridge"]
     return options
    
-#this is the "cook" function that is the finished product ["brown mush"] = ["rawRice", "smallWater"]
+#this is the "cook" function that is the finished product ["cooked rice"] = ["rawRice", "smallWater"]
 def riceCooker( rawIngredients ):
-    foodPlate = "brown mush"
+    foodPlate = "cooked rice"
+    foodBowl  = "porridge"
+    bowlFood  = "chili"
+    # XXX if raw ingredients match a "riceCooker" recipe, set foodPlate to that.
+   
+    return [foodPlate, foodBowl, bowlFood]
+
+#the other  "cook" function that is the finished product ->["bugs"] <- )) = ["rawRice", "smallWater"]
+def microWave ( rawIngredients ):
+    hotPlate    = "bugs"
+    hotBowl     = "bugsoup"
+    chunkyFood  = "yesterdays special"
+    hotLiquid   = "tea"
 
     # XXX if raw ingredients match a "riceCooker" recipe, set foodPlate to that.
    
-    return foodPlate
+    return [hotPlate, hotBowl, chunkyFood, hotLiquid]
 
 # XXX down the road, different cooks will have different menus
 def cookFood( cookBook, order ):
@@ -158,7 +170,7 @@ def main():
     
     print( "Alfonso's Diner is open for business!" )
 
-    maxNum=20 
+    maxNum    = 20 
     townsFolk = getTownsfolk()
     cookBook  = getCookBook()
     menu      = getMenu()
