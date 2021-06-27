@@ -40,7 +40,7 @@ def makeCustomer(townPeople):
     aCust=random.randint(0, len( townPeople ) - 1)
     Cust=townPeople[aCust][0]
     return Cust
-
+###########################################################               XXX MENU/ Recipes            ################################################################################
 #creates recipes and returns cookbook
 def getCookBook():
     recipes = {}
@@ -65,9 +65,14 @@ def pickFromMenu( menu ):
     print ("randomwords")
     #XXX pick a random dish from the menu
 
-#waiter brings one of two menues to customer
+#waiter brings one of two menues to customer MENU 1/2
 def getMenu():
-    options = ["cookedRice","porridge"]
+    options = ["cookedRice","porridge","chili","bugs","yesterdays special"]
+    return options
+    
+#waiter brings one of two menues to customer MENU 2/2
+def getVegMenu():
+    options = ["","Bugsoup","tea"]
     return options
    
 #this is the "cook" function that is the finished product ["cooked rice"] = ["rawRice", "smallWater"]
@@ -97,6 +102,8 @@ def cookFood( cookBook, order ):
     # XXX use the cookbook to get the ingredients for the order, then
     # XXX use the cooking implement to make the food and return it.
 
+    
+    ##########################################################################  Menu/Recipe end       ##############################################################################################################
 def waiter(Guy,Anthony):
     random.randit(1,2)
     
