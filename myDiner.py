@@ -46,15 +46,16 @@ def getCookBook():
     recipes = {}
 
     riceCookerRecipes = {}
-    riceCookerRecipes["cookedRice"] = ["rawRice", "smallWater"]
-    riceCookerRecipes["porridge"]   = ["rawRice", "bigWater"]
-    riceCookerRecipes["chili"]      = ["beans", "meat","smallWater"]
+    riceCookerRecipes["cookedRice"] = ["rawRice", "smallWater","bowl"]
+    riceCookerRecipes["porridge"]   = ["rawRice", "bigWater","bowl"]
+    riceCookerRecipes["chili"]      = ["beans", "meat","smallWater","bowl"]
     
     microwaveRecipes  = {}
-    microwaveRecipes["bugsoup"]            = ["bugs", "bigWater"]
-    microwaveRecipes["tea"]                = ["teaBag", "smallWater"]
-    microwaveRecipes["bugs"]               = ["bugs",]
-    microwaveRecipes["yesterdays special"] = ["teaBag", "bugs", "smallWater"]
+    microwaveRecipes["bugsoup"]            = ["bugs", "bigWater","bowl"]
+    microwaveRecipes["tea"]                = ["teaBag", "smallWater","mug"]
+    microwaveRecipes["bugs"]               = ["bugs","plate"]
+    microwaveRecipes["yesterdays special"] = ["teaBag", "bugs", "smallWater","mug"]
+    microwaveRecipes["personal Pizza"] = ["bread", "cheese", "tomatosauce","plate"]
 
     recipes["riceCooker"] = riceCookerRecipes
     recipes["microwave"]  = microwaveRecipes
@@ -90,10 +91,11 @@ def microWave ( rawIngredients ):
     hotBowl     = "bugsoup"
     chunkyFood  = "yesterdays special"
     hotLiquid   = "tea"
+    pizza       = "personal Pizza"
 
     # XXX if raw ingredients match a "riceCooker" recipe, set foodPlate to that.
    
-    return [hotPlate, hotBowl, chunkyFood, hotLiquid]
+    return [hotPlate, hotBowl, chunkyFood, hotLiquid,pizza]
 
 # XXX down the road, different cooks will have different menus
 def cookFood( cookBook, order ):
@@ -102,11 +104,53 @@ def cookFood( cookBook, order ):
     # XXX use the cookbook to get the ingredients for the order, then
     # XXX use the cooking implement to make the food and return it.
 
-    
+
     ##########################################################################  Menu/Recipe end       ##############################################################################################################
+def Table(tableOne,tableTwo):
+    random.randit(1,2)
+    print("table is open or closed")
+ 
+def bussBoy(Gary): #bussboy is the "accurate" term for table cleaner in resturaunt businesses
+    print("cleaning table")
+    #return dirty dishes to backroom 
+    
+def wait():
+    print("FILLER WAIT")
+
+def clean():
+    print("filler CLEAN")
+def ready():
+    print ("FILLER READY")
+
+def dirty(dirtTable):
+    while True:
+    table =(wait,clean,ready)
+    x = table
+    if   x   == 1:
+        return wait
+        print ("FILLERTABLE needs to be cleaned before another patron can be sat here")
+    elif x   == 2:
+        return clean
+        print("FILLERTABLE is currently being cleaned by the bussboy")
+    elif x   == 5:
+        return ready
+        print ("FILLERTABLE is ready to be used")
+
+def dishWash(dishwasher):
+    print ("washing dishes/ dishes done")
+
+
 def waiter(Guy,Anthony):
     random.randit(1,2)
-    
+    print("Blank Waiter will seat you now at a table")
+
+"""
+#XXX QUESTIONS
+how would i leave specific dirty dishes on the table/ make the table un useable until the table is cleaned off
+
+"""
+
+
 
 def randCustEvent(maxNum):
     #Get Random Number 
@@ -146,7 +190,7 @@ def randCustEvent(maxNum):
     elif( eventRandom >=11 ):
         print( "the lights flicker" )
 
-def getTownsfolk():
+def getTownsfolk(): # Currently 20 TOWNSFOLK
     x =[ ["Sally", "Jean"],
         ["Billy", "Rae"],
         ["Samantha", "Johnson"],
@@ -225,7 +269,7 @@ def main():
 
 
             #XXX can another function be added ro randomly have the 
-            # customer decide if they want to order anything else            
+            # customer decide if they want to order anything else  i/e "wait no how about blank instead" and,  "ill also have this"
             
             
             """
