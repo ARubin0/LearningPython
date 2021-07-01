@@ -124,19 +124,33 @@ def ready():
 
 def dirty(dirtTable):
     while True:
+        return random.randit (1,10)
     table =(wait,clean,ready)
     x = table
-    if   x   == 1:
-        return wait
+    if   x   <= 6:
         print ("FILLERTABLE needs to be cleaned before another patron can be sat here")
-    elif x   == 2:
-        return clean
+        return wait
+    elif x   == 3:
         print("FILLERTABLE is currently being cleaned by the bussboy")
-    elif x   == 5:
-        return ready
+        return clean
+    elif x   == 1:
         print ("FILLERTABLE is ready to be used")
+        return ready
+
+def dish(bowl,plate,cup):
+    print("FILLER")
+
 
 def dishWash(dishwasher):
+    while True:
+        x = dish
+        if x == 1:
+            print ("dishes are being washed")
+        if x == 2:
+            print ("dishes are clean and ready")
+
+
+    
     print ("washing dishes/ dishes done")
 
 
