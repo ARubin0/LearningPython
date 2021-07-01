@@ -106,52 +106,54 @@ def cookFood( cookBook, order ):
 
 
     ##########################################################################  Menu/Recipe end       ##############################################################################################################
-def Table(tableOne,tableTwo):
-    random.randit(1,2)
-    print("table is open or closed")
- 
+
 def bussBoy(Gary): #bussboy is the "accurate" term for table cleaner in resturaunt businesses
     print("cleaning table")
     #return dirty dishes to backroom 
     
+"""
 def wait():
-    print("FILLER WAIT")
+    
 
 def clean():
-    print("filler CLEAN")
+    
+
 def ready():
-    print ("FILLER READY")
+    
 
 def dirty(dirtTable):
     while True:
         return random.randit (1,10)
-    table =(wait,clean,ready)
-    x = table
-    if   x   <= 6:
-        print ("FILLERTABLE needs to be cleaned before another patron can be sat here")
-        return wait
-    elif x   == 3:
-        print("FILLERTABLE is currently being cleaned by the bussboy")
-        return clean
-    elif x   == 1:
-        print ("FILLERTABLE is ready to be used")
-        return ready
 
+roundtable =(wait,clean,ready)
+x = table
+if   x   <= 6:
+    print  + table ("needs to be cleaned before another patron can be sat here")
+    return wait
+elif x   == 3:
+    print  + table ("is currently being cleaned by the bussboy")
+    return clean
+elif x   == 1:
+    print  + table ("is ready to be used")
+    return ready
+
+def Table(tableOne,tableTwo):#table currently has one chair
+    random.randit(1,2)
+    print("table is open or closed")
+ 
 def dish(bowl,plate,cup):
     print("FILLER")
 
-
+"""
 def dishWash(dishwasher):
     while True:
+        random.randit(1,5)
         x = dish
-        if x == 1:
+        if x <= 2:
             print ("dishes are being washed")
-        if x == 2:
+        if x == 1:
             print ("dishes are clean and ready")
 
-
-    
-    print ("washing dishes/ dishes done")
 
 
 def waiter(Guy,Anthony):
