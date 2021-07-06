@@ -344,7 +344,33 @@ def feedBack():
         print("" )
         time.sleep(3)
 
-        
-        
+
+
+            #XXX can another function be added ro randomly have the 
+            # customer decide if they want to order anything else  i/e "wait no how about blank instead" and,  "ill also have this"
+            
+            # XXX deliver food from cook. 
+
+            # XXX get customer feedback
+def feedBack():
+    #Get Random Number 
+    eventRandom = random.randint(0,20)
+
+        if    ( brownMush ) >=  10:
+            print ("this is disgusting get me the cook")
+        elif  ( brownMush )   ==  9:
+                print("this needed salt")
+        elif  ( foodPlate ) ==  2:
+            print ("this was the best food ive had in a while")
+        elif  ( foodPlate ) ==  1:
+                print("this needed salt") #add salt and pepper shaker when objects are added?
+        elif  ( foodPlate ) ==  3:
+                print("this was OK")
+        elif  ( foodPlate ) ==  4:
+                print("this has WAY too much salt")
+        # Wait for us slow humans
+        print("" )
+        time.sleep(3)
+         
 if __name__ == "__main__":
     main()
