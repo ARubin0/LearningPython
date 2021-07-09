@@ -2,20 +2,19 @@
 
 # TODO
 # XXX * Need more townsfolk √ ADDED 10 more. if more are needed.https://www.name-generator.org.uk/?i=c
-# XXX * makeCustomer function should roll the randInt for us
 # XXX * add random events for when there are no customers (its a func)
 # XXX * add random events for when there are customers (its the same func, different argument)
 # XXX * add 2 cooking implements.   For example, riceCooker takes rawRice, returns cookedRice.  If input is not rawRice
-
-# XXX add 1 cook
+# XXX * makeCustomer function should roll the randInt for us √√
 # XXX add ingredients + dish pairings that work on cooking implements.  e.g. ingredients: rawRice, makes: cookedRice
 # XXX add days, 24 hours, Diner closes from 1AM to 6AM.  event loop is 1 tick per hour.
+# XXX add 1 cook √√
 # XXX customers should only show up once, i.e. Bobby Smith does not have a clone
 # XXX add waiters
 # XXX add cooks
 # XXX add cooking implements 
-# XXX add tables
 # XXX one waiter can serve 1 customer per hour.
+# XXX add tables √
 
 
 import signal,sys               # to check for user abort
@@ -26,6 +25,7 @@ import time                     # to sleep
 def signal_handling(signum,frame):
     print ("The Diner is closing for remodeling.")
     sys.exit()
+
 
 signal.signal(signal.SIGINT,signal_handling)
 
@@ -43,8 +43,6 @@ def makeCustomer(townPeople):
 ###########################################################               XXX MENU/ Recipes            ################################################################################
 #creates recipes and returns cookbook
 def getCookBook():
-    recipes = {}
-
     riceCookerRecipes = {}
     riceCookerRecipes["cookedRice"] = ["rawRice", "smallWater","bowl"]
     riceCookerRecipes["porridge"]   = ["rawRice", "bigWater","bowl"]
@@ -90,7 +88,7 @@ def microwave( rawIngredients, cookBook ):
     foodPlate = "brownMush"
 
     # run through riceCookerRecipes, look for rawIngredients that match a recipe, then get the food item.
-    for dish, recipeIngredients in microwave.items():
+    for dish, recipeIngredients in microwaveRecipes.items():
         if recipeIngredients == rawIngredients:
             foodPlate = dish
             break
@@ -146,31 +144,31 @@ def bussBoy(Gary): #bussboy is the "accurate" term for table cleaner in resturau
     print("cleaning table")
     #return dirty dishes to backroom 
     
-"""
+
 def wait():
-    
+    print ("wait")
 
 def clean():
-    
+    print("clean")
 
 def ready():
-    
+    print("ready")
 
 def dirty(dirtTable):
     while True:
         return random.randit (1,10)
 
+
 roundtable =(wait,clean,ready)
-x = table
-if   x   <= 6:
-    print  + table ("needs to be cleaned before another patron can be sat here")
-    return wait
+x = roundtable
+if   x   >= 6:
+    print  + roundtable ("needs to be cleaned before another patron can be sat here")
+    
 elif x   == 3:
-    print  + table ("is currently being cleaned by the bussboy")
-    return clean
+    print  + roundtable ("is currently being cleaned by the bussboy")
+ 
 elif x   == 1:
-    print  + table ("is ready to be used")
-    return ready
+    print  + roundtable ("is ready to be used")
 
 def Table(tableOne,tableTwo):#table currently has one chair
     random.randit(1,2)
@@ -179,13 +177,14 @@ def Table(tableOne,tableTwo):#table currently has one chair
 def dish(bowl,plate,cup):
     print("FILLER")
 
-"""
+
 def dishWash(dishwasher):
     while True:
         random.randit(1,5)
         x = dish
         if x <= 2:
             print ("dishes are being washed")
+            time.sleep(1)
         if x == 1:
             print ("dishes are clean and ready")
 
@@ -200,8 +199,6 @@ def waiter(Guy,Anthony):
 how would i leave specific dirty dishes on the table/ make the table un useable until the table is cleaned off
 
 """
-
-
 
 def randCustEvent(maxNum):
     #Get Random Number 
@@ -314,39 +311,46 @@ def main():
             print (hotFood)
 
 
+            #XXX can another function be added ro randomly have the 
+            # customer decide if they want to order anything else  i/e "wait no how about blank instead" and,  "ill also have this"
+            
+            # XXX deliver food from cook. 
 
+# XXX customer feedback 
+def brownMush ():
+    print ("")
 
+def foodPlate ():
+    print ("")
+
+def feedBack():
+    #Get Random Number 
+    eventRandom = random.randint(0,20)
+
+    if    ( brownMush ) >=  10:
+        print ("this is disgusting get me the cook")
+    elif  ( brownMush )   ==  9:
+        print("this needed salt")
+    elif  ( foodPlate ) ==  2:
+        print ("this was the best food ive had in a while")
+    elif  ( foodPlate ) ==  1:
+        print("this needed salt") #add salt and pepper shaker when objects are added?
+    elif  ( foodPlate ) ==  3:
+        print("this was OK")
+    elif  ( foodPlate ) ==  4:
+        print("this has WAY too much salt")
+        # Wait 
+        print("" )
+        time.sleep(3)
 
 
 
             #XXX can another function be added ro randomly have the 
             # customer decide if they want to order anything else  i/e "wait no how about blank instead" and,  "ill also have this"
             
-            
-            """
-            #     For example, customer wants cooked rice
-            if order:#("bugs")
-                print( "Eeeew, " + serveCustomer + ", you bugs again again??!!" )
-            # XXX place order to cook..  For example, if customer wants cookedRice, and we have rice cooker, tell cook cookedRice
-            
-            elif order == 2:#("Eggs"):
-                print(waiter +"brings Gordon a white slip with"+ serveCustomer(" s order"))
-            elif( order == 3 ):#("filler1")
-                print( "Eeeew, " + serveCustomer + ", you want fillerOne again??!!" )
-            elif( order == 4 ):#("filler2")
-                print( "Eeeew, " + serveCustomer + ", you want fillerTwo again??!!" )
-            elif( order == 5 ):
-                print("5")
-            """
             # XXX deliver food from cook. 
 
             # XXX get customer feedback
-            
-        # Wait for us slow humans
-        print("" )
-        time.sleep(3)
 
-        
-        
 if __name__ == "__main__":
     main()
