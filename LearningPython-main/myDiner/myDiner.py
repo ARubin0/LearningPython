@@ -26,6 +26,7 @@ def signal_handling(signum,frame):
     print ("The Diner is closing for remodeling.")
     sys.exit()
 
+
 signal.signal(signal.SIGINT,signal_handling)
 
 #v0
