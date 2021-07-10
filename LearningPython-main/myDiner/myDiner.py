@@ -2,16 +2,17 @@
 
 # TODO
 # XXX * Need more townsfolk √ ADDED 10 more. if more are needed.https://www.name-generator.org.uk/?i=c
-# XXX * add random events for when there are no customers (its a func)
 # XXX * add random events for when there are customers (its the same func, different argument)
-# XXX * add 2 cooking implements.   For example, riceCooker takes rawRice, returns cookedRice.  If input is not rawRice
+# XXX * add 2 cooking implements. riceCooker and microWave
+        ##For example, riceCooker takes rawRice, returns cookedRice.  If input is not rawRice return brownMush 
+# XXX * add random events for when there are no customers (its a func) √√
 # XXX * makeCustomer function should roll the randInt for us √√
-# XXX add ingredients + dish pairings that work on cooking implements.  e.g. ingredients: rawRice, makes: cookedRice
 # XXX add days, 24 hours, Diner closes from 1AM to 6AM.  event loop is 1 tick per hour.
 # XXX add 1 cook √√
-# XXX customers should only show up once, i.e. Bobby Smith does not have a clone
+# XXX add ingredients + dish pairings that work on cooking implements.  e.g. ingredients: rawRice, makes: cookedRice √√
 # XXX add waiters
 # XXX add cooks
+# XXX customers should only show up once, i.e. Bobby Smith does not have a clone √√
 # XXX add cooking implements 
 # XXX one waiter can serve 1 customer per hour.
 # XXX add tables √
@@ -177,8 +178,8 @@ def Table(tableOne,tableTwo):#table currently has one chair
 def dish(bowl,plate,cup):
     print("FILLER")
 
-
 def dishWash(dishwasher):
+#XXX this chunk needs to run only at night or when all of the dishes are used
     while True:
         random.randit(1,5)
         x = dish
