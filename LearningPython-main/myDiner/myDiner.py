@@ -17,6 +17,14 @@
 # XXX one waiter can serve 1 customer per hour.
 # XXX add tables √
 
+#XXX IDEAS III/ Questions QQQ
+
+# QQQ can another function be added to randomly have the  
+#   customer decide if they want to order anything else  i/e "wait no how about blank instead" and,  "ill also have this"
+# III monetary food  on the menu and tipping
+# III physical objects being salt and pepper shaker for food
+# QQQ how would i leave specific dirty dishes on the table/ make the table un useable until the table is cleaned off
+
 
 import signal,sys               # to check for user abort
 import random
@@ -41,8 +49,10 @@ def makeCustomer(townPeople):
     aCust=random.randint(0, len( townPeople ) - 1)
     Cust=townPeople[aCust][0]
     return Cust
-###########################################################               XXX MENU/ Recipes            ################################################################################
+
+###########################################################               XXX MENU/ Recipes 
 #creates recipes and returns cookbook
+
 def getCookBook():
     riceCookerRecipes = {}
     riceCookerRecipes["cookedRice"] = ["rawRice", "smallWater","bowl"]
@@ -139,13 +149,12 @@ def cookFood( cookBook, order ):
     # XXX use the cooking implement to make the food and return it.
 
 
-    ##########################################################################  Menu/Recipe end       ##############################################################################################################
+    ##########################################################################  Menu/Recipe end
 
 def bussBoy(Gary): #bussboy is the "accurate" term for table cleaner in resturaunt businesses
     print("cleaning table")
     #return dirty dishes to backroom 
     
-
 def wait():
     print ("wait")
 
@@ -189,17 +198,9 @@ def dishWash(dishwasher):
         if x == 1:
             print ("dishes are clean and ready")
 
-
-
 def waiter(Guy,Anthony):
     random.randit(1,2)
     print("Blank Waiter will seat you now at a table")
-
-"""
-#XXX QUESTIONS
-how would i leave specific dirty dishes on the table/ make the table un useable until the table is cleaned off
-
-"""
 
 def randCustEvent(maxNum):
     #Get Random Number 
@@ -263,7 +264,6 @@ def getTownsfolk(): # Currently 20 TOWNSFOLK
         ]
     return x
 
-                
 
 # The main event loop that drives myDiner.
 def main():
@@ -310,19 +310,33 @@ def main():
             #time to make the food
             hotFood=cookFood(cookBook,order)
             print (hotFood)
+            
+           
+# XXX deliver food from cook. 
+def tableOne():
+    print("TABLE FILLER")
 
+def tableTwo():
+    print("TABLE FILLER")
 
-            #XXX can another function be added ro randomly have the 
-            # customer decide if they want to order anything else  i/e "wait no how about blank instead" and,  "ill also have this"
+    if waiter ( tableOne ):
+        print ("here is BLANK food for" )+ (tableOne)
+
+    if waiter ( tableTwo ):
+        print ("here is BLANK food for" )+ (tableTwo)
+   
             
             # XXX deliver food from cook. 
 
+
+# XXX get customer feedback
 # XXX customer feedback 
+
 def brownMush ():
-    print ("")
+    print ("BAD food")
 
 def foodPlate ():
-    print ("")
+    print ("GOOD food")
 
 def feedBack():
     #Get Random Number 
@@ -339,19 +353,11 @@ def feedBack():
     elif  ( foodPlate ) ==  3:
         print("this was OK")
     elif  ( foodPlate ) ==  4:
-        print("this has WAY too much salt")
+        print("this has WAY too much salt i need to get a replacement")
         # Wait 
         print("" )
         time.sleep(3)
 
-
-
-            #XXX can another function be added ro randomly have the 
-            # customer decide if they want to order anything else  i/e "wait no how about blank instead" and,  "ill also have this"
-            
-            # XXX deliver food from cook. 
-
-            # XXX get customer feedback
 
 if __name__ == "__main__":
     main()
