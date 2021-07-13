@@ -24,7 +24,8 @@
 # III monetary food  on the menu and tipping
 # III physical objects being salt and pepper shaker for food
 # QQQ how would i leave specific dirty dishes on the table/ make the table un useable until the table is cleaned off
-
+# QQQ Line 76-86 drink menu. want to be able to "remove drinks" from menu with append as if the tap runs dry
+#  CTRL G is shortcut to type to the line of code you want to go to
 
 import signal,sys               # to check for user abort
 import random
@@ -64,11 +65,27 @@ def getCookBook():
     microwaveRecipes["tea"]                = ["teaBag", "smallWater","mug"]
     microwaveRecipes["bugs"]               = ["bugs","plate"]
     microwaveRecipes["yesterdays special"] = ["teaBag", "bugs", "smallWater","mug"]
-    microwaveRecipes["personal Pizza"] = ["bread", "cheese", "tomatosauce","plate"]
+    microwaveRecipes["personal Pizza"]     = ["bread", "cheese", "tomatosauce","plate"]
+
+    dessertRecipes  = {}
+    dessertRecipes["iceCream"]            = ["icecream","bowl"]
 
     recipes["riceCooker"] = riceCookerRecipes
     recipes["microwave"]  = microwaveRecipes
+    recipes["dessert"]    = dessertRecipes
     return recipes
+    #XXX
+def drinkMenu(): 
+   x=[["oldFashoned"],     ["margarita"]    ["martini"],       
+    ["mojito"]           ["whiskySour"],  ["darkandstormy"]
+    ["bloodyMary"],      ["guinness"]     ["heineken"],       
+    ["blueMoon"]         ["miller"],      ["millerLight"]
+    ["coke"],            ["pepsi"]        ["sprite"],         
+    ["creamSoda"]        ["mountainDew"], ["rootBeer"]
+    ]
+
+drinkMenu.append(drinkStock)
+
 
 # Give good raw ingredients, get good food back.
 # example function call:   foodPlate = riceCooker( ["rawRice", "smallWater","bowl"], cookBook]   will return "cookedRice"
@@ -188,7 +205,7 @@ def dish(bowl,plate,cup):
     print("FILLER")
 
 def dishWash(dishwasher):
-#XXX this chunk needs to run only at night or when all of the dishes are used
+#XXX this chunk needs to run only at "night" or when all of the dishes are used
     while True:
         random.randit(1,5)
         x = dish
