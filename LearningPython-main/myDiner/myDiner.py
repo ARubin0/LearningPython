@@ -90,7 +90,7 @@ def getCookBook():
         *append it to drinks in stock
         *return drinks in stock
 4. figure out appliances ricecooker and microwave and how to call them 
-5. put sleep back in 
+5. put sleep back in  
 """
 def drinkMenu(): 
    x=[["oldFashoned"],     ["margarita"]    ["martini"],       
@@ -320,6 +320,7 @@ def foodPlate ():
     print ("GOOD food")
 
 def feedBack():
+
     #Get Random Number 
     eventRandom = random.randint(0,20)
 
@@ -335,9 +336,13 @@ def feedBack():
         print("this was OK")
     elif  ( foodPlate ) ==  4:
         print("this has WAY too much salt i need to get a replacement")
-        # Wait 
-        print("" )
-        time.sleep(3)
+
+
+
+
+#   wait
+    print("zzz" )
+    time.sleep(5)
 
 
 if __name__ == "__main__":
