@@ -11,21 +11,22 @@
 # XXX add 1 cook √√
 # XXX add ingredients + dish pairings that work on cooking implements.  e.g. ingredients: rawRice, makes: cookedRice √√
 # XXX add waiters
-# XXX add cooks
+# XXX add cooks √
 # XXX customers should only show up once, i.e. Bobby Smith does not have a clone √√
 # XXX add cooking implements 
 # XXX one waiter can serve 1 customer per hour.
 # XXX add tables √
 
-#XXX IDEAS III/ Questions QQQ
+#XXX IDEAS III/ Questions QQQ/ ZZZ later code things
 
 # QQQ can another function be added to randomly have the  
 #   customer decide if they want to order anything else  i/e "wait no how about blank instead" and,  "ill also have this"
-# III monetary food  on the menu and tipping
-# III physical objects being salt and pepper shaker for food
-# QQQ how would i leave specific dirty dishes on the table/ make the table un useable until the table is cleaned off
 # QQQ Line 76-86 drink menu. want to be able to "remove drinks" from menu with append as if the tap runs dry
 #  CTRL G is shortcut to type to the line of code you want to go to
+# ZZZ   FOR LATER
+#   physical objects being salt and pepper shaker for food
+#   monetary food  on the menu and tipping
+#   dirty dishes on the table/ make the table un useable until the table is cleaned off
 
 import signal,sys               # to check for user abort
 import random
@@ -74,7 +75,9 @@ def getCookBook():
     recipes["microwave"]  = microwaveRecipes
     recipes["dessert"]    = dessertRecipes
     return recipes
-    #XXX
+    
+    #XXX Drinks
+
 def drinkMenu(): 
    x=[["oldFashoned"],     ["margarita"]    ["martini"],       
     ["mojito"]           ["whiskySour"],  ["darkandstormy"]
