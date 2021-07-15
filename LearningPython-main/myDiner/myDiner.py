@@ -2,20 +2,31 @@
 
 # TODO
 # XXX * Need more townsfolk √ ADDED 10 more. if more are needed.https://www.name-generator.org.uk/?i=c
-# XXX * add random events for when there are no customers (its a func)
 # XXX * add random events for when there are customers (its the same func, different argument)
-# XXX * add 2 cooking implements.   For example, riceCooker takes rawRice, returns cookedRice.  If input is not rawRice
+# XXX * add 2 cooking implements. riceCooker and microWave
+        ##For example, riceCooker takes rawRice, returns cookedRice.  If input is not rawRice return brownMush 
+# XXX * add random events for when there are no customers (its a func) √√
 # XXX * makeCustomer function should roll the randInt for us √√
-# XXX add ingredients + dish pairings that work on cooking implements.  e.g. ingredients: rawRice, makes: cookedRice
 # XXX add days, 24 hours, Diner closes from 1AM to 6AM.  event loop is 1 tick per hour.
 # XXX add 1 cook √√
-# XXX customers should only show up once, i.e. Bobby Smith does not have a clone
+# XXX add ingredients + dish pairings that work on cooking implements.  e.g. ingredients: rawRice, makes: cookedRice √√
 # XXX add waiters
-# XXX add cooks
+# XXX add cooks √
+# XXX customers should only show up once, i.e. Bobby Smith does not have a clone √√
 # XXX add cooking implements 
 # XXX one waiter can serve 1 customer per hour.
 # XXX add tables √
 
+#XXX IDEAS III/ Questions QQQ/ ZZZ later code things
+
+# QQQ can another function be added to randomly have the  
+#   customer decide if they want to order anything else  i/e "wait no how about blank instead" and,  "ill also have this"
+# QQQ Line 76-86 drink menu. want to be able to "remove drinks" from menu with append as if the tap runs dry
+#  CTRL G is shortcut to type to the line of code you want to go to
+# ZZZ   FOR LATER
+#   physical objects being salt and pepper shaker for food
+#   monetary food  on the menu and tipping
+#   dirty dishes on the table/ make the table un useable until the table is cleaned off
 
 import signal,sys               # to check for user abort
 import random
@@ -40,8 +51,10 @@ def makeCustomer(townPeople):
     aCust=random.randint(0, len( townPeople ) - 1)
     Cust=townPeople[aCust][0]
     return Cust
-###########################################################               XXX MENU/ Recipes            ################################################################################
+
+###########################################################               XXX MENU/ Recipes 
 #creates recipes and returns cookbook
+
 def getCookBook():
     riceCookerRecipes = {}
     riceCookerRecipes["cookedRice"] = ["rawRice", "smallWater","bowl"]
@@ -53,11 +66,29 @@ def getCookBook():
     microwaveRecipes["tea"]                = ["teaBag", "smallWater","mug"]
     microwaveRecipes["bugs"]               = ["bugs","plate"]
     microwaveRecipes["yesterdays special"] = ["teaBag", "bugs", "smallWater","mug"]
-    microwaveRecipes["personal Pizza"] = ["bread", "cheese", "tomatosauce","plate"]
+    microwaveRecipes["personal Pizza"]     = ["bread", "cheese", "tomatosauce","plate"]
+
+    dessertRecipes  = {}
+    dessertRecipes["iceCream"]            = ["icecream","bowl"]
 
     recipes["riceCooker"] = riceCookerRecipes
     recipes["microwave"]  = microwaveRecipes
+    recipes["dessert"]    = dessertRecipes
     return recipes
+    
+    #XXX Drinks
+
+def drinkMenu(): 
+   x=[["oldFashoned"],     ["margarita"]    ["martini"],       
+    ["mojito"]           ["whiskySour"],  ["darkandstormy"]
+    ["bloodyMary"],      ["guinness"]     ["heineken"],       
+    ["blueMoon"]         ["miller"],      ["millerLight"]
+    ["coke"],            ["pepsi"]        ["sprite"],         
+    ["creamSoda"]        ["mountainDew"], ["rootBeer"]
+    ]
+
+drinkMenu.append(drinkStock)
+
 
 # Give good raw ingredients, get good food back.
 # example function call:   foodPlate = riceCooker( ["rawRice", "smallWater","bowl"], cookBook]   will return "cookedRice"
@@ -138,13 +169,12 @@ def cookFood( cookBook, order ):
     # XXX use the cooking implement to make the food and return it.
 
 
-    ##########################################################################  Menu/Recipe end       ##############################################################################################################
+    ##########################################################################  Menu/Recipe end
 
 def bussBoy(Gary): #bussboy is the "accurate" term for table cleaner in resturaunt businesses
     print("cleaning table")
     #return dirty dishes to backroom 
     
-
 def wait():
     print ("wait")
 
@@ -177,8 +207,8 @@ def Table(tableOne,tableTwo):#table currently has one chair
 def dish(bowl,plate,cup):
     print("FILLER")
 
-
 def dishWash(dishwasher):
+#XXX this chunk needs to run only at "night" or when all of the dishes are used
     while True:
         random.randit(1,5)
         x = dish
@@ -188,17 +218,9 @@ def dishWash(dishwasher):
         if x == 1:
             print ("dishes are clean and ready")
 
-
-
 def waiter(Guy,Anthony):
     random.randit(1,2)
     print("Blank Waiter will seat you now at a table")
-
-"""
-#XXX QUESTIONS
-how would i leave specific dirty dishes on the table/ make the table un useable until the table is cleaned off
-
-"""
 
 def randCustEvent(maxNum):
     #Get Random Number 
@@ -262,7 +284,6 @@ def getTownsfolk(): # Currently 20 TOWNSFOLK
         ]
     return x
 
-                
 
 # The main event loop that drives myDiner.
 def main():
@@ -309,19 +330,33 @@ def main():
             #time to make the food
             hotFood=cookFood(cookBook,order)
             print (hotFood)
+            
+           
+# XXX deliver food from cook. 
+def tableOne():
+    print("TABLE FILLER")
 
+def tableTwo():
+    print("TABLE FILLER")
 
-            #XXX can another function be added ro randomly have the 
-            # customer decide if they want to order anything else  i/e "wait no how about blank instead" and,  "ill also have this"
+    if waiter ( tableOne ):
+        print ("here is BLANK food for" )+ (tableOne)
+
+    if waiter ( tableTwo ):
+        print ("here is BLANK food for" )+ (tableTwo)
+   
             
             # XXX deliver food from cook. 
 
+
+# XXX get customer feedback
 # XXX customer feedback 
+
 def brownMush ():
-    print ("")
+    print ("BAD food")
 
 def foodPlate ():
-    print ("")
+    print ("GOOD food")
 
 def feedBack():
     #Get Random Number 
@@ -338,19 +373,11 @@ def feedBack():
     elif  ( foodPlate ) ==  3:
         print("this was OK")
     elif  ( foodPlate ) ==  4:
-        print("this has WAY too much salt")
+        print("this has WAY too much salt i need to get a replacement")
         # Wait 
         print("" )
         time.sleep(3)
 
-
-
-            #XXX can another function be added ro randomly have the 
-            # customer decide if they want to order anything else  i/e "wait no how about blank instead" and,  "ill also have this"
-            
-            # XXX deliver food from cook. 
-
-            # XXX get customer feedback
 
 if __name__ == "__main__":
     main()
