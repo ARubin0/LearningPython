@@ -1,9 +1,10 @@
 #!/usr/bin/env python
 
 import sys
-#import time
+import time
 import os
 import logging
+import random
 
 #from os import path
 
@@ -49,8 +50,6 @@ def riceCooker( rawIngredients, cookBook ):
     return foodPlate
 
 
-
-
 def microwave( rawIngredients, cookBook ):
     #print( cookBook )
 
@@ -67,3 +66,14 @@ def microwave( rawIngredients, cookBook ):
             break
    
     return foodPlate
+
+def dishWash(dishwasher):
+#XXX this chunk needs to run only at "night" or when all of the dishes are used
+    while True:
+        random.randit(1,5)
+        x = dish
+        if x <= 2:
+            print ("dishes are being washed")
+            time.sleep(1)
+        if x == 1:
+            print ("dishes are clean and ready") 

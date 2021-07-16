@@ -1,18 +1,9 @@
 #!/usr/bin/env python
 
 # TODO
-# XXX * Need more townsfolk √ ADDED 10 more. if more are needed.https://www.name-generator.org.uk/?i=c
-# XXX * add random events for when there are customers (its the same func, different argument)
-
-        ##For example, riceCooker takes rawRice, returns cookedRice.  If input is not rawRice return brownMush 
-# XXX * add random events for when there are no customers (its a func) √√
-# XXX * makeCustomer function should roll the randInt for us √√
+# XXX * if more townsfolk needed.https://www.name-generator.org.uk/?i=c
 # XXX add days, 24 hours, Diner closes from 1AM to 6AM.  event loop is 1 tick per hour.
-# XXX add 1 cook √√
-# XXX add ingredients + dish pairings that work on cooking implements.  e.g. ingredients: rawRice, makes: cookedRice √√
-# XXX add waiters
 # XXX add cooks √
-# XXX customers should only show up once, i.e. Bobby Smith does not have a clone √√
 # XXX add cooking implements 
 # XXX one waiter can serve 1 customer per hour.
 # XXX add tables √
@@ -27,6 +18,7 @@
 #   physical objects being salt and pepper shaker for food
 #   monetary food  on the menu and tipping
 #   dirty dishes on the table/ make the table un useable until the table is cleaned off
+
 import sys,os
 
 import signal,sys               # to check for user abort
@@ -34,6 +26,7 @@ import random
 import time                     # to sleep
 import appliances
 
+def appliances(microWave):
 
 # Abort handler
 def signal_handling(signum,frame):
@@ -90,18 +83,21 @@ def getCookBook():
         *append it to drinks in stock
         *return drinks in stock
 4. figure out appliances ricecooker and microwave and how to call them 
-5. put sleep back in  
 """
-def drinkMenu(): 
-   x=[["oldFashoned"],     ["margarita"]    ["martini"],       
-    ["mojito"]           ["whiskySour"],  ["darkandstormy"]
-    ["bloodyMary"],      ["guinness"]     ["heineken"],       
-    ["blueMoon"]         ["miller"],      ["millerLight"]
-    ["coke"],            ["pepsi"]        ["sprite"],         
-    ["creamSoda"]        ["mountainDew"], ["rootBeer"]
-    ]
+def drinkStock ["",""]
 
-#drinkMenu.append(drinkStock)
+def drinkMenu(): 
+   drink=[["oldFashoned"],     ["margarita"]    ["martini"],       
+           ["mojito"]           ["whiskySour"],  ["darkandstormy"]
+           ["bloodyMary"],      ["guinness"]     ["heineken"],       
+           ["blueMoon"]         ["miller"],      ["millerLight"]
+           ["coke"],            ["pepsi"]        ["sprite"],         
+           ["creamSoda"]        ["mountainDew"], ["rootBeer"]]
+for x in drink,print("ill have " + random.choice (drink)) then: drinkMenu.append (drinkStock)
+
+
+
+
 
 #customer chooses from menu 
 def pickFromMenu( menu ):
@@ -168,16 +164,7 @@ def Table(tableOne,tableTwo):#table currently has one chair
 def dish(bowl,plate,cup):
     print("FILLER")
 """
-def dishWash(dishwasher):
-#XXX this chunk needs to run only at "night" or when all of the dishes are used
-    while True:
-        random.randit(1,5)
-        x = dish
-        if x <= 2:
-            print ("dishes are being washed")
-            time.sleep(1)
-        if x == 1:
-            print ("dishes are clean and ready")
+
 
 def waiter(Guy,Anthony):
     random.randit(1,2)
@@ -220,6 +207,8 @@ def randCustEvent(maxNum):
 
     elif( eventRandom >=11 ):
         print( "the lights flicker" )
+    
+    
 
 def getTownsfolk(): # Currently 20 TOWNSFOLK
     x =[ ["Sally", "Jean"],
@@ -245,6 +234,7 @@ def getTownsfolk(): # Currently 20 TOWNSFOLK
         ]
     return x
 
+#   wait
 
 # The main event loop that drives myDiner.
 def main():
@@ -282,6 +272,7 @@ def main():
             print( "Where are my customers??" )
             # XXX add random event, like cook scratches his head
             randCustEvent(maxNum)
+        
         else :
             # XXX Take an order based on cooking implements.
             print( "What can I get for you " + serveCustomer + "we currently have replaceme1 and replaceme2 as our specials" )
@@ -291,6 +282,7 @@ def main():
             #time to make the food
             hotFood=cookFood(cookBook,order)
             print (hotFood)
+            
             
            
 # XXX deliver food from cook. 
@@ -336,7 +328,6 @@ def feedBack():
         print("this was OK")
     elif  ( foodPlate ) ==  4:
         print("this has WAY too much salt i need to get a replacement")
-
 
 
 
