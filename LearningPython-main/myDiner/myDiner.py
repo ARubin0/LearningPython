@@ -26,7 +26,7 @@ import random
 import time                     # to sleep
 import appliances
 
-def appliances(microWave):
+
 
 # Abort handler
 def signal_handling(signum,frame):
@@ -85,6 +85,7 @@ def getCookBook():
 4. figure out appliances ricecooker and microwave and how to call them 
 """
 def drinkStock ["",""]
+#v1
 
 def drinkMenu(): 
    drink=[["oldFashoned"],     ["margarita"]    ["martini"],       
@@ -93,9 +94,32 @@ def drinkMenu():
            ["blueMoon"]         ["miller"],      ["millerLight"]
            ["coke"],            ["pepsi"]        ["sprite"],         
            ["creamSoda"]        ["mountainDew"], ["rootBeer"]]
-for x in drink,print("ill have " + random.choice (drink)) then: drinkMenu.append (drinkStock)
+           
+for drink,print("ill have " + random.choice (drink)) then: drinkMenu.append (drinkStock)
 
+#v2
 
+def drinkMenu(): 
+   drink=[["oldFashoned"],     ["margarita"]    ["martini"],       
+           ["mojito"]           ["whiskySour"],  ["darkandstormy"]
+           ["bloodyMary"],      ["guinness"]     ["heineken"],       
+           ["blueMoon"]         ["miller"],      ["millerLight"]
+           ["coke"],            ["pepsi"]        ["sprite"],         
+           ["creamSoda"]        ["mountainDew"], ["rootBeer"]]
+    return random.randint (drink) + drimkMenu.append
+
+#v3
+def drinkMenu(): 
+   drink=[["oldFashoned"],     ["margarita"]    ["martini"],       
+           ["mojito"]           ["whiskySour"],  ["darkandstormy"]
+           ["bloodyMary"],      ["guinness"]     ["heineken"],       
+           ["blueMoon"]         ["miller"],      ["millerLight"]
+           ["coke"],            ["pepsi"]        ["sprite"],         
+           ["creamSoda"]        ["mountainDew"], ["rootBeer"],["water"]]
+for x in drink:
+    if x == "water": 
+        break
+    print (x)
 
 
 
