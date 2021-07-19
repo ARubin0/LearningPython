@@ -43,6 +43,7 @@ signal.signal(signal.SIGINT,signal_handling)
     
 #v1
 #Picking a random townsfolk and returning the first name
+#IN
 def makeCustomer(townPeople):
     aCust=random.randint(0, len( townPeople ) - 1)
     Cust=townPeople[aCust][0]
@@ -51,6 +52,7 @@ def makeCustomer(townPeople):
 ###########################################################               XXX MENU/ Recipes 
 #creates recipes and returns cookbook
 
+#IN
 def getCookBook():
     riceCookerRecipes = {}
     riceCookerRecipes["cookedRice"] = ["rawRice", "smallWater","bowl"]
@@ -74,75 +76,48 @@ def getCookBook():
     return recipes
     
     #XXX Drinks
-"""
-1.drink menu defined as a function, then appended to as a list.
-2.drink menu function does not return anything. 
-3. one way to build drinks-in-stock list would be;
-        *have a for loop
-        *in it randomly pick member from list x
-        *append it to drinks in stock
-        *return drinks in stock
-4. figure out appliances ricecooker and microwave and how to call them 
-"""
-def drinkStock ["",""]
+#def drinkStock
 #v1
 
-def drinkMenu(): 
-   drink=[["oldFashoned"],     ["margarita"]    ["martini"],       
-           ["mojito"]           ["whiskySour"],  ["darkandstormy"]
-           ["bloodyMary"],      ["guinness"]     ["heineken"],       
-           ["blueMoon"]         ["miller"],      ["millerLight"]
-           ["coke"],            ["pepsi"]        ["sprite"],         
-           ["creamSoda"]        ["mountainDew"], ["rootBeer"]]
-           
-for drink,print("ill have " + random.choice (drink)) then: drinkMenu.append (drinkStock)
-
-#v2
-
-def drinkMenu(): 
-   drink=[["oldFashoned"],     ["margarita"]    ["martini"],       
-           ["mojito"]           ["whiskySour"],  ["darkandstormy"]
-           ["bloodyMary"],      ["guinness"]     ["heineken"],       
-           ["blueMoon"]         ["miller"],      ["millerLight"]
-           ["coke"],            ["pepsi"]        ["sprite"],         
-           ["creamSoda"]        ["mountainDew"], ["rootBeer"]]
-    return random.randint (drink) + drimkMenu.append
-
-#v3
-def drinkMenu(): 
-   drink=[["oldFashoned"],     ["margarita"]    ["martini"],       
-           ["mojito"]           ["whiskySour"],  ["darkandstormy"]
-           ["bloodyMary"],      ["guinness"]     ["heineken"],       
-           ["blueMoon"]         ["miller"],      ["millerLight"]
-           ["coke"],            ["pepsi"]        ["sprite"],         
-           ["creamSoda"]        ["mountainDew"], ["rootBeer"],["water"]]
-for x in drink:
-    if x == "water": 
-        break
-    print (x)
-
-
-
-#customer chooses from menu 
+#customer chooses from menu
+# IN 
 def pickFromMenu( menu ):
     print ("randomwords")
     #XXX pick a random dish from the menu
 
+#XXX drink menu commented out for now
+"""
+1. one way to build drinks-in-stock list would be;
+        *have a for loop
+        *in it randomly pick member from list x
+        *append it to drinks in stock
+        *return drinks in stock
+2. figure out appliances ricecooker and microwave and how to call them 
+"""
+def drinkMenu(): 
+   
+    drink=[["oldFashoned"],     ["margarita"],    ["martini"],       
+           ["mojito"],           ["whiskySour"],  ["darkandstormy"],
+           ["bloodyMary"],      ["guinness"],     ["heineken"],       
+           ["blueMoon"],         ["miller"],      ["millerLight"],
+           ["coke"],            ["pepsi"],        ["sprite"],         
+           ["creamSoda"],        ["mountainDew"], ["rootBeer"]]
+    print ("drink") 
+    drinkStock = [],
+    for x in range(9):
+        print("ill have " + random.choice (drink))
+        drinkStock.append, x(0)
+#return list at end of for loop
+
 #waiter brings one of two menues to customer MENU 1/2
+#IN
 def getMenu():
     options = ["cookedRice","porridge","chili","bugs","yesterdays special"]
     return options
-    
-#waiter brings one of two menues to customer MENU 2/2
-def getVegMenu():
-    options = ["","Bugsoup","tea"]
-    return options
-   
-
-
 
 
 # XXX down the road, different cooks will have different menus
+#IN
 def cookFood( cookBook, order ):
     print ("randomword")
     return "cupcake"
@@ -152,48 +127,7 @@ def cookFood( cookBook, order ):
 
     ##########################################################################  Menu/Recipe end
 
-def bussBoy(Gary): #bussboy is the "accurate" term for table cleaner in resturaunt businesses
-    print("cleaning table")
-    #return dirty dishes to backroom 
-    
-def wait():
-    print ("wait")
-
-def clean():
-    print("clean")
-
-def ready():
-    print("ready")
-
-def dirty(dirtTable):
-    while True:
-        return random.randit (1,10)
-
-"""
-roundtable =(wait,clean,ready)
-x = roundtable
-if   x   >= 6:
-    print  + roundtable ("needs to be cleaned before another patron can be sat here")
-    
-elif x   == 3:
-    print  + roundtable ("is currently being cleaned by the bussboy")
- 
-elif x   == 1:
-    print  + roundtable ("is ready to be used")
-
-def Table(tableOne,tableTwo):#table currently has one chair
-    random.randit(1,2)
-    print("table is open or closed")
- 
-def dish(bowl,plate,cup):
-    print("FILLER")
-"""
-
-
-def waiter(Guy,Anthony):
-    random.randit(1,2)
-    print("Blank Waiter will seat you now at a table")
-
+#IN
 def randCustEvent(maxNum):
     #Get Random Number 
     eventRandom = random.randint(0,maxNum)
@@ -233,7 +167,7 @@ def randCustEvent(maxNum):
         print( "the lights flicker" )
     
     
-
+#IN
 def getTownsfolk(): # Currently 20 TOWNSFOLK
     x =[ ["Sally", "Jean"],
         ["Billy", "Rae"],
@@ -258,10 +192,14 @@ def getTownsfolk(): # Currently 20 TOWNSFOLK
         ]
     return x
 
-#   wait
+# XXX deliver food from cook. 
+# XXX get customer feedback
+# XXX customer feedback 
+
 
 # The main event loop that drives myDiner.
 def main():
+   
     
     print( "Alfonso's Diner is open for business!" )
 
@@ -278,7 +216,7 @@ def main():
    
     # Event loop.  The diner is always open.. loop forever
     while True:
-
+        
         # Check if we have a new customer
         if( random.randint( 0, 10 ) < 3 ) :
 
@@ -296,7 +234,6 @@ def main():
             print( "Where are my customers??" )
             # XXX add random event, like cook scratches his head
             randCustEvent(maxNum)
-        
         else :
             # XXX Take an order based on cooking implements.
             print( "What can I get for you " + serveCustomer + "we currently have replaceme1 and replaceme2 as our specials" )
@@ -306,59 +243,11 @@ def main():
             #time to make the food
             hotFood=cookFood(cookBook,order)
             print (hotFood)
-            
-            
-           
-# XXX deliver food from cook. 
-def tableOne():
-    print("TABLE FILLER")
-
-def tableTwo():
-    print("TABLE FILLER")
-
-    if waiter ( tableOne ):
-        print ("here is BLANK food for" )+ (tableOne)
-
-    if waiter ( tableTwo ):
-        print ("here is BLANK food for" )+ (tableTwo)
-   
-            
-            # XXX deliver food from cook. 
-
-
-# XXX get customer feedback
-# XXX customer feedback 
-
-def brownMush ():
-    print ("BAD food")
-
-def foodPlate ():
-    print ("GOOD food")
-
-def feedBack():
-
-    #Get Random Number 
-    eventRandom = random.randint(0,20)
-
-    if    ( brownMush ) >=  10:
-        print ("this is disgusting get me the cook")
-    elif  ( brownMush )   ==  9:
-        print("this needed salt")
-    elif  ( foodPlate ) ==  2:
-        print ("this was the best food ive had in a while")
-    elif  ( foodPlate ) ==  1:
-        print("this needed salt") #add salt and pepper shaker when objects are added?
-    elif  ( foodPlate ) ==  3:
-        print("this was OK")
-    elif  ( foodPlate ) ==  4:
-        print("this has WAY too much salt i need to get a replacement")
-
-
-
-#   wait
-    print("zzz" )
-    time.sleep(5)
-
+    
+        #wait
+        print("zzz")
+        time.sleep(5)
+          
 
 if __name__ == "__main__":
     main()
