@@ -3,7 +3,7 @@
 # TODO
 # XXX * Need more townsfolk √ ADDED 10 more. if more are needed.https://www.name-generator.org.uk/?i=c
 # XXX * add random events for when there are customers (its the same func, different argument)
-
+# XXX * add 2 cooking implements. riceCooker and microWave
         ##For example, riceCooker takes rawRice, returns cookedRice.  If input is not rawRice return brownMush 
 # XXX * add random events for when there are no customers (its a func) √√
 # XXX * makeCustomer function should roll the randInt for us √√
@@ -21,19 +21,16 @@
 
 # QQQ can another function be added to randomly have the  
 #   customer decide if they want to order anything else  i/e "wait no how about blank instead" and,  "ill also have this"
-# QQQ Line 76-86 r menu. want to be able to "remove drinks" from menu with append as if the tap runs dry
+# QQQ Line 76-86 drink menu. want to be able to "remove drinks" from menu with append as if the tap runs dry
 #  CTRL G is shortcut to type to the line of code you want to go to
 # ZZZ   FOR LATER
 #   physical objects being salt and pepper shaker for food
 #   monetary food  on the menu and tipping
 #   dirty dishes on the table/ make the table un useable until the table is cleaned off
-import sys,os
 
 import signal,sys               # to check for user abort
 import random
 import time                     # to sleep
-import appliances
-
 
 # Abort handler
 def signal_handling(signum,frame):
@@ -74,24 +71,13 @@ def getCookBook():
     dessertRecipes  = {}
     dessertRecipes["iceCream"]            = ["icecream","bowl"]
 
-    recipes ={}
     recipes["riceCooker"] = riceCookerRecipes
     recipes["microwave"]  = microwaveRecipes
     recipes["dessert"]    = dessertRecipes
     return recipes
     
     #XXX Drinks
-"""
-1.drink menu defined as a function, then appended to as a list.
-2.drink menu function does not return anything. 
-3. one way to build drinks-in-stock list would be;
-        *have a for loop
-        *in it randomly pick member from list x
-        *append it to drinks in stock
-        *return drinks in stock
-4. figure out appliances ricecooker and microwave and how to call them 
-5. put sleep back in 
-"""
+
 def drinkMenu(): 
    x=[["oldFashoned"],     ["margarita"]    ["martini"],       
     ["mojito"]           ["whiskySour"],  ["darkandstormy"]
@@ -101,8 +87,44 @@ def drinkMenu():
     ["creamSoda"]        ["mountainDew"], ["rootBeer"]
     ]
 
-#drinkMenu.append(drinkStock)
+drinkMenu.append(drinkStock)
 
+
+# Give good raw ingredients, get good food back.
+# example function call:   foodPlate = riceCooker( ["rawRice", "smallWater","bowl"], cookBook]   will return "cookedRice"
+def riceCooker( rawIngredients, cookBook ):
+    #print( cookBook )
+
+    riceCookerRecipes = cookBook["riceCooker"]
+    #print( riceCookerRecipes)
+
+    # if raw ingredients don't match a "riceCooker" recipe, iiiick
+    foodPlate = "brownMush"
+
+    # run through riceCookerRecipes, look for rawIngredients that match a recipe, then get the food item.
+    for dish, recipeIngredients in riceCookerRecipes.items():
+        if recipeIngredients == rawIngredients:
+            foodPlate = dish
+            break
+   
+    return foodPlate
+
+def microwave( rawIngredients, cookBook ):
+    #print( cookBook )
+
+    microwaveRecipes = cookBook["microwave"]
+    #print( microwaveRecipes)
+
+    # if raw ingredients don't match a "microwave" recipe, iiiick
+    foodPlate = "brownMush"
+
+    # run through riceCookerRecipes, look for rawIngredients that match a recipe, then get the food item.
+    for dish, recipeIngredients in microwaveRecipes.items():
+        if recipeIngredients == rawIngredients:
+            foodPlate = dish
+            break
+   
+    return foodPlate
 #customer chooses from menu 
 def pickFromMenu( menu ):
     print ("randomwords")
@@ -118,9 +140,26 @@ def getVegMenu():
     options = ["","Bugsoup","tea"]
     return options
    
+#this is the "cook" function that is the finished product ["cooked rice"] = ["rawRice", "smallWater"]
+def riceCooker( rawIngredients ):
+    foodPlate = "cooked rice"
+    foodBowl  = "porridge"
+    bowlFood  = "chili"
+    # XXX if raw ingredients match a "riceCooker" recipe, set foodPlate to that.
+   
+    return [foodPlate, foodBowl, bowlFood]
 
+#the other  "cook" function that is the finished product ->["bugs"] <- )) = ["rawRice", "smallWater"]
+def microWave ( rawIngredients ):
+    hotPlate    = "bugs"
+    hotBowl     = "bugsoup"
+    chunkyFood  = "yesterdays special"
+    hotLiquid   = "tea"
+    pizza       = "personal Pizza"
 
-
+    # XXX if raw ingredients match a "riceCooker" recipe, set foodPlate to that.
+   
+    return [hotPlate, hotBowl, chunkyFood, hotLiquid,pizza]
 
 # XXX down the road, different cooks will have different menus
 def cookFood( cookBook, order ):
@@ -149,7 +188,7 @@ def dirty(dirtTable):
     while True:
         return random.randit (1,10)
 
-"""
+
 roundtable =(wait,clean,ready)
 x = roundtable
 if   x   >= 6:
@@ -167,7 +206,7 @@ def Table(tableOne,tableTwo):#table currently has one chair
  
 def dish(bowl,plate,cup):
     print("FILLER")
-"""
+
 def dishWash(dishwasher):
 #XXX this chunk needs to run only at "night" or when all of the dishes are used
     while True:
