@@ -6,9 +6,7 @@
 # XXX add cooks √
 # XXX add cooking implements 
 # XXX one waiter can serve 1 customer per hour.
-# XXX add tables √
-
-#XXX IDEAS III/ Questions QQQ/ ZZZ later code things
+# XXX IDEAS III/ Questions QQQ/ ZZZ later code things
 
 # QQQ can another function be added to randomly have the  
 #   customer decide if they want to order anything else  i/e "wait no how about blank instead" and,  "ill also have this"
@@ -18,6 +16,7 @@
 #   physical objects being salt and pepper shaker for food
 #   monetary food  on the menu and tipping
 #   dirty dishes on the table/ make the table un useable until the table is cleaned off
+#   use input command before/after code to add townsfolk but not allow for duplicants or random letters?
 
 import sys,os
 
@@ -25,8 +24,6 @@ import signal,sys               # to check for user abort
 import random
 import time                     # to sleep
 import appliances
-
-
 
 # Abort handler
 def signal_handling(signum,frame):
@@ -49,7 +46,7 @@ def makeCustomer(townPeople):
     Cust=townPeople[aCust][0]
     return Cust
 
-###########################################################               XXX MENU/ Recipes 
+#############################################              XXX MENU/ Recipes 
 #creates recipes and returns cookbook
 
 #IN
@@ -125,7 +122,7 @@ def cookFood( cookBook, order ):
     # XXX use the cooking implement to make the food and return it.
 
 
-    ##########################################################################  Menu/Recipe end
+    #########################################  Menu/Recipe end
 
 #IN
 def randCustEvent(maxNum):
@@ -134,7 +131,7 @@ def randCustEvent(maxNum):
 
     #based on random number choose random event
     if( eventRandom == 1 ):
-        print( "Where are my customers??" )
+        print( "Where is everyone??" ) #use to be. where are my customers??
 
     elif( eventRandom == 2 ):
         print( "a mouse scurries across the floor" )
@@ -236,7 +233,7 @@ def main():
             randCustEvent(maxNum)
         else :
             # XXX Take an order based on cooking implements.
-            print( "What can I get for you " + serveCustomer + "we currently have replaceme1 and replaceme2 as our specials" )
+            print( "What can I get for you " + serveCustomer + " we currently have replaceme1 and replaceme2 as our specials" )
             #
             order = pickFromMenu(menu)
             print ("thats a great dish!") #anyting else?")
@@ -245,8 +242,8 @@ def main():
             print (hotFood)
     
         #wait
-        print("zzz")
-        time.sleep(5)
+        print("")
+        time.sleep(3)
           
 
 if __name__ == "__main__":
