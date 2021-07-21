@@ -113,6 +113,7 @@ def tableOne():
 
 def tableTwo():
     print("TABLE FILLER")
+    
 
     if waiter ( tableOne ):
         print ("here is BLANK food for" )+ (tableOne)

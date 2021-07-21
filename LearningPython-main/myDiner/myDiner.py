@@ -14,7 +14,7 @@
 #  CTRL G is shortcut to type to the line of code you want to go to
 # ZZZ   FOR LATER
 #   physical objects being salt and pepper shaker for food
-#   monetary food  on the menu and tipping
+#   monetary values for food  on the menu and tipping for service
 #   dirty dishes on the table/ make the table un useable until the table is cleaned off
 #   use input command before/after code to add townsfolk but not allow for duplicants or random letters?
 
@@ -91,6 +91,7 @@ def pickFromMenu( menu ):
         *return drinks in stock
 2. figure out appliances ricecooker and microwave and how to call them 
 """
+#NOT in yet
 def drinkMenu(): 
    
     drink=[["oldFashoned"],     ["margarita"],    ["martini"],       
