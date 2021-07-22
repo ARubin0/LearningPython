@@ -40,7 +40,7 @@ signal.signal(signal.SIGINT,signal_handling)
     
 #v1
 #Picking a random townsfolk and returning the first name
-#IN
+
 def makeCustomer(townPeople):
     aCust=random.randint(0, len( townPeople ) - 1)
     Cust=townPeople[aCust][0]
@@ -49,7 +49,7 @@ def makeCustomer(townPeople):
 #############################################              XXX MENU/ Recipes 
 #creates recipes and returns cookbook
 
-#IN
+
 def getCookBook():
     riceCookerRecipes = {}
     riceCookerRecipes["cookedRice"] = ["rawRice", "smallWater","bowl"]
@@ -91,31 +91,40 @@ def pickFromMenu( menu ):
         *return drinks in stock
 2. figure out appliances ricecooker and microwave and how to call them 
 """
-#NOT in yet
+ 
+"""
+2. what am i returning below.
+3. do drink menu similar to line 215
+4. add pick from drink menu near line 81
+5. make pick from menu and pick from drink menu do something real
+
+"""
 def drinkMenu(): 
    
-    drink=[["oldFashoned"],     ["margarita"],    ["martini"],       
-           ["mojito"],           ["whiskySour"],  ["darkandstormy"],
-           ["bloodyMary"],      ["guinness"],     ["heineken"],       
-           ["blueMoon"],         ["miller"],      ["millerLight"],
-           ["coke"],            ["pepsi"],        ["sprite"],         
-           ["creamSoda"],        ["mountainDew"], ["rootBeer"]]
-    print ("drink") 
-    drinkStock = [],
+    drink=["oldFashoned",      "margarita",   "martini",       
+           "mojito",           "whiskySour",  "darkandstormy",
+           "bloodyMary",       "guinness",    "heineken",       
+           "blueMoon",         "miller",      "millerLight",
+           "coke",             "pepsi",       "sprite",         
+           "creamSoda",        "mountainDew", "rootBeer"]
+    drinkStock = []
     for x in range(9):
-        print("ill have " + random.choice (drink))
-        drinkStock.append, x(0)
+        print("ill have " + random.choice(drink))
+        drinkStock.append(random.choice(drink))
+    return #XXX 
+    #
+
 #return list at end of for loop
 
 #waiter brings one of two menues to customer MENU 1/2
-#IN
+
 def getMenu():
     options = ["cookedRice","porridge","chili","bugs","yesterdays special"]
     return options
 
 
 # XXX down the road, different cooks will have different menus
-#IN
+
 def cookFood( cookBook, order ):
     print ("randomword")
     return "cupcake"
@@ -125,7 +134,7 @@ def cookFood( cookBook, order ):
 
     #########################################  Menu/Recipe end
 
-#IN
+
 def randCustEvent(maxNum):
     #Get Random Number 
     eventRandom = random.randint(0,maxNum)
@@ -165,7 +174,7 @@ def randCustEvent(maxNum):
         print( "the lights flicker" )
     
     
-#IN
+
 def getTownsfolk(): # Currently 20 TOWNSFOLK
     x =[ ["Sally", "Jean"],
         ["Billy", "Rae"],
@@ -237,6 +246,8 @@ def main():
             print( "What can I get for you " + serveCustomer + " we currently have replaceme1 and replaceme2 as our specials" )
             #
             order = pickFromMenu(menu)
+            drinkOrder = drinkMenu()
+            print("so you would like "+drinkOrder)
             print ("thats a great dish!") #anyting else?")
             #time to make the food
             hotFood=cookFood(cookBook,order)
