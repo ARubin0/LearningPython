@@ -72,33 +72,23 @@ def getCookBook():
     recipes["dessert"]    = dessertRecipes
     return recipes
     
-    #XXX Drinks
-#def drinkStock
 #v1
 
 #customer chooses from menu
-# IN 
 def pickFromMenu( menu ):
-    print ("randomwords")
+    print ("This is the food menu")
     #XXX pick a random dish from the menu
 
-#XXX drink menu commented out for now
+def pickDrinkMenu( liquid ):
+    print ("this is the drink menu")
+
 """
-1. one way to build drinks-in-stock list would be;
-        *have a for loop
-        *in it randomly pick member from list x
-        *append it to drinks in stock
-        *return drinks in stock
-2. figure out appliances ricecooker and microwave and how to call them 
-"""
- 
-"""
-2. what am i returning below.
+1. figure out appliances ricecooker and microwave and how to call them 
 3. do drink menu similar to line 215
 4. add pick from drink menu near line 81
 5. make pick from menu and pick from drink menu do something real
-
 """
+#XXX Drinks
 def drinkMenu(): 
    
     drink=["oldFashoned",      "margarita",   "martini",       
@@ -111,10 +101,7 @@ def drinkMenu():
     for x in range(9):
         print("ill have " + random.choice(drink))
         drinkStock.append(random.choice(drink))
-    return #XXX 
-    #
-
-#return list at end of for loop
+    #return drinkOrder
 
 #waiter brings one of two menues to customer MENU 1/2
 
@@ -214,6 +201,7 @@ def main():
     townsFolk = getTownsfolk()
     cookBook  = getCookBook()
     menu      = getMenu()
+    drinkOrder= drinkMenu()
 
     # init customers with 2 random people
     firstCust = makeCustomer(townsFolk)
@@ -256,7 +244,6 @@ def main():
         #wait
         print("")
         time.sleep(3)
-          
 
 if __name__ == "__main__":
     main()
