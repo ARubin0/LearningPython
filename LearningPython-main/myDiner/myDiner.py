@@ -79,17 +79,21 @@ def pickFromMenu( menu ):
     print ("This is the food menu")
     #XXX pick a random dish from the menu
 
-def pickDrinkMenu( liquid ):
+def pickFromDrinkMenu( drinkMen ):
     print ("this is the drink menu")
 
 """
-1. figure out appliances ricecooker and microwave and how to call them 
 3. do drink menu similar to line 215
+    -added just below main
 4. add pick from drink menu near line 81
 5. make pick from menu and pick from drink menu do something real
+6. comment drink function CORRECTLY
+7.do no.5
+8.after 5 and 7 work. block out pick menu and drink menu out , then make code work with pick from menu only
+11. figure out appliances ricecooker and microwave and how to call them 
 """
 #XXX Drinks
-def drinkMenu(): 
+def getDrinkMenu(): 
    
     drink=["oldFashoned",      "margarita",   "martini",       
            "mojito",           "whiskySour",  "darkandstormy",
@@ -97,12 +101,11 @@ def drinkMenu():
            "blueMoon",         "miller",      "millerLight",
            "coke",             "pepsi",       "sprite",         
            "creamSoda",        "mountainDew", "rootBeer"]
-    drinkStock = []
+    drinksOnTap = []
     for x in range(9):
-        print("ill have " + random.choice(drink))
-        drinkStock.append(random.choice(drink))
-    #return drinkOrder
-
+        print("we  have " + random.choice(drink))
+        drinksOnTap.append(random.choice(drink))
+    return drinksOnTap
 #waiter brings one of two menues to customer MENU 1/2
 
 def getMenu():
@@ -112,7 +115,7 @@ def getMenu():
 
 # XXX down the road, different cooks will have different menus
 
-def cookFood( cookBook, order ):
+def cookFood( cookBook, foodOrder ):
     print ("randomword")
     return "cupcake"
     # XXX use the cookbook to get the ingredients for the order, then
@@ -201,8 +204,8 @@ def main():
     townsFolk = getTownsfolk()
     cookBook  = getCookBook()
     menu      = getMenu()
-    drinkOrder= drinkMenu()
-
+    drinkMenu = getDrinkMenu()
+    
     # init customers with 2 random people
     firstCust = makeCustomer(townsFolk)
     secCust   = makeCustomer(townsFolk) 
@@ -233,12 +236,11 @@ def main():
             # XXX Take an order based on cooking implements.
             print( "What can I get for you " + serveCustomer + " we currently have replaceme1 and replaceme2 as our specials" )
             #
-            order = pickFromMenu(menu)
-            drinkOrder = drinkMenu()
-            print("so you would like "+drinkOrder)
+            foodOrder      = pickFromMenu(menu)
+            drinkOrder     = pickFromDrinkMenu(drinkMenu)
             print ("thats a great dish!") #anyting else?")
             #time to make the food
-            hotFood=cookFood(cookBook,order)
+            hotFood=cookFood(cookBook,foodOrder)
             print (hotFood)
     
         #wait
@@ -247,3 +249,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+    
