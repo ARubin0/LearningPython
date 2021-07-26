@@ -130,3 +130,5 @@ write microwave function
 
 PULL CORRECTLY FROM GITHUB
 dont forget to write stuff on paper if stuck and use python CMD
+
+IF BROKEN RELOAD INCASE ERROR WITH visual studio
