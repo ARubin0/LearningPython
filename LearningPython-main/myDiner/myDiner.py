@@ -64,7 +64,7 @@ def getCookBook():
     microwaveRecipes["personal Pizza"]     = ["bread", "cheese", "tomatosauce","plate"]
 
     dessertRecipes  = {}
-    dessertRecipes["iceCream"]            = ["icecream","bowl"]
+    dessertRecipes["iceCream"]             = ["icecream","bowl"]
 
     recipes ={}
     recipes["riceCooker"] = riceCookerRecipes
@@ -76,23 +76,23 @@ def getCookBook():
 
 #customer chooses from menu
 def pickFromMenu( menu ):
-    print ("This is the food menu")
-    #XXX pick a random dish from the menu
+    print ("this is the menu, what would you like?")
+    return (random.choice(options))  
 
-def pickFromDrinkMenu( drinkMen ):
-    print ("this is the drink menu")
+    
+#customer chooses from drink menu
+def pickFromDrinkMenu( drinkMenu ):
+    print ("this is the drink menu, what would you like?")
+    return (random.choice(drinksOnTap))
+
 
 """
-3. do drink menu similar to line 215
-    -added just below main
-4. add pick from drink menu near line 81
 5. make pick from menu and pick from drink menu do something real
-6. comment drink function CORRECTLY
 7.do no.5
 8.after 5 and 7 work. block out pick menu and drink menu out , then make code work with pick from menu only
 11. figure out appliances ricecooker and microwave and how to call them 
 """
-#XXX Drinks
+#XXX Drinkmenu 
 def getDrinkMenu(): 
    
     drink=["oldFashoned",      "margarita",   "martini",       
@@ -137,7 +137,7 @@ def randCustEvent(maxNum):
         print( "a mouse scurries across the floor" )
 
     elif( eventRandom == 3 ):
-        print( " a cold wind passes bye" )
+        print( "a cold wind passes bye" )
 
     elif( eventRandom == 4 ):
         print( "a car passes by the diner" )
