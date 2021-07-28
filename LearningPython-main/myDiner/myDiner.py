@@ -85,7 +85,6 @@ def pickFromDrinkMenu( drinkMenu ):
     print ("this is the drink menu, what would you like?")
     return (random.choice(drinksOnTap))
 
-
 """
 5. make pick from menu and pick from drink menu do something real
 7.do no.5
