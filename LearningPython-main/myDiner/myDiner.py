@@ -21,9 +21,12 @@
 import sys,os
 
 import signal,sys               # to check for user abort
-import random
+import random                   # to randomly select with the if/elif statements
 import time                     # to sleep
-import appliances
+#import appliances               # to do other things while keeping myDiner clean
+
+#from myDiner import foodPlate                     
+from appliances import riceCooker 
 
 # Abort handler
 def signal_handling(signum,frame):
@@ -75,15 +78,16 @@ def getCookBook():
 #v1
 
 #customer chooses from menu
-def pickFromMenu( menu ):
+def pickFromMenu( anyMenu ):
     print ("this is the menu, what would you like?")
-    return (random.choice(options))  
+    return (random.choice(anyMenu))
 
     
 #customer chooses from drink menu
-def pickFromDrinkMenu( drinkMenu ):
+def pickFromDrinkMenu( anyDrinkMenu ):
     print ("this is the drink menu, what would you like?")
-    return (random.choice(drinksOnTap))
+    print(anyDrinkMenu)
+    return (random.choice(anyDrinkMenu))
 
 """
 5. make pick from menu and pick from drink menu do something real
@@ -105,7 +109,7 @@ def getDrinkMenu():
         print("we  have " + random.choice(drink))
         drinksOnTap.append(random.choice(drink))
     return drinksOnTap
-#waiter brings one of two menues to customer MENU 1/2
+#waiter brings one of two menues to customer MENU 1/2 is getMenu 2/2 is getVegMenu
 
 def getMenu():
     options = ["cookedRice","porridge","chili","bugs","yesterdays special"]
@@ -115,8 +119,8 @@ def getMenu():
 # XXX down the road, different cooks will have different menus
 
 def cookFood( cookBook, foodOrder ):
-    print ("randomword")
-    return "cupcake"
+    print ("the food is cooking")
+    return "the food is done cooking " # + foodplate (if food doesnt match cookbood return brownMush instead)
     # XXX use the cookbook to get the ingredients for the order, then
     # XXX use the cooking implement to make the food and return it.
 
@@ -237,7 +241,7 @@ def main():
             #
             foodOrder      = pickFromMenu(menu)
             drinkOrder     = pickFromDrinkMenu(drinkMenu)
-            print ("thats a great dish!") #anyting else?")
+            print (drinkOrder, foodOrder," thats a great dish!")
             #time to make the food
             hotFood=cookFood(cookBook,foodOrder)
             print (hotFood)
