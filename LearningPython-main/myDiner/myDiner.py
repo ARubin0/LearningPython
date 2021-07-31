@@ -90,10 +90,13 @@ def pickFromDrinkMenu( anyDrinkMenu ):
     return (random.choice(anyDrinkMenu))
 
 """
-5. make pick from menu and pick from drink menu do something real
-7.do no.5
-8.after 5 and 7 work. block out pick menu and drink menu out , then make code work with pick from menu only
-11. figure out appliances ricecooker and microwave and how to call them 
+1.after 5 and 7 work. block out pick menu and drink menu out , then make code work with pick from menu only
+block comment 79-91
+2. look up python scope, try to write about example relating to scope. internal state not exposed (wizard, horse)
+    #XXX KEYWORD  -- reserved words that canNOT be used as a variable name AKA statement makers(if, elif, and,return,etc)
+-    XXX variables created inside functions belong to those functions only
+-    and can only be used inside the function it was created in UNLESS -- global -- keyword is used 
+3. nothing nextweek. attempt to add some unused code back in or use ricecooker
 """
 #XXX Drinkmenu 
 def getDrinkMenu(): 
