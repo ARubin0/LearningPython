@@ -76,23 +76,31 @@ def getCookBook():
     return recipes
     
 #v1
-
-#customer chooses from menu
+"""
 def pickFromMenu( anyMenu ):
     print ("this is the menu, what would you like?")
     return (random.choice(anyMenu))
 
-    
 #customer chooses from drink menu
+
 def pickFromDrinkMenu( anyDrinkMenu ):
     print ("this is the drink menu, what would you like?")
     print(anyDrinkMenu)
-    return (random.choice(anyDrinkMenu))
+    print(riceCooker)
+    return(random.choice(anyDrinkMenu))
+    """
+
+#customer chooses from  food and drink from menu
+def pickFromMenus( anyTwoMenu ):
+    print ("this is the food and drink menu, what would you like?")
+    return (random.choice(anyTwoMenu))
+    
 
 """
 1.after 5 and 7 work. block out pick menu and drink menu out , then make code work with pick from menu only
 block comment 79-91
 2. look up python scope, try to write about example relating to scope. internal state not exposed (wizard, horse)
+    
     #XXX KEYWORD  -- reserved words that canNOT be used as a variable name AKA statement makers(if, elif, and,return,etc)
 -    XXX variables created inside functions belong to those functions only
 -    and can only be used inside the function it was created in UNLESS -- global -- keyword is used 
@@ -243,8 +251,10 @@ def main():
             print( "What can I get for you " + serveCustomer + " we currently have replaceme1 and replaceme2 as our specials" )
             #
             foodOrder      = pickFromMenu(menu)
-            drinkOrder     = pickFromDrinkMenu(drinkMenu)
-            print (drinkOrder, foodOrder," thats a great dish!")
+            #drinkOrder     = pickFromDrinkMenu(drinkMenu)
+            tableOrder     = pickFromMenus(menu,drinkMenu)
+            #print (drinkOrder, foodOrder," thats a great dish!")
+            print (tableOrder," thats a great dish! we'll have it out for you shortly")
             #time to make the food
             hotFood=cookFood(cookBook,foodOrder)
             print (hotFood)
