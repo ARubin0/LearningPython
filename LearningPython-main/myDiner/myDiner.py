@@ -86,14 +86,14 @@ def pickFromMenu( anyMenu ):
 def pickFromDrinkMenu( anyDrinkMenu ):
     print ("this is the drink menu, what would you like?")
     print(anyDrinkMenu)
-    print(riceCooker)
     return(random.choice(anyDrinkMenu))
     """
 
 #customer chooses from  food and drink from menu
 def pickFromMenus( anyTwoMenu ):
     print ("this is the food and drink menu, what would you like?")
-    return (random.choice(anyTwoMenu))
+    print(riceCooker)
+    return(random.choice(anyTwoMenu))
     
 
 """
@@ -105,7 +105,7 @@ block comment 79-91
 -    XXX variables created inside functions belong to those functions only
 -    and can only be used inside the function it was created in UNLESS -- global -- keyword is used 
 3. nothing nextweek. attempt to add some unused code back in or use ricecooker
-"""
+
 #XXX Drinkmenu 
 def getDrinkMenu(): 
    
@@ -125,6 +125,21 @@ def getDrinkMenu():
 def getMenu():
     options = ["cookedRice","porridge","chili","bugs","yesterdays special"]
     return options
+"""
+def getMenus():
+    options = ["cookedRice","porridge","chili","bugs","yesterdays special"]
+    drink=["oldFashoned",      "margarita",   "martini",       
+           "mojito",           "whiskySour",  "darkandstormy",
+           "bloodyMary",       "guinness",    "heineken",       
+           "blueMoon",         "miller",      "millerLight",
+           "coke",             "pepsi",       "sprite",         
+           "creamSoda",        "mountainDew", "rootBeer"]
+    drinksOnTap = []
+    for x in range(9):
+        print("we  have " + random.choice(drink))
+        drinksOnTap.append(random.choice(drink))
+    return drinksOnTap,options
+
 
 
 # XXX down the road, different cooks will have different menus
@@ -217,9 +232,9 @@ def main():
     maxNum    = 20 
     townsFolk = getTownsfolk()
     cookBook  = getCookBook()
-    menu      = getMenu()
-    drinkMenu = getDrinkMenu()
-    
+    #menu     = getMenu()
+    #drinkMenu = getDrinkMenu()
+    menu      = getMenus()
     # init customers with 2 random people
     firstCust = makeCustomer(townsFolk)
     secCust   = makeCustomer(townsFolk) 
@@ -250,13 +265,14 @@ def main():
             # XXX Take an order based on cooking implements.
             print( "What can I get for you " + serveCustomer + " we currently have replaceme1 and replaceme2 as our specials" )
             #
-            foodOrder      = pickFromMenu(menu)
+            #foodOrder      = pickFromMenu(menu)
             #drinkOrder     = pickFromDrinkMenu(drinkMenu)
-            tableOrder     = pickFromMenus(menu,drinkMenu)
+            tableOrder      = pickFromMenus(menu)
             #print (drinkOrder, foodOrder," thats a great dish!")
             print (tableOrder," thats a great dish! we'll have it out for you shortly")
             #time to make the food
-            hotFood=cookFood(cookBook,foodOrder)
+            #hotFood=cookFood(cookBook,foodOrder)
+            hotFood=cookFood(cookBook,tableOrder,)
             print (hotFood)
     
         #wait
