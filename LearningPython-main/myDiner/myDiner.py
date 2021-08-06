@@ -92,7 +92,7 @@ def pickFromDrinkMenu( anyDrinkMenu ):
 #customer chooses from  food and drink from menu
 def pickFromMenus( anyTwoMenu ):
     print ("this is the food and drink menu, what would you like?")
-    print(riceCooker)
+    #print(riceCooker)
     return(random.choice(anyTwoMenu))
     
 
@@ -145,7 +145,8 @@ def getMenus():
 # XXX down the road, different cooks will have different menus
 
 def cookFood( cookBook, foodOrder ):
-    print ("the food is cooking")
+    print ("the food is cooking");time.sleep (1) 
+
     return "the food is done cooking " # + foodplate (if food doesnt match cookbood return brownMush instead)
     # XXX use the cookbook to get the ingredients for the order, then
     # XXX use the cooking implement to make the food and return it.
@@ -229,12 +230,13 @@ def main():
     
     print( "Alfonso's Diner is open for business!" )
 
+    #drinkMenu = getDrinkMenu()
+    #menu     = getMenu()
     maxNum    = 20 
     townsFolk = getTownsfolk()
     cookBook  = getCookBook()
-    #menu     = getMenu()
-    #drinkMenu = getDrinkMenu()
     menu      = getMenus()
+
     # init customers with 2 random people
     firstCust = makeCustomer(townsFolk)
     secCust   = makeCustomer(townsFolk) 

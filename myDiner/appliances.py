@@ -47,7 +47,7 @@ def riceCooker( rawIngredients, cookBook ):
             foodPlate = dish
             break
    
-    return foodPlate
+    return foodPlate, print("ricecooker printing test from appliances module")
 
 
 def microwave( rawIngredients, cookBook ):
