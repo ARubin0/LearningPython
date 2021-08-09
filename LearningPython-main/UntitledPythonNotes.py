@@ -135,3 +135,4 @@ IF BROKEN RELOAD INCASE ERROR WITH visual studio
 #KEYWORD  -- reserved words that canNOT be used as a variable name AKA statement makers(if, elif, and,return,etc)
 -   XXX variables created inside functions belong to those functions only
 - and can only be used inside the function it was created in UNLESS -- global -- keyword is used 
+get element from list x ... x[0] for first x[1] for seccond and so on

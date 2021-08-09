@@ -22,7 +22,9 @@ import sys,os
 
 import signal,sys               # to check for user abort
 import random                   # to randomly select with the if/elif statements
-import time                     # to sleep
+import time
+
+#from myDiner import drinkMenu                     # to sleep
 #import appliances               # to do other things while keeping myDiner clean
 
 #from myDiner import foodPlate                     
@@ -89,12 +91,21 @@ def pickFromDrinkMenu( anyDrinkMenu ):
     return(random.choice(anyDrinkMenu))
     """
 
-#customer chooses from  food and drink from menu
+#customer chooses a single food and drink from  menu
+#anyTwoMenu is a food and a drink menu being chosen by customer 
 def pickFromMenus( anyTwoMenu ):
     print ("this is the food and drink menu, what would you like?")
-    #print(riceCooker)
-    return(random.choice(anyTwoMenu))
+    menuDrink=anyTwoMenu[0]
+    menuFood=anyTwoMenu [1]
+    return random.choice; menuDrink,menuFood
+  
     
+
+    #This returns a random entire menu
+    #return(random.choice(anyTwoMenu))
+    
+
+
 
 """
 1.after 5 and 7 work. block out pick menu and drink menu out , then make code work with pick from menu only
@@ -270,7 +281,7 @@ def main():
             #foodOrder      = pickFromMenu(menu)
             #drinkOrder     = pickFromDrinkMenu(drinkMenu)
             tableOrder      = pickFromMenus(menu)
-            #print (drinkOrder, foodOrder," thats a great dish!")
+            #print (drinkOrder, foodOrder, + " thats a great dish!")
             print (tableOrder," thats a great dish! we'll have it out for you shortly")
             #time to make the food
             #hotFood=cookFood(cookBook,foodOrder)
