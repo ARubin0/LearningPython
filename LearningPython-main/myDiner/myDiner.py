@@ -97,25 +97,13 @@ def pickFromMenus( anyTwoMenu ):
     print ("this is the food and drink menu, what would you like?")
     menuDrink=anyTwoMenu[0]
     menuFood=anyTwoMenu [1]
-    return random.choice; menuDrink,menuFood
-  
-    
+    return random.choice(menuDrink,menuFood)
+
 
     #This returns a random entire menu
     #return(random.choice(anyTwoMenu))
     
-
-
-
 """
-1.after 5 and 7 work. block out pick menu and drink menu out , then make code work with pick from menu only
-block comment 79-91
-2. look up python scope, try to write about example relating to scope. internal state not exposed (wizard, horse)
-    
-    #XXX KEYWORD  -- reserved words that canNOT be used as a variable name AKA statement makers(if, elif, and,return,etc)
--    XXX variables created inside functions belong to those functions only
--    and can only be used inside the function it was created in UNLESS -- global -- keyword is used 
-3. nothing nextweek. attempt to add some unused code back in or use ricecooker
 
 #XXX Drinkmenu 
 def getDrinkMenu(): 
