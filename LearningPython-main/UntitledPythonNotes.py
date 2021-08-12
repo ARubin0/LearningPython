@@ -136,3 +136,10 @@ IF BROKEN RELOAD INCASE ERROR WITH visual studio
 -   XXX variables created inside functions belong to those functions only
 - and can only be used inside the function it was created in UNLESS -- global -- keyword is used 
 get element from list x ... x[0] for first x[1] for seccond and so on
+
+Most comomn function flow
+ pass an argument to a function, compute something in the function, save result,then return result 
+   #y=random.choice(x)
+    random.choice(menuDrink)
+    print(random.choice(menuDrink))
+    z=random.choice(menuDrink)

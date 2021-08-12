@@ -40,7 +40,7 @@ signal.signal(signal.SIGINT,signal_handling)
 
 #v0
 # Our first customer function just returns the first name of the customer.
-#ef makeCustomer( firstName, lastName ):
+#def makeCustomer( firstName, lastName ):
     #return firstName
     
 #v1
@@ -78,53 +78,29 @@ def getCookBook():
     return recipes
     
 #v1
+
 """
-def pickFromMenu( anyMenu ):
-    print ("this is the menu, what would you like?")
-    return (random.choice(anyMenu))
-
-#customer chooses from drink menu
-
-def pickFromDrinkMenu( anyDrinkMenu ):
-    print ("this is the drink menu, what would you like?")
-    print(anyDrinkMenu)
-    return(random.choice(anyDrinkMenu))
-    """
+    random.choice(menuFood)
+    print(random.choice(menuFood))
+    y=random.choice(menuFood)
+"""
 
 #customer chooses a single food and drink from  menu
 #anyTwoMenu is a food and a drink menu being chosen by customer 
 def pickFromMenus( anyTwoMenu ):
     print ("this is the food and drink menu, what would you like?")
-    menuDrink=anyTwoMenu[0]
     menuFood=anyTwoMenu [1]
-    return random.choice(menuDrink,menuFood)
-
-
-    #This returns a random entire menu
-    #return(random.choice(anyTwoMenu))
+    menuDrink=anyTwoMenu[0]
     
-"""
+    afood=random.choice(menuFood)
+    #print(afood)
 
-#XXX Drinkmenu 
-def getDrinkMenu(): 
-   
-    drink=["oldFashoned",      "margarita",   "martini",       
-           "mojito",           "whiskySour",  "darkandstormy",
-           "bloodyMary",       "guinness",    "heineken",       
-           "blueMoon",         "miller",      "millerLight",
-           "coke",             "pepsi",       "sprite",         
-           "creamSoda",        "mountainDew", "rootBeer"]
-    drinksOnTap = []
-    for x in range(9):
-        print("we  have " + random.choice(drink))
-        drinksOnTap.append(random.choice(drink))
-    return drinksOnTap
-#waiter brings one of two menues to customer MENU 1/2 is getMenu 2/2 is getVegMenu
+    adrink=random.choice(menuDrink)
+    #print(adrink)
 
-def getMenu():
-    options = ["cookedRice","porridge","chili","bugs","yesterdays special"]
-    return options
-"""
+    return afood,adrink
+    
+    #This returns a random entire menu
 def getMenus():
     options = ["cookedRice","porridge","chili","bugs","yesterdays special"]
     drink=["oldFashoned",      "margarita",   "martini",       
