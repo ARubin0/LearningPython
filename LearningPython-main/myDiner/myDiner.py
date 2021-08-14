@@ -25,17 +25,20 @@ import random                   # to randomly select with the if/elif statements
 import time
 
 #from myDiner import drinkMenu                     # to sleep
-#import appliances               # to do other things while keeping myDiner clean
+import appliances               # to do other things while keeping myDiner clean
 
 #from myDiner import foodPlate                     
 from appliances import riceCooker 
-
+from appliances import microwave
+appliances = 'datetime'
+if appliances not in sys.modules:
+    print ('You have not imported the appliances module'.format(appliances))
 # Abort handler
 def signal_handling(signum,frame):
     print ("The Diner is closing for remodeling.")
     sys.exit()
 
-
+sys.modules
 signal.signal(signal.SIGINT,signal_handling)
 
 #v0
