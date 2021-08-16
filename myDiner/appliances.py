@@ -44,7 +44,7 @@ def riceCooker( rawIngredients, cookBook ):
     # run through riceCookerRecipes, look for rawIngredients that match a recipe, then get the food item.
     for dish, recipeIngredients in riceCookerRecipes.items():
         if recipeIngredients == rawIngredients:
-            foodPlate = dish
+            riceFoodPlate = dish
             break
    
     return riceFoodPlate, print("ricecooker printing test from appliances module")
@@ -62,7 +62,7 @@ def microwave( rawIngredients, cookBook ):
     # run through riceCookerRecipes, look for rawIngredients that match a recipe, then get the food item.
     for dish, recipeIngredients in microwaveRecipes.items():
         if recipeIngredients == rawIngredients:
-            foodPlate = dish
+            microFoodPlate = dish
             break
    
     return microFoodPlate
