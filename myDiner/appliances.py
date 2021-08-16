@@ -44,10 +44,10 @@ def riceCooker( rawIngredients, cookBook ):
     # run through riceCookerRecipes, look for rawIngredients that match a recipe, then get the food item.
     for dish, recipeIngredients in riceCookerRecipes.items():
         if recipeIngredients == rawIngredients:
-            foodPlate = dish
+            riceFoodPlate = dish
             break
    
-    return foodPlate
+    return riceFoodPlate, print("ricecooker printing test from appliances module")
 
 
 def microwave( rawIngredients, cookBook ):
@@ -62,10 +62,10 @@ def microwave( rawIngredients, cookBook ):
     # run through riceCookerRecipes, look for rawIngredients that match a recipe, then get the food item.
     for dish, recipeIngredients in microwaveRecipes.items():
         if recipeIngredients == rawIngredients:
-            foodPlate = dish
+            microFoodPlate = dish
             break
    
-    return foodPlate
+    return microFoodPlate
 
 def dishWash(dishwasher):
 #XXX this chunk needs to run only at "night" or when all of the dishes are used
