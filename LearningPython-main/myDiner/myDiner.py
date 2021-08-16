@@ -30,9 +30,11 @@ import appliances               # to do other things while keeping myDiner clean
 #from myDiner import foodPlate                     
 from appliances import riceCooker 
 from appliances import microwave
+
 appliances = 'datetime'
 if appliances not in sys.modules:
     print ('You have not imported the appliances module'.format(appliances))
+
 # Abort handler
 def signal_handling(signum,frame):
     print ("The Diner is closing for remodeling.")
@@ -56,7 +58,6 @@ def makeCustomer(townPeople):
 
 #############################################              XXX MENU/ Recipes 
 #creates recipes and returns cookbook
-
 
 def getCookBook():
     riceCookerRecipes = {}
@@ -95,13 +96,13 @@ def pickFromMenus( anyTwoMenu ):
     menuFood=anyTwoMenu [1]
     menuDrink=anyTwoMenu[0]
     
-    afood=random.choice(menuFood)
+    aFood=random.choice(menuFood)
     #print(afood)
 
-    adrink=random.choice(menuDrink)
+    aDrink=random.choice(menuDrink)
     #print(adrink)
 
-    return afood,adrink
+    return aFood,aDrink
     
     #This returns a random entire menu
 def getMenus():
