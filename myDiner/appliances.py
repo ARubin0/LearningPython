@@ -39,7 +39,7 @@ def riceCooker( rawIngredients, cookBook ):
     #print( riceCookerRecipes)
 
     # if raw ingredients don't match a "riceCooker" recipe, iiiick
-    foodPlate = "brownMush"
+    riceFoodPlate = "brownMush"
 
     # run through riceCookerRecipes, look for rawIngredients that match a recipe, then get the food item.
     for dish, recipeIngredients in riceCookerRecipes.items():
@@ -47,7 +47,7 @@ def riceCooker( rawIngredients, cookBook ):
             riceFoodPlate = dish
             break
    
-    return riceFoodPlate, print("ricecooker printing test from appliances module")
+    return riceFoodPlate 
 
 
 def microwave( rawIngredients, cookBook ):
@@ -57,7 +57,7 @@ def microwave( rawIngredients, cookBook ):
     #print( microwaveRecipes)
 
     # if raw ingredients don't match a "microwave" recipe, iiiick
-    foodPlate = "brownMush"
+    microFoodPlate = "brownMush"
 
     # run through riceCookerRecipes, look for rawIngredients that match a recipe, then get the food item.
     for dish, recipeIngredients in microwaveRecipes.items():
