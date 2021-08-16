@@ -125,10 +125,21 @@ def riceCooker( rawIngredients, cookBook ):
             foodPlate = dish
             break
    
-    return foodPlate
+    return foodPlate global
 write microwave function
 
 PULL CORRECTLY FROM GITHUB
 dont forget to write stuff on paper if stuck and use python CMD
 
 IF BROKEN RELOAD INCASE ERROR WITH visual studio
+#KEYWORD  -- reserved words that canNOT be used as a variable name AKA statement makers(if, elif, and,return,etc)
+-   XXX variables created inside functions belong to those functions only
+- and can only be used inside the function it was created in UNLESS -- global -- keyword is used 
+get element from list x ... x[0] for first x[1] for seccond and so on
+
+Most comomn function flow
+ pass an argument to a function, compute something in the function, save result,then return result 
+   #y=random.choice(x)
+    random.choice(menuDrink)
+    print(random.choice(menuDrink))
+    z=random.choice(menuDrink)

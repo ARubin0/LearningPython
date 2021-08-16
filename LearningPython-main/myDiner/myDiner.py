@@ -22,23 +22,30 @@ import sys,os
 
 import signal,sys               # to check for user abort
 import random                   # to randomly select with the if/elif statements
-import time                     # to sleep
-#import appliances               # to do other things while keeping myDiner clean
+import time
+
+#from myDiner import drinkMenu                     # to sleep
+import appliances               # to do other things while keeping myDiner clean
 
 #from myDiner import foodPlate                     
 from appliances import riceCooker 
+from appliances import microwave
+
+appliances = 'datetime'
+if appliances not in sys.modules:
+    print ('You have not imported the appliances module'.format(appliances))
 
 # Abort handler
 def signal_handling(signum,frame):
     print ("The Diner is closing for remodeling.")
     sys.exit()
 
-
+sys.modules
 signal.signal(signal.SIGINT,signal_handling)
 
 #v0
 # Our first customer function just returns the first name of the customer.
-#ef makeCustomer( firstName, lastName ):
+#def makeCustomer( firstName, lastName ):
     #return firstName
     
 #v1
@@ -51,7 +58,6 @@ def makeCustomer(townPeople):
 
 #############################################              XXX MENU/ Recipes 
 #creates recipes and returns cookbook
-
 
 def getCookBook():
     riceCookerRecipes = {}
@@ -77,27 +83,30 @@ def getCookBook():
     
 #v1
 
-#customer chooses from menu
-def pickFromMenu( anyMenu ):
-    print ("this is the menu, what would you like?")
-    return (random.choice(anyMenu))
+"""
+    random.choice(menuFood)
+    print(random.choice(menuFood))
+    y=random.choice(menuFood)
+"""
 
+#customer chooses a single food and drink from  menu
+#anyTwoMenu is a food and a drink menu being chosen by customer 
+def pickFromMenus( anyTwoMenu ):
+    print ("this is the food and drink menu, what would you like?")
+    menuFood=anyTwoMenu [1]
+    menuDrink=anyTwoMenu[0]
     
-#customer chooses from drink menu
-def pickFromDrinkMenu( anyDrinkMenu ):
-    print ("this is the drink menu, what would you like?")
-    print(anyDrinkMenu)
-    return (random.choice(anyDrinkMenu))
+    aFood=random.choice(menuFood)
+    #print(afood)
 
-"""
-5. make pick from menu and pick from drink menu do something real
-7.do no.5
-8.after 5 and 7 work. block out pick menu and drink menu out , then make code work with pick from menu only
-11. figure out appliances ricecooker and microwave and how to call them 
-"""
-#XXX Drinkmenu 
-def getDrinkMenu(): 
-   
+    aDrink=random.choice(menuDrink)
+    #print(adrink)
+
+    return aFood,aDrink
+    
+    #This returns a random entire menu
+def getMenus():
+    options = ["cookedRice","porridge","chili","bugs","yesterdays special"]
     drink=["oldFashoned",      "margarita",   "martini",       
            "mojito",           "whiskySour",  "darkandstormy",
            "bloodyMary",       "guinness",    "heineken",       
@@ -108,18 +117,15 @@ def getDrinkMenu():
     for x in range(9):
         print("we  have " + random.choice(drink))
         drinksOnTap.append(random.choice(drink))
-    return drinksOnTap
-#waiter brings one of two menues to customer MENU 1/2 is getMenu 2/2 is getVegMenu
+    return drinksOnTap,options
 
-def getMenu():
-    options = ["cookedRice","porridge","chili","bugs","yesterdays special"]
-    return options
 
 
 # XXX down the road, different cooks will have different menus
 
 def cookFood( cookBook, foodOrder ):
-    print ("the food is cooking")
+    print ("the food is cooking");time.sleep (1) 
+
     return "the food is done cooking " # + foodplate (if food doesnt match cookbood return brownMush instead)
     # XXX use the cookbook to get the ingredients for the order, then
     # XXX use the cooking implement to make the food and return it.
@@ -203,12 +209,13 @@ def main():
     
     print( "Alfonso's Diner is open for business!" )
 
+    #drinkMenu = getDrinkMenu()
+    #menu     = getMenu()
     maxNum    = 20 
     townsFolk = getTownsfolk()
     cookBook  = getCookBook()
-    menu      = getMenu()
-    drinkMenu = getDrinkMenu()
-    
+    menu      = getMenus()
+
     # init customers with 2 random people
     firstCust = makeCustomer(townsFolk)
     secCust   = makeCustomer(townsFolk) 
@@ -239,11 +246,14 @@ def main():
             # XXX Take an order based on cooking implements.
             print( "What can I get for you " + serveCustomer + " we currently have replaceme1 and replaceme2 as our specials" )
             #
-            foodOrder      = pickFromMenu(menu)
-            drinkOrder     = pickFromDrinkMenu(drinkMenu)
-            print (drinkOrder, foodOrder," thats a great dish!")
+            #foodOrder      = pickFromMenu(menu)
+            #drinkOrder     = pickFromDrinkMenu(drinkMenu)
+            tableOrder      = pickFromMenus(menu)
+            #print (drinkOrder, foodOrder, + " thats a great dish!")
+            print (tableOrder," thats a great dish! we'll have it out for you shortly")
             #time to make the food
-            hotFood=cookFood(cookBook,foodOrder)
+            #hotFood=cookFood(cookBook,foodOrder)
+            hotFood=cookFood(cookBook,tableOrder,)
             print (hotFood)
     
         #wait

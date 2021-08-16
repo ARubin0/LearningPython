@@ -47,7 +47,7 @@ def riceCooker( rawIngredients, cookBook ):
             foodPlate = dish
             break
    
-    return foodPlate
+    return riceFoodPlate, print("ricecooker printing test from appliances module")
 
 
 def microwave( rawIngredients, cookBook ):
@@ -65,7 +65,7 @@ def microwave( rawIngredients, cookBook ):
             foodPlate = dish
             break
    
-    return foodPlate
+    return microFoodPlate
 
 def dishWash(dishwasher):
 #XXX this chunk needs to run only at "night" or when all of the dishes are used

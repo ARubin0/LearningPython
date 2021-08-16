@@ -121,3 +121,39 @@ def tableTwo():
     if waiter ( tableTwo ):
         print ("here is BLANK food for" )+ (tableTwo)
 """
+
+
+
+
+#XXX WORKING CODE TAKEN OUT OF MYDINER FOR BETTER/OTHER CODE
+#XXX Drinkmenu 
+def getDrinkMenu(): 
+   
+    drink=["oldFashoned",      "margarita",   "martini",       
+           "mojito",           "whiskySour",  "darkandstormy",
+           "bloodyMary",       "guinness",    "heineken",       
+           "blueMoon",         "miller",      "millerLight",
+           "coke",             "pepsi",       "sprite",         
+           "creamSoda",        "mountainDew", "rootBeer"]
+    drinksOnTap = []
+    for x in range(9):
+        print("we  have " + random.choice(drink))
+        drinksOnTap.append(random.choice(drink))
+    return drinksOnTap
+#waiter brings one of two menues to customer MENU 1/2 is getMenu 2/2 is getVegMenu
+
+def getMenu():
+    options = ["cookedRice","porridge","chili","bugs","yesterdays special"]
+    return options
+
+
+def pickFromMenu( anyMenu ):
+    print ("this is the menu, what would you like?")
+    return (random.choice(anyMenu))
+
+#customer chooses from drink menu
+
+def pickFromDrinkMenu( anyDrinkMenu ):
+    print ("this is the drink menu, what would you like?")
+    print(anyDrinkMenu)
+    return(random.choice(anyDrinkMenu))
