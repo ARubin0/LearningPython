@@ -1,58 +1,62 @@
 #!/usr/bin/env python
 
 # TODO
-# XXX * Need more townsfolk √ ADDED 10 more. if more are needed.https://www.name-generator.org.uk/?i=c
-# XXX * add random events for when there are customers (its the same func, different argument)
-# XXX * add 2 cooking implements. riceCooker and microWave
-        ##For example, riceCooker takes rawRice, returns cookedRice.  If input is not rawRice return brownMush 
-# XXX * add random events for when there are no customers (its a func) √√
-# XXX * makeCustomer function should roll the randInt for us √√
+# XXX * if more townsfolk needed.https://www.name-generator.org.uk/?i=c
 # XXX add days, 24 hours, Diner closes from 1AM to 6AM.  event loop is 1 tick per hour.
-# XXX add 1 cook √√
-# XXX add ingredients + dish pairings that work on cooking implements.  e.g. ingredients: rawRice, makes: cookedRice √√
-# XXX add waiters
 # XXX add cooks √
-# XXX customers should only show up once, i.e. Bobby Smith does not have a clone √√
 # XXX add cooking implements 
 # XXX one waiter can serve 1 customer per hour.
-# XXX add tables √
-
-#XXX IDEAS III/ Questions QQQ/ ZZZ later code things
+# XXX IDEAS III/ Questions QQQ/ ZZZ later code things
 
 # QQQ can another function be added to randomly have the  
 #   customer decide if they want to order anything else  i/e "wait no how about blank instead" and,  "ill also have this"
-# QQQ Line 76-86 drink menu. want to be able to "remove drinks" from menu with append as if the tap runs dry
+# QQQ Line 76-86 r menu. want to be able to "remove drinks" from menu with append as if the tap runs dry
 #  CTRL G is shortcut to type to the line of code you want to go to
 # ZZZ   FOR LATER
 #   physical objects being salt and pepper shaker for food
-#   monetary food  on the menu and tipping
+#   monetary values for food  on the menu and tipping for service
 #   dirty dishes on the table/ make the table un useable until the table is cleaned off
+#   use input command before/after code to add townsfolk but not allow for duplicants or random letters?
+
+import sys,os
 
 import signal,sys               # to check for user abort
-import random
-import time                     # to sleep
+import random                   # to randomly select with the if/elif statements
+import time
+
+#from myDiner import drinkMenu                     # to sleep
+#import appliances               # to do other things while keeping myDiner clean
+
+#from myDiner import foodPlate                     
+from appliances import riceCooker 
+from appliances import microwave
+
+appliances = 'datetime'
+if appliances not in sys.modules:
+    print ('You have not imported the appliances module'.format(appliances))
 
 # Abort handler
 def signal_handling(signum,frame):
     print ("The Diner is closing for remodeling.")
     sys.exit()
 
-
+sys.modules
 signal.signal(signal.SIGINT,signal_handling)
 
 #v0
 # Our first customer function just returns the first name of the customer.
-#ef makeCustomer( firstName, lastName ):
+#def makeCustomer( firstName, lastName ):
     #return firstName
     
 #v1
 #Picking a random townsfolk and returning the first name
+
 def makeCustomer(townPeople):
     aCust=random.randint(0, len( townPeople ) - 1)
     Cust=townPeople[aCust][0]
     return Cust
 
-###########################################################               XXX MENU/ Recipes 
+#############################################              XXX MENU/ Recipes 
 #creates recipes and returns cookbook
 
 def getCookBook():
@@ -69,158 +73,66 @@ def getCookBook():
     microwaveRecipes["personal Pizza"]     = ["bread", "cheese", "tomatosauce","plate"]
 
     dessertRecipes  = {}
-    dessertRecipes["iceCream"]            = ["icecream","bowl"]
+    dessertRecipes["iceCream"]             = ["icecream","bowl"]
 
+    recipes ={}
     recipes["riceCooker"] = riceCookerRecipes
     recipes["microwave"]  = microwaveRecipes
     recipes["dessert"]    = dessertRecipes
     return recipes
     
-    #XXX Drinks
+#v1
 
-def drinkMenu(): 
-   x=[["oldFashoned"],     ["margarita"]    ["martini"],       
-    ["mojito"]           ["whiskySour"],  ["darkandstormy"]
-    ["bloodyMary"],      ["guinness"]     ["heineken"],       
-    ["blueMoon"]         ["miller"],      ["millerLight"]
-    ["coke"],            ["pepsi"]        ["sprite"],         
-    ["creamSoda"]        ["mountainDew"], ["rootBeer"]
-    ]
+"""
+    random.choice(menuFood)
+    print(random.choice(menuFood))
+    y=random.choice(menuFood)
+"""
 
-drinkMenu.append(drinkStock)
-
-
-# Give good raw ingredients, get good food back.
-# example function call:   foodPlate = riceCooker( ["rawRice", "smallWater","bowl"], cookBook]   will return "cookedRice"
-def riceCooker( rawIngredients, cookBook ):
-    #print( cookBook )
-
-    riceCookerRecipes = cookBook["riceCooker"]
-    #print( riceCookerRecipes)
-
-    # if raw ingredients don't match a "riceCooker" recipe, iiiick
-    foodPlate = "brownMush"
-
-    # run through riceCookerRecipes, look for rawIngredients that match a recipe, then get the food item.
-    for dish, recipeIngredients in riceCookerRecipes.items():
-        if recipeIngredients == rawIngredients:
-            foodPlate = dish
-            break
-   
-    return foodPlate
-
-def microwave( rawIngredients, cookBook ):
-    #print( cookBook )
-
-    microwaveRecipes = cookBook["microwave"]
-    #print( microwaveRecipes)
-
-    # if raw ingredients don't match a "microwave" recipe, iiiick
-    foodPlate = "brownMush"
-
-    # run through riceCookerRecipes, look for rawIngredients that match a recipe, then get the food item.
-    for dish, recipeIngredients in microwaveRecipes.items():
-        if recipeIngredients == rawIngredients:
-            foodPlate = dish
-            break
-   
-    return foodPlate
-#customer chooses from menu 
-def pickFromMenu( menu ):
-    print ("randomwords")
-    #XXX pick a random dish from the menu
-
-#waiter brings one of two menues to customer MENU 1/2
-def getMenu():
-    options = ["cookedRice","porridge","chili","bugs","yesterdays special"]
-    return options
+#customer chooses a single food and drink from  menu
+#anyTwoMenu is a food and a drink menu being chosen by customer 
+def pickFromMenus( anyTwoMenu ):
+    print ("this is the food and drink menu, what would you like?")
+    menuFood=anyTwoMenu [1]
+    menuDrink=anyTwoMenu[0]
     
-#waiter brings one of two menues to customer MENU 2/2
-def getVegMenu():
-    options = ["","Bugsoup","tea"]
-    return options
-   
-#this is the "cook" function that is the finished product ["cooked rice"] = ["rawRice", "smallWater"]
-def riceCooker( rawIngredients ):
-    foodPlate = "cooked rice"
-    foodBowl  = "porridge"
-    bowlFood  = "chili"
-    # XXX if raw ingredients match a "riceCooker" recipe, set foodPlate to that.
-   
-    return [foodPlate, foodBowl, bowlFood]
+    aFood=random.choice(menuFood)
+    #print(afood)
 
-#the other  "cook" function that is the finished product ->["bugs"] <- )) = ["rawRice", "smallWater"]
-def microWave ( rawIngredients ):
-    hotPlate    = "bugs"
-    hotBowl     = "bugsoup"
-    chunkyFood  = "yesterdays special"
-    hotLiquid   = "tea"
-    pizza       = "personal Pizza"
+    aDrink=random.choice(menuDrink)
+    #print(adrink)
 
-    # XXX if raw ingredients match a "riceCooker" recipe, set foodPlate to that.
-   
-    return [hotPlate, hotBowl, chunkyFood, hotLiquid,pizza]
+    return aFood,aDrink
+    
+    #This returns a random entire menu
+def getMenus():
+    options = ["cookedRice","porridge","chili","bugs","yesterdays special"]
+    drink=["oldFashoned",      "margarita",   "martini",       
+           "mojito",           "whiskySour",  "darkandstormy",
+           "bloodyMary",       "guinness",    "heineken",       
+           "blueMoon",         "miller",      "millerLight",
+           "coke",             "pepsi",       "sprite",         
+           "creamSoda",        "mountainDew", "rootBeer"]
+    drinksOnTap = []
+    for x in range(9):
+        print("we  have " + random.choice(drink))
+        drinksOnTap.append(random.choice(drink))
+    return drinksOnTap,options
+#XXX fix 118-119 to look like 102 subtle bug prints twice doesnt save one 
+
 
 # XXX down the road, different cooks will have different menus
-def cookFood( cookBook, order ):
-    print ("randomword")
-    return "cupcake"
+
+def cookFood( cookBook, foodOrder ):
+    print ("the food is cooking");time.sleep (1) 
+
+    return "the food is done cooking " # + foodplate (if food doesnt match cookbood return brownMush instead)
     # XXX use the cookbook to get the ingredients for the order, then
     # XXX use the cooking implement to make the food and return it.
 
 
-    ##########################################################################  Menu/Recipe end
+    #########################################  Menu/Recipe end
 
-def bussBoy(Gary): #bussboy is the "accurate" term for table cleaner in resturaunt businesses
-    print("cleaning table")
-    #return dirty dishes to backroom 
-    
-def wait():
-    print ("wait")
-
-def clean():
-    print("clean")
-
-def ready():
-    print("ready")
-
-def dirty(dirtTable):
-    while True:
-        return random.randit (1,10)
-
-
-roundtable =(wait,clean,ready)
-x = roundtable
-if   x   >= 6:
-    print  + roundtable ("needs to be cleaned before another patron can be sat here")
-    
-elif x   == 3:
-    print  + roundtable ("is currently being cleaned by the bussboy")
- 
-elif x   == 1:
-    print  + roundtable ("is ready to be used")
-
-def Table(tableOne,tableTwo):#table currently has one chair
-    random.randit(1,2)
-    print("table is open or closed")
- 
-def dish(bowl,plate,cup):
-    print("FILLER")
-
-def dishWash(dishwasher):
-#XXX this chunk needs to run only at "night" or when all of the dishes are used
-    while True:
-        random.randit(1,5)
-        x = dish
-        if x <= 2:
-            print ("dishes are being washed")
-            time.sleep(1)
-        if x == 1:
-            print ("dishes are clean and ready")
-
-def waiter(Guy,Anthony):
-    random.randit(1,2)
-    print("Blank Waiter will seat you now at a table")
 
 def randCustEvent(maxNum):
     #Get Random Number 
@@ -228,13 +140,13 @@ def randCustEvent(maxNum):
 
     #based on random number choose random event
     if( eventRandom == 1 ):
-        print( "Where are my customers??" )
+        print( "Where is everyone??" ) #use to be. where are my customers??
 
     elif( eventRandom == 2 ):
         print( "a mouse scurries across the floor" )
 
     elif( eventRandom == 3 ):
-        print( " a cold wind passes bye" )
+        print( "a cold wind passes bye" )
 
     elif( eventRandom == 4 ):
         print( "a car passes by the diner" )
@@ -259,6 +171,8 @@ def randCustEvent(maxNum):
 
     elif( eventRandom >=11 ):
         print( "the lights flicker" )
+    
+    
 
 def getTownsfolk(): # Currently 20 TOWNSFOLK
     x =[ ["Sally", "Jean"],
@@ -284,26 +198,35 @@ def getTownsfolk(): # Currently 20 TOWNSFOLK
         ]
     return x
 
+# XXX deliver food from cook. 
+# XXX get customer feedback
+# XXX customer feedback 
+
 
 # The main event loop that drives myDiner.
 def main():
+   
     
     print( "Alfonso's Diner is open for business!" )
 
+    #drinkMenu = getDrinkMenu()
+    #menu     = getMenu()
     maxNum    = 20 
     townsFolk = getTownsfolk()
     cookBook  = getCookBook()
-    menu      = getMenu()
+    menu      = getMenus()
 
     # init customers with 2 random people
     firstCust = makeCustomer(townsFolk)
     secCust   = makeCustomer(townsFolk) 
     customers = [ firstCust, secCust ]
 
+    appliances.riceCooker(["rawRice"],cookBook)
+    assert(False)
    
     # Event loop.  The diner is always open.. loop forever
     while True:
-
+        
         # Check if we have a new customer
         if( random.randint( 0, 10 ) < 3 ) :
 
@@ -323,61 +246,23 @@ def main():
             randCustEvent(maxNum)
         else :
             # XXX Take an order based on cooking implements.
-            print( "What can I get for you " + serveCustomer + "we currently have replaceme1 and replaceme2 as our specials" )
+            print( "What can I get for you " + serveCustomer + " we currently have replaceme1 and replaceme2 as our specials" )
             #
-            order = pickFromMenu(menu)
-            print ("thats a great dish!") #anyting else?")
+            #foodOrder      = pickFromMenu(menu)
+            #drinkOrder     = pickFromDrinkMenu(drinkMenu)
+            tableOrder      = pickFromMenus(menu)
+            #print (drinkOrder, foodOrder, + " thats a great dish!")
+            print (tableOrder," thats a great dish! we'll have it out for you shortly")
             #time to make the food
-            hotFood=cookFood(cookBook,order)
+            #hotFood=cookFood(cookBook,foodOrder)
+            hotFood=cookFood(cookBook,tableOrder,)
             print (hotFood)
-            
-           
-# XXX deliver food from cook. 
-def tableOne():
-    print("TABLE FILLER")
-
-def tableTwo():
-    print("TABLE FILLER")
-
-    if waiter ( tableOne ):
-        print ("here is BLANK food for" )+ (tableOne)
-
-    if waiter ( tableTwo ):
-        print ("here is BLANK food for" )+ (tableTwo)
-   
-            
-            # XXX deliver food from cook. 
-
-
-# XXX get customer feedback
-# XXX customer feedback 
-
-def brownMush ():
-    print ("BAD food")
-
-def foodPlate ():
-    print ("GOOD food")
-
-def feedBack():
-    #Get Random Number 
-    eventRandom = random.randint(0,20)
-
-    if    ( brownMush ) >=  10:
-        print ("this is disgusting get me the cook")
-    elif  ( brownMush )   ==  9:
-        print("this needed salt")
-    elif  ( foodPlate ) ==  2:
-        print ("this was the best food ive had in a while")
-    elif  ( foodPlate ) ==  1:
-        print("this needed salt") #add salt and pepper shaker when objects are added?
-    elif  ( foodPlate ) ==  3:
-        print("this was OK")
-    elif  ( foodPlate ) ==  4:
-        print("this has WAY too much salt i need to get a replacement")
-        # Wait 
-        print("" )
+    
+        #wait
+        print("")
         time.sleep(3)
-
 
 if __name__ == "__main__":
     main()
+
+    
