@@ -15,7 +15,7 @@ def riceCooker( rawIngredients ):
     foodBowl  = "porridge"
     bowlFood  = "chili"
     # XXX if raw ingredients match a "riceCooker" recipe, set foodPlate to that.
-   
+    
     return [foodPlate, foodBowl, bowlFood]
 
     #the other  "cook" function that is the finished product ->["bugs"] <- )) = ["rawRice", "smallWater"]
@@ -27,7 +27,7 @@ def microWave ( rawIngredients ):
     pizza       = "personal Pizza"
 
     # XXX if raw ingredients match a "riceCooker" recipe, set foodPlate to that.
-   
+    
     return [hotPlate, hotBowl, chunkyFood, hotLiquid,pizza]
 """
 # Give good raw ingredients, get good food back.
@@ -46,7 +46,6 @@ def riceCooker( rawIngredients, cookBook ):
         if recipeIngredients == rawIngredients:
             riceFoodPlate = dish
             break
-   
     return riceFoodPlate 
 
 
@@ -64,9 +63,9 @@ def microwave( rawIngredients, cookBook ):
         if recipeIngredients == rawIngredients:
             microFoodPlate = dish
             break
-   
+    
     return microFoodPlate
-
+"""
 def dishWash(dishwasher):
 #XXX this chunk needs to run only at "night" or when all of the dishes are used
     while True:
@@ -76,4 +75,6 @@ def dishWash(dishwasher):
             print ("dishes are being washed")
             time.sleep(1)
         if x == 1:
-            print ("dishes are clean and ready") 
+            print ("dishes are clean and ready")
+            return x
+"""

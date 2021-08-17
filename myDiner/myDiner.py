@@ -24,6 +24,8 @@ import signal,sys               # to check for user abort
 import random                   # to randomly select with the if/elif statements
 import time
 
+from appliances import riceCooker
+
 #from myDiner import drinkMenu                     # to sleep
 import appliances               # to do other things while keeping myDiner clean
 
@@ -86,7 +88,7 @@ def getCookBook():
 #customer chooses a single food and drink from  menu
 #anyTwoMenu is a food and a drink menu being chosen by customer 
 def pickFromMenus( anyTwoMenu ):
-    print ("this is the food and drink menu, what would you like?")
+    print ("this is the food and drink menu, take your time deciding,or dont")
     menuFood=anyTwoMenu [1]
     menuDrink=anyTwoMenu[0]
     
@@ -102,18 +104,21 @@ def pickFromMenus( anyTwoMenu ):
 def getMenus():
     options = ["cookedRice","porridge","chili","bugs","yesterdays special"]
     drink=["oldFashoned",      "margarita",   "martini",       
-           "mojito",           "whiskySour",  "darkandstormy",
-           "bloodyMary",       "guinness",    "heineken",       
-           "blueMoon",         "miller",      "millerLight",
-           "coke",             "pepsi",       "sprite",         
-           "creamSoda",        "mountainDew", "rootBeer"]
+            "mojito",           "whiskySour",  "darkandstormy",
+            "bloodyMary",       "guinness",    "heineken",       
+            "blueMoon",         "miller",      "millerLight",
+            "coke",             "pepsi",       "sprite",         
+            "creamSoda",        "mountainDew", "rootBeer"]
     drinksOnTap = []
     for x in range(9):
-        print("we  have " + random.choice(drink))
-        drinksOnTap.append(random.choice(drink))
+        #print("we  have " + random.choice(drink))
+        d=drinksOnTap.append(random.choice(drink))
     return drinksOnTap,options
-#XXX fix 118-119 to look like 102 subtle bug prints twice doesnt save one 
 
+#d=drinksOnTap.append(random.choice(drink)) 
+# above doesnt work.(d) cant be set to no list. also creates more errors
+
+#XXX fixed 118-119 now (112-113) to look like 102 subtle bug prints twice doesnt save one 
 
 # XXX down the road, different cooks will have different menus
 
@@ -155,10 +160,10 @@ def randCustEvent(maxNum):
         print( "Gordon scratches his head" )
 
     elif( eventRandom == 8 ):
-       print( "Gordon coughs" )
+        print( "Gordon coughs" )
             
     elif( eventRandom == 9 ):
-       print( "Gordon sneezes"  )
+        print( "Gordon sneezes"  )
 
     elif( eventRandom == 10 ):
         print( "the jukebox changes songs" )
@@ -199,7 +204,6 @@ def getTownsfolk(): # Currently 20 TOWNSFOLK
 
 # The main event loop that drives myDiner.
 def main():
-   
     
     print( "Alfonso's Diner is open for business!" )
 
@@ -216,8 +220,8 @@ def main():
     customers = [ firstCust, secCust ]
 
     appliances.riceCooker(["rawRice"],cookBook)
-    #assert(False)
-   
+    
+    
     # Event loop.  The diner is always open.. loop forever
     while True:
         
@@ -246,7 +250,7 @@ def main():
             #drinkOrder     = pickFromDrinkMenu(drinkMenu)
             tableOrder      = pickFromMenus(menu)
             #print (drinkOrder, foodOrder, + " thats a great dish!")
-            print (tableOrder," thats a great dish! we'll have it out for you shortly")
+            print (tableOrder,"Great! we'll have them out for you shortly")
             #time to make the food
             #hotFood=cookFood(cookBook,foodOrder)
             hotFood=cookFood(cookBook,tableOrder,)
