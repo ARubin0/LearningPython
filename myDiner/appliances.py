@@ -31,20 +31,12 @@ def microWave ( rawIngredients ):
     
     return [hotPlate, hotBowl, chunkyFood, hotLiquid,pizza]
 """
-#cookbook holds recipes to be used with riceCooker and microwave. if recipe doesnt match cookBook it returns brownMush
-def cookBook():
-    riceFoodPlate = riceCooker( ["rawRice", "smallWater",], cookBook,
-    oatFoodPlate  = riceCooker( ["oats", "smallWater",   ], cookBook,
-    chiliFoodPlate= riceCooker( ["beans", "smallWater",  ], cookBook)
-    return None 
-# Give good raw ingredients, get good food back.
+
 # example function call:   foodPlate = riceCooker( ["rawRice", "smallWater","bowl"], cookBook]   will return "cookedRice"
 def riceCooker( rawIngredients, cookBook ):
     #print( cookBook )
     """
-    riceFoodPlate = riceCooker( ["rawRice", "smallWater",], cookBook,
-    oatFoodPlate  = riceCooker( ["oats", "smallWater",   ], cookBook,
-    chiliFoodPlate= riceCooker( ["beans", "smallWater",  ], cookBook)
+    
     """
 
     riceCookerRecipes = cookBook["riceCooker"]
@@ -56,6 +48,7 @@ def riceCooker( rawIngredients, cookBook ):
     chiliFoodPlate= "brownMush"
     # run through riceCookerRecipes, look for rawIngredients that match a recipe, then get the food item.
     for dish, recipeIngredients in riceCookerRecipes.items():
+        print("***",dish, recipeIngredients,"***")
         if recipeIngredients == rawIngredients:
             riceFoodPlate = dish
             break

@@ -1,25 +1,6 @@
 #!/usr/bin/env python
 
-# TODO
-# XXX * if more townsfolk needed.https://www.name-generator.org.uk/?i=c
-# XXX add days, 24 hours, Diner closes from 1AM to 6AM.  event loop is 1 tick per hour.
-# XXX add cooks √
-# XXX add cooking implements 
-# XXX one waiter can serve 1 customer per hour.
-# XXX IDEAS III/ Questions QQQ/ ZZZ later code things
-
-# QQQ can another function be added to randomly have the  
-#   customer decide if they want to order anything else  i/e "wait no how about blank instead" and,  "ill also have this"
-# QQQ Line 76-86 r menu. want to be able to "remove drinks" from menu with append as if the tap runs dry
-#  CTRL G is shortcut to type to the line of code you want to go to
-# ZZZ   FOR LATER
-#   physical objects being salt and pepper shaker for food
-#   monetary values for food  on the menu and tipping for service
-#   dirty dishes on the table/ make the table un useable until the table is cleaned off
-#   use input command before/after code to add townsfolk but not allow for duplicants or random letters?
-
 import sys,os
-
 import signal,sys               # to check for user abort
 import random                   # to randomly select with the if/elif statements
 import time
@@ -57,19 +38,19 @@ def makeCustomer(townPeople):
 
 def getCookBook():
     riceCookerRecipes = {}
-    riceCookerRecipes["cookedRice"] = ["rawRice", "smallWater","bowl"]
-    riceCookerRecipes["porridge"]   = ["rawRice", "bigWater","bowl"]
-    riceCookerRecipes["chili"]      = ["beans", "meat","smallWater","bowl"]
+    riceCookerRecipes["cookedRice"] = ["rawRice", "smallWater"]
+    riceCookerRecipes["porridge"]   = ["rawRice", "bigWater"]
+    riceCookerRecipes["chili"]      = ["beans", "meat","smallWater"]
     
     microwaveRecipes  = {}
-    microwaveRecipes["bugsoup"]            = ["bugs", "bigWater","bowl"]
-    microwaveRecipes["tea"]                = ["teaBag", "smallWater","mug"]
-    microwaveRecipes["bugs"]               = ["bugs","plate"]
-    microwaveRecipes["yesterdays special"] = ["teaBag", "bugs", "smallWater","mug"]
-    microwaveRecipes["personal Pizza"]     = ["bread", "cheese", "tomatosauce","plate"]
+    microwaveRecipes["bugsoup"]            = ["bugs", "bigWater"]
+    microwaveRecipes["tea"]                = ["teaBag", "smallWater"]
+    microwaveRecipes["bugs"]               = ["bugs"]
+    microwaveRecipes["yesterdays special"] = ["teaBag", "bugs", "smallWater"]
+    microwaveRecipes["personal Pizza"]     = ["bread", "cheese", "tomatosauce"]
 
     dessertRecipes  = {}
-    dessertRecipes["iceCream"]             = ["icecream","bowl"]
+    dessertRecipes["iceCream"]             = ["icecream",]
 
     recipes ={}
     recipes["riceCooker"] = riceCookerRecipes
@@ -219,8 +200,21 @@ def main():
     secCust   = makeCustomer(townsFolk) 
     customers = [ firstCust, secCust ]
 
-    appliances.riceCooker(["rawRice"],cookBook)
-    
+    #XXXRicecooker works. call it from a good place   
+    #appliances.riceCooker(["rawRice"],cookBook)
+    #cook will eventually take order and use "cookbook" to make food like code below
+    #0.this belongs in event loop somewhere
+    #1.waiter takes order from cust.
+    #2. waiter gives order to cook
+    #3. cook looks up order in cookbook to find recipe
+    #3.5 this goes here...z=appliances.riceCooker(["beans","meat","smallWater"],cookBook)
+    #                           print(z, "++++")
+    #4.cook feeds raw ingredients to appliance(s) 
+    #5.cook takes food from appliance and puts it on plate for waiter
+    #6.cook rings bell telling waiter food is ready
+    #7.waiter brings food to cust
+    z=appliances.riceCooker(["beans","meat","smallWater"],cookBook)
+    print(z, "++++")
     
     # Event loop.  The diner is always open.. loop forever
     while True:
