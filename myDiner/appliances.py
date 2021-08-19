@@ -5,6 +5,7 @@ import time
 import os
 import logging
 import random
+from typing import NoReturn
 
 #from os import path
 
@@ -30,19 +31,24 @@ def microWave ( rawIngredients ):
     
     return [hotPlate, hotBowl, chunkyFood, hotLiquid,pizza]
 """
-# Give good raw ingredients, get good food back.
+
 # example function call:   foodPlate = riceCooker( ["rawRice", "smallWater","bowl"], cookBook]   will return "cookedRice"
 def riceCooker( rawIngredients, cookBook ):
     #print( cookBook )
+    """
+    
+    """
 
     riceCookerRecipes = cookBook["riceCooker"]
     #print( riceCookerRecipes)
 
     # if raw ingredients don't match a "riceCooker" recipe, iiiick
     riceFoodPlate = "brownMush"
-
+    oatFoodPlate  = "brownMush"
+    chiliFoodPlate= "brownMush"
     # run through riceCookerRecipes, look for rawIngredients that match a recipe, then get the food item.
     for dish, recipeIngredients in riceCookerRecipes.items():
+        print("***",dish, recipeIngredients,"***")
         if recipeIngredients == rawIngredients:
             riceFoodPlate = dish
             break
@@ -65,6 +71,7 @@ def microwave( rawIngredients, cookBook ):
             break
     
     return microFoodPlate
+
 """
 def dishWash(dishwasher):
 #XXX this chunk needs to run only at "night" or when all of the dishes are used
@@ -77,4 +84,5 @@ def dishWash(dishwasher):
         if x == 1:
             print ("dishes are clean and ready")
             return x
-"""
+            
+        """ 
