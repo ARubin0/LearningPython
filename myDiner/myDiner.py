@@ -47,7 +47,7 @@ def getCookBook():
     microwaveRecipes["tea"]                = ["teaBag", "smallWater"]
     microwaveRecipes["bugs"]               = ["bugs"]
     microwaveRecipes["yesterdays special"] = ["teaBag", "bugs", "smallWater"]
-    microwaveRecipes["personal Pizza"]     = ["bread", "cheese", "tomatosauce"]
+    microwaveRecipes["personal Pizza"]     = ["bread", "cheese", "tomatoSauce"]
 
     dessertRecipes  = {}
     dessertRecipes["iceCream"]             = ["icecream",]
@@ -200,7 +200,7 @@ def main():
     secCust   = makeCustomer(townsFolk) 
     customers = [ firstCust, secCust ]
 
-    #XXXRicecooker works. call it from a good place   
+    #XXX Ricecooker works. call it from a good place   
     #appliances.riceCooker(["rawRice"],cookBook)
     #cook will eventually take order and use "cookbook" to make food like code below
     #0.this belongs in event loop somewhere
@@ -213,8 +213,19 @@ def main():
     #5.cook takes food from appliance and puts it on plate for waiter
     #6.cook rings bell telling waiter food is ready
     #7.waiter brings food to cust
+    z=appliances.riceCooker(["rawRice","smallWater"     ],cookBook)
     z=appliances.riceCooker(["beans","meat","smallWater"],cookBook)
-    print(z, "++++")
+    z=appliances.riceCooker(["rawRice","bigWater"       ],cookBook)
+    #XXX microwave saved item functions
+    y=appliances.microwave(["bugs","bigWater"              ],cookBook)
+    y=appliances.microwave(["teaBag","smallWater"          ],cookBook)
+    y=appliances.microwave(["bugs"                         ],cookBook)
+    y=appliances.microwave(["teaBag","bugs","smallWater"   ],cookBook)
+    y=appliances.microwave(["bread","cheese","tomatoSauce" ],cookBook)
+    #XXXdessert not in appliances but doing this anyway for later incase of dessert code put in later
+    w=appliances.dessert(["icecream"],cookBook)
+
+    #print(z, "++++")
     
     # Event loop.  The diner is always open.. loop forever
     while True:
