@@ -35,9 +35,6 @@ def microWave ( rawIngredients ):
 # example function call:   foodPlate = riceCooker( ["rawRice", "smallWater","bowl"], cookBook]   will return "cookedRice"
 def riceCooker( rawIngredients, cookBook ):
     #print( cookBook )
-    """
-    
-    """
 
     riceCookerRecipes = cookBook["riceCooker"]
     #print( riceCookerRecipes)
@@ -63,6 +60,10 @@ def microwave( rawIngredients, cookBook ):
 
     # if raw ingredients don't match a "microwave" recipe, iiiick
     microFoodPlate = "brownMush"
+    teaFoodPlate   = "brownMush"
+    bugFoodPlate   = "brownMush"
+    specFoodPlate  = "brownMush"
+    pizzaFoodPlate = "brownMush"
 
     # run through riceCookerRecipes, look for rawIngredients that match a recipe, then get the food item.
     for dish, recipeIngredients in microwaveRecipes.items():
@@ -72,6 +73,22 @@ def microwave( rawIngredients, cookBook ):
     
     return microFoodPlate
 
+def dessert( rawIngredients, cookBook ):
+    #print( cookBook )
+
+    dessertRecipes = cookBook["dessert"]
+    #print( microwaveRecipes)
+
+    # if raw ingredients don't match a "dessert" recipe, its not "good" but not bad
+    coldFoodPlate = "this isnt what the customer ordered"
+
+    # run through riceCookerRecipes, look for rawIngredients that match a recipe, then get the food item.
+    for dish, recipeIngredients in dessertRecipes.items():
+        if recipeIngredients == rawIngredients:
+            coldFoodPlate = dish
+            break
+    
+    return coldFoodPlate
 """
 def dishWash(dishwasher):
 #XXX this chunk needs to run only at "night" or when all of the dishes are used

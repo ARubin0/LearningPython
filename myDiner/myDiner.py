@@ -222,10 +222,11 @@ def main():
     y=appliances.microwave(["bugs"                         ],cookBook)
     y=appliances.microwave(["teaBag","bugs","smallWater"   ],cookBook)
     y=appliances.microwave(["bread","cheese","tomatoSauce" ],cookBook)
-    #XXXdessert not in appliances but doing this anyway for later incase of dessert code put in later
+    #XXX dessert not in appliances but doing this anyway for later incase of dessert code put in later
+        #Now in appliances so "wrong icecream" can be made and sent out 
     w=appliances.dessert(["icecream"],cookBook)
-
     #print(z, "++++")
+
     
     # Event loop.  The diner is always open.. loop forever
     while True:

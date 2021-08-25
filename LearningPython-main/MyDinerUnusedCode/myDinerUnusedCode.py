@@ -106,7 +106,7 @@ def feedBack(): XXX food Feedback
         print("this has WAY too much salt i need to get a replacement")
 
 
-           
+    
 # XXX deliver food from cook. 
 def tableOne():
     print("TABLE FILLER")
@@ -128,13 +128,13 @@ def tableTwo():
 #XXX WORKING CODE TAKEN OUT OF MYDINER FOR BETTER/OTHER CODE
 #XXX Drinkmenu 
 def getDrinkMenu(): 
-   
-    drink=["oldFashoned",      "margarita",   "martini",       
-           "mojito",           "whiskySour",  "darkandstormy",
-           "bloodyMary",       "guinness",    "heineken",       
-           "blueMoon",         "miller",      "millerLight",
-           "coke",             "pepsi",       "sprite",         
-           "creamSoda",        "mountainDew", "rootBeer"]
+
+    drink=[ "oldFashoned",      "margarita",   "martini",       
+            "mojito",           "whiskySour",  "darkandstormy",
+            "bloodyMary",       "guinness",    "heineken",       
+            "blueMoon",         "miller",      "millerLight",
+            "coke",             "pepsi",       "sprite",         
+            "creamSoda",        "mountainDew", "rootBeer"]
     drinksOnTap = []
     for x in range(9):
         print("we  have " + random.choice(drink))
