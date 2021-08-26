@@ -5,6 +5,7 @@ import time
 import os
 import logging
 import random
+#from typing import NoReturn
 
 #from os import path
 
@@ -15,7 +16,7 @@ def riceCooker( rawIngredients ):
     foodBowl  = "porridge"
     bowlFood  = "chili"
     # XXX if raw ingredients match a "riceCooker" recipe, set foodPlate to that.
-   
+    
     return [foodPlate, foodBowl, bowlFood]
 
     #the other  "cook" function that is the finished product ->["bugs"] <- )) = ["rawRice", "smallWater"]
@@ -27,10 +28,10 @@ def microWave ( rawIngredients ):
     pizza       = "personal Pizza"
 
     # XXX if raw ingredients match a "riceCooker" recipe, set foodPlate to that.
-   
+    
     return [hotPlate, hotBowl, chunkyFood, hotLiquid,pizza]
 """
-# Give good raw ingredients, get good food back.
+
 # example function call:   foodPlate = riceCooker( ["rawRice", "smallWater","bowl"], cookBook]   will return "cookedRice"
 def riceCooker( rawIngredients, cookBook ):
     #print( cookBook )
@@ -39,15 +40,16 @@ def riceCooker( rawIngredients, cookBook ):
     #print( riceCookerRecipes)
 
     # if raw ingredients don't match a "riceCooker" recipe, iiiick
-    foodPlate = "brownMush"
-
+    riceFoodPlate = "brownMush"
+    oatFoodPlate  = "brownMush"
+    chiliFoodPlate= "brownMush"
     # run through riceCookerRecipes, look for rawIngredients that match a recipe, then get the food item.
     for dish, recipeIngredients in riceCookerRecipes.items():
+        print("***",dish, recipeIngredients,"***")
         if recipeIngredients == rawIngredients:
             riceFoodPlate = dish
             break
-   
-    return riceFoodPlate, print("ricecooker printing test from appliances module")
+    return riceFoodPlate 
 
 
 def microwave( rawIngredients, cookBook ):
@@ -57,16 +59,37 @@ def microwave( rawIngredients, cookBook ):
     #print( microwaveRecipes)
 
     # if raw ingredients don't match a "microwave" recipe, iiiick
-    foodPlate = "brownMush"
+    microFoodPlate = "brownMush"
+    teaFoodPlate   = "brownMush"
+    bugFoodPlate   = "brownMush"
+    specFoodPlate  = "brownMush"
+    pizzaFoodPlate = "brownMush"
 
     # run through riceCookerRecipes, look for rawIngredients that match a recipe, then get the food item.
     for dish, recipeIngredients in microwaveRecipes.items():
         if recipeIngredients == rawIngredients:
             microFoodPlate = dish
             break
-   
+    
     return microFoodPlate
 
+def dessert( rawIngredients, cookBook ):
+    #print( cookBook )
+
+    dessertRecipes = cookBook["dessert"]
+    #print( microwaveRecipes)
+
+    # if raw ingredients don't match a "dessert" recipe, its not "good" but not bad
+    coldFoodPlate = "this isnt what the customer ordered"
+
+    # run through riceCookerRecipes, look for rawIngredients that match a recipe, then get the food item.
+    for dish, recipeIngredients in dessertRecipes.items():
+        if recipeIngredients == rawIngredients:
+            coldFoodPlate = dish
+            break
+    
+    return coldFoodPlate
+"""
 def dishWash(dishwasher):
 #XXX this chunk needs to run only at "night" or when all of the dishes are used
     while True:
@@ -76,4 +99,7 @@ def dishWash(dishwasher):
             print ("dishes are being washed")
             time.sleep(1)
         if x == 1:
-            print ("dishes are clean and ready") 
+            print ("dishes are clean and ready")
+            return x
+            
+        """ 

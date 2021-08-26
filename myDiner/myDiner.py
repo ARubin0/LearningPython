@@ -1,39 +1,16 @@
 #!/usr/bin/env python
 
-# TODO
-# XXX * if more townsfolk needed.https://www.name-generator.org.uk/?i=c
-# XXX add days, 24 hours, Diner closes from 1AM to 6AM.  event loop is 1 tick per hour.
-# XXX add cooks √
-# XXX add cooking implements 
-# XXX one waiter can serve 1 customer per hour.
-# XXX IDEAS III/ Questions QQQ/ ZZZ later code things
-
-# QQQ can another function be added to randomly have the  
-#   customer decide if they want to order anything else  i/e "wait no how about blank instead" and,  "ill also have this"
-# QQQ Line 76-86 r menu. want to be able to "remove drinks" from menu with append as if the tap runs dry
-#  CTRL G is shortcut to type to the line of code you want to go to
-# ZZZ   FOR LATER
-#   physical objects being salt and pepper shaker for food
-#   monetary values for food  on the menu and tipping for service
-#   dirty dishes on the table/ make the table un useable until the table is cleaned off
-#   use input command before/after code to add townsfolk but not allow for duplicants or random letters?
-
 import sys,os
-
 import signal,sys               # to check for user abort
 import random                   # to randomly select with the if/elif statements
 import time
 
+from appliances import riceCooker
+
 #from myDiner import drinkMenu                     # to sleep
-#import appliances               # to do other things while keeping myDiner clean
+import appliances               # to do other things while keeping myDiner clean
 
-#from myDiner import foodPlate                     
-from appliances import riceCooker 
-from appliances import microwave
 
-appliances = 'datetime'
-if appliances not in sys.modules:
-    print ('You have not imported the appliances module'.format(appliances))
 
 # Abort handler
 def signal_handling(signum,frame):
@@ -61,19 +38,19 @@ def makeCustomer(townPeople):
 
 def getCookBook():
     riceCookerRecipes = {}
-    riceCookerRecipes["cookedRice"] = ["rawRice", "smallWater","bowl"]
-    riceCookerRecipes["porridge"]   = ["rawRice", "bigWater","bowl"]
-    riceCookerRecipes["chili"]      = ["beans", "meat","smallWater","bowl"]
+    riceCookerRecipes["cookedRice"] = ["rawRice", "smallWater"]
+    riceCookerRecipes["porridge"]   = ["rawRice", "bigWater"]
+    riceCookerRecipes["chili"]      = ["beans", "meat","smallWater"]
     
     microwaveRecipes  = {}
-    microwaveRecipes["bugsoup"]            = ["bugs", "bigWater","bowl"]
-    microwaveRecipes["tea"]                = ["teaBag", "smallWater","mug"]
-    microwaveRecipes["bugs"]               = ["bugs","plate"]
-    microwaveRecipes["yesterdays special"] = ["teaBag", "bugs", "smallWater","mug"]
-    microwaveRecipes["personal Pizza"]     = ["bread", "cheese", "tomatosauce","plate"]
+    microwaveRecipes["bugsoup"]            = ["bugs", "bigWater"]
+    microwaveRecipes["tea"]                = ["teaBag", "smallWater"]
+    microwaveRecipes["bugs"]               = ["bugs"]
+    microwaveRecipes["yesterdays special"] = ["teaBag", "bugs", "smallWater"]
+    microwaveRecipes["personal Pizza"]     = ["bread", "cheese", "tomatoSauce"]
 
     dessertRecipes  = {}
-    dessertRecipes["iceCream"]             = ["icecream","bowl"]
+    dessertRecipes["iceCream"]             = ["icecream",]
 
     recipes ={}
     recipes["riceCooker"] = riceCookerRecipes
@@ -92,7 +69,7 @@ def getCookBook():
 #customer chooses a single food and drink from  menu
 #anyTwoMenu is a food and a drink menu being chosen by customer 
 def pickFromMenus( anyTwoMenu ):
-    print ("this is the food and drink menu, what would you like?")
+    print ("this is the food and drink menu, take your time deciding,or dont")
     menuFood=anyTwoMenu [1]
     menuDrink=anyTwoMenu[0]
     
@@ -108,18 +85,21 @@ def pickFromMenus( anyTwoMenu ):
 def getMenus():
     options = ["cookedRice","porridge","chili","bugs","yesterdays special"]
     drink=["oldFashoned",      "margarita",   "martini",       
-           "mojito",           "whiskySour",  "darkandstormy",
-           "bloodyMary",       "guinness",    "heineken",       
-           "blueMoon",         "miller",      "millerLight",
-           "coke",             "pepsi",       "sprite",         
-           "creamSoda",        "mountainDew", "rootBeer"]
+            "mojito",           "whiskySour",  "darkandstormy",
+            "bloodyMary",       "guinness",    "heineken",       
+            "blueMoon",         "miller",      "millerLight",
+            "coke",             "pepsi",       "sprite",         
+            "creamSoda",        "mountainDew", "rootBeer"]
     drinksOnTap = []
     for x in range(9):
-        print("we  have " + random.choice(drink))
-        drinksOnTap.append(random.choice(drink))
+        #print("we  have " + random.choice(drink))
+        d=drinksOnTap.append(random.choice(drink))
     return drinksOnTap,options
-#XXX fix 118-119 to look like 102 subtle bug prints twice doesnt save one 
 
+#d=drinksOnTap.append(random.choice(drink)) 
+# above doesnt work.(d) cant be set to no list. also creates more errors
+
+#XXX fixed 118-119 now (112-113) to look like 102 subtle bug prints twice doesnt save one 
 
 # XXX down the road, different cooks will have different menus
 
@@ -161,10 +141,10 @@ def randCustEvent(maxNum):
         print( "Gordon scratches his head" )
 
     elif( eventRandom == 8 ):
-       print( "Gordon coughs" )
+        print( "Gordon coughs" )
             
     elif( eventRandom == 9 ):
-       print( "Gordon sneezes"  )
+        print( "Gordon sneezes"  )
 
     elif( eventRandom == 10 ):
         print( "the jukebox changes songs" )
@@ -205,7 +185,6 @@ def getTownsfolk(): # Currently 20 TOWNSFOLK
 
 # The main event loop that drives myDiner.
 def main():
-   
     
     print( "Alfonso's Diner is open for business!" )
 
@@ -221,9 +200,34 @@ def main():
     secCust   = makeCustomer(townsFolk) 
     customers = [ firstCust, secCust ]
 
-    appliances.riceCooker(["rawRice"],cookBook)
-    assert(False)
-   
+    #XXX Ricecooker works. call it from a good place   
+    #appliances.riceCooker(["rawRice"],cookBook)
+    #cook will eventually take order and use "cookbook" to make food like code below
+    #0.this belongs in event loop somewhere
+    #1.waiter takes order from cust.
+    #2. waiter gives order to cook
+    #3. cook looks up order in cookbook to find recipe
+    #3.5 this goes here...z=appliances.riceCooker(["beans","meat","smallWater"],cookBook)
+    #                           print(z, "++++")
+    #4.cook feeds raw ingredients to appliance(s) 
+    #5.cook takes food from appliance and puts it on plate for waiter
+    #6.cook rings bell telling waiter food is ready
+    #7.waiter brings food to cust
+    z=appliances.riceCooker(["rawRice","smallWater"     ],cookBook)
+    z=appliances.riceCooker(["beans","meat","smallWater"],cookBook)
+    z=appliances.riceCooker(["rawRice","bigWater"       ],cookBook)
+    #XXX microwave saved item functions
+    y=appliances.microwave(["bugs","bigWater"              ],cookBook)
+    y=appliances.microwave(["teaBag","smallWater"          ],cookBook)
+    y=appliances.microwave(["bugs"                         ],cookBook)
+    y=appliances.microwave(["teaBag","bugs","smallWater"   ],cookBook)
+    y=appliances.microwave(["bread","cheese","tomatoSauce" ],cookBook)
+    #XXX dessert not in appliances but doing this anyway for later incase of dessert code put in later
+        #Now in appliances so "wrong icecream" can be made and sent out 
+    w=appliances.dessert(["icecream"],cookBook)
+    #print(z, "++++")
+
+    
     # Event loop.  The diner is always open.. loop forever
     while True:
         
@@ -252,7 +256,7 @@ def main():
             #drinkOrder     = pickFromDrinkMenu(drinkMenu)
             tableOrder      = pickFromMenus(menu)
             #print (drinkOrder, foodOrder, + " thats a great dish!")
-            print (tableOrder," thats a great dish! we'll have it out for you shortly")
+            print (tableOrder,"Great! we'll have them out for you shortly")
             #time to make the food
             #hotFood=cookFood(cookBook,foodOrder)
             hotFood=cookFood(cookBook,tableOrder,)

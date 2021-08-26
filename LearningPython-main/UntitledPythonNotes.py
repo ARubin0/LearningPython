@@ -143,3 +143,11 @@ Most comomn function flow
     random.choice(menuDrink)
     print(random.choice(menuDrink))
     z=random.choice(menuDrink)
+    
+    
+    for dish, recipeIngredients in riceCookerRecipes.items():
+        print("***",dish, recipeIngredients,"***")
+
+    *** cookedRice ['rawRice', 'smallWater', 'bowl'] ***
+*** porridge ['rawRice', 'bigWater', 'bowl'] ***
+*** chili ['beans', 'meat', 'smallWater', 'bowl'] ***
