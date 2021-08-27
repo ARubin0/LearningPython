@@ -5,11 +5,10 @@ import signal,sys               # to check for user abort
 import random                   # to randomly select with the if/elif statements
 import time
 
-from appliances import riceCooker
 
 #from myDiner import drinkMenu                     # to sleep
 import appliances               # to do other things while keeping myDiner clean
-
+import cooks
 
 
 # Abort handler
@@ -50,14 +49,15 @@ def getCookBook():
     microwaveRecipes["personal Pizza"]     = ["bread", "cheese", "tomatoSauce"]
 
     dessertRecipes  = {}
-    dessertRecipes["iceCream"]             = ["icecream",]
+    dessertRecipes["iceCream"]             = ["icecream"]
+    dessertRecipes["chipIceCream"]         = ["icecream","chips"]
 
     recipes ={}
     recipes["riceCooker"] = riceCookerRecipes
     recipes["microwave"]  = microwaveRecipes
     recipes["dessert"]    = dessertRecipes
     return recipes
-    
+
 #v1
 
 """
@@ -103,16 +103,27 @@ def getMenus():
 
 # XXX down the road, different cooks will have different menus
 
-def cookFood( cookBook, foodOrder ):
+def sendToKitchen( cookBook, foodOrder ):
     print ("the food is cooking");time.sleep (1) 
 
-    return "the food is done cooking " # + foodplate (if food doesnt match cookbood return brownMush instead)
-    # XXX use the cookbook to get the ingredients for the order, then
-    # XXX use the cooking implement to make the food and return it.
+    #XXX randomly choose cook 
+    cook="Gordon"
+    
+    foodPlate="bronwMush"
+    
+    #send food order to chosen cook
+    if( cook=="Gordon" ):
+        foodPlate=cooks.gordon( foodOrder,cookBook )
 
+    return foodPlate
 
+#XXX
+def waiter(Guy,Anthony):
+    x=random.choice(waiter)
+    g=Guy
+    a=Anthony
+    return g,a
     #########################################  Menu/Recipe end
-
 
 def randCustEvent(maxNum):
     #Get Random Number 
@@ -151,8 +162,7 @@ def randCustEvent(maxNum):
 
     elif( eventRandom >=11 ):
         print( "the lights flicker" )
-    
-    
+
 
 def getTownsfolk(): # Currently 20 TOWNSFOLK
     x =[ ["Sally", "Jean"],
@@ -187,7 +197,7 @@ def getTownsfolk(): # Currently 20 TOWNSFOLK
 def main():
     
     print( "Alfonso's Diner is open for business!" )
-
+    #(Initializing variables)
     #drinkMenu = getDrinkMenu()
     #menu     = getMenu()
     maxNum    = 20 
@@ -200,37 +210,60 @@ def main():
     secCust   = makeCustomer(townsFolk) 
     customers = [ firstCust, secCust ]
 
-    #XXX Ricecooker works. call it from a good place   
-    #appliances.riceCooker(["rawRice"],cookBook)
     #cook will eventually take order and use "cookbook" to make food like code below
-    #0.this belongs in event loop somewhere
-    #1.waiter takes order from cust.
-    #2. waiter gives order to cook
+
     #3. cook looks up order in cookbook to find recipe
     #3.5 this goes here...z=appliances.riceCooker(["beans","meat","smallWater"],cookBook)
     #                           print(z, "++++")
     #4.cook feeds raw ingredients to appliance(s) 
     #5.cook takes food from appliance and puts it on plate for waiter
     #6.cook rings bell telling waiter food is ready
-    #7.waiter brings food to cust
-    z=appliances.riceCooker(["rawRice","smallWater"     ],cookBook)
-    z=appliances.riceCooker(["beans","meat","smallWater"],cookBook)
-    z=appliances.riceCooker(["rawRice","bigWater"       ],cookBook)
-    #XXX microwave saved item functions
-    y=appliances.microwave(["bugs","bigWater"              ],cookBook)
-    y=appliances.microwave(["teaBag","smallWater"          ],cookBook)
-    y=appliances.microwave(["bugs"                         ],cookBook)
-    y=appliances.microwave(["teaBag","bugs","smallWater"   ],cookBook)
-    y=appliances.microwave(["bread","cheese","tomatoSauce" ],cookBook)
-    #XXX dessert not in appliances but doing this anyway for later incase of dessert code put in later
-        #Now in appliances so "wrong icecream" can be made and sent out 
-    w=appliances.dessert(["icecream"],cookBook)
-    #print(z, "++++")
 
-    
+
+
+
     # Event loop.  The diner is always open.. loop forever
     while True:
-        
+
+        # Check if we have a new customer
+        if( random.randint( 0, 10 ) < 3 ) :
+
+            newCust =makeCustomer(townsFolk)
+            print( newCust + " walks in." )
+            print( "Hi " + newCust + ".  Be right with you." )
+            customers.append( newCust )
+
+        serveCustomer = "---"
+        # Serve next customer in line, if there is one
+        if( len( customers ) > 0 ):
+            serveCustomer = customers.pop(0)
+
+        if( serveCustomer == "---" ) :
+            print( "Where are my customers??" )
+            # XXX add random event, like cook scratches his head
+            randCustEvent(maxNum)
+        else :
+            # XXX Take an order based on cooking implements.
+            print( "What can I get for you " + serveCustomer + " we currently have replaceme1 and replaceme2 as our specials" )
+            #
+            #foodOrder      = pickFromMenu(menu)
+            #drinkOrder     = pickFromDrinkMenu(drinkMenu)
+            tableOrder      = pickFromMenus(menu)
+            #print (drinkOrder, foodOrder, + " thats a great dish!")
+            print (tableOrder,"Great! we'll have them out for you shortly")
+            #time to make the food
+            #hotFood=cookFood(cookBook,foodOrder)
+            hotFood=sendToKitchen(cookBook,tableOrder)
+            print (hotFood)
+    
+        #wait
+        print("")
+        time.sleep(3)
+
+"""
+    # Event loop.  The diner is always open.. loop forever
+    while True:
+
         # Check if we have a new customer
         if( random.randint( 0, 10 ) < 3 ) :
 
@@ -265,7 +298,7 @@ def main():
         #wait
         print("")
         time.sleep(3)
-
+"""
 if __name__ == "__main__":
     main()
 

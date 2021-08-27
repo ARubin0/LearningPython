@@ -27,3 +27,4 @@ finish appliances functions and calls with riceCooker microwave and dessert
     print(z, "++++")
     
 then work on event loop
+in gordon do 35-43
