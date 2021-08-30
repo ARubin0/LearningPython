@@ -77,7 +77,7 @@ def dessert( rawIngredients, cookBook ):
     #print( cookBook )
 
     dessertRecipes = cookBook["dessert"]
-    #print( microwaveRecipes)
+    #print( dessertRecipes)
 
     # if raw ingredients don't match a "dessert" recipe, its not "good" but not bad
     coldFoodPlate = "this isnt what the customer ordered"
@@ -86,6 +86,7 @@ def dessert( rawIngredients, cookBook ):
     for dish, recipeIngredients in dessertRecipes.items():
         if recipeIngredients == rawIngredients:
             coldFoodPlate = dish
+            chipFoodPlate = dish
             break
     
     return coldFoodPlate
