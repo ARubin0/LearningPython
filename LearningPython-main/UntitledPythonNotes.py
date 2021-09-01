@@ -24,6 +24,8 @@ coin without looking at if function. in A heads is only incramented if less than
     ( members are words/numbers in the list [ie] Number (1),(1) or names/words [ie] (james),(james) 
 
 
+Calling a Function
+To call a function, use the function name followed by parenthesis
 
 ###Function V Function Call
  # line 30 is correct. Variable 'Coin' is being set to the call to 'getflip'.
@@ -33,7 +35,6 @@ coin without looking at if function. in A heads is only incramented if less than
   
 
 make another function more complicated than coinflip 3 numbers less than or = heads greater than or = tails greater than or equal to the third number it is edge
-
 
 
 
@@ -151,3 +152,38 @@ Most comomn function flow
     *** cookedRice ['rawRice', 'smallWater', 'bowl'] ***
 *** porridge ['rawRice', 'bigWater', 'bowl'] ***
 *** chili ['beans', 'meat', 'smallWater', 'bowl'] ***
+
+
+
+
+
+#XXX how to approach coding a new function
+    0. review paper function thing 
+        for now, re lable one coppy and compare it to master copy
+    1. look at how the function is being callled
+        for example. put the function call above the function def to remember what it is
+    2. understand what the function arguments  REALLY  are reread function calls and defs before using them...
+        see the args as they actually are. dont think.
+        for ex, def each arg above funct. 
+    3.before each component in the body write a comment describing what it will do. 
+        for example.     # cook looks up order in cookbook to find recipe
+    4. open python interpriter and look at components of code, then, try to access the part that is needed
+        for ex, create temp file in myDiner, import temp to python interpreter (CMD), temp.getCookBook 
+>           CB=temp.getCookBook()
+            for x,y in CB.items():
+
+
+
+
+
+
+
+
+
+
+    BOILER PLATE FUNCTION TEMPLATE
+# gordon takes food request from customer(waiter) cooks then gives finished food( good or bad ) to waiter to bring out for customer
+# Example function call; foodPlate=cooks.gordon( foodOrder,cookBook )
+#   foodOrder is customer order
+#   cookBook  is recipe
+def gordon( foodOrder, cookBook ):
