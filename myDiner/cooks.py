@@ -24,14 +24,26 @@ import random
     w=appliances.dessert(["icecream","chips"],cookBook)
     #print(z, "++++")
 """
-
+"""
+    for dish, recipeIngredients in riceCookerRecipes.items():
+        print("***",dish, recipeIngredients,"***")
+        if recipeIngredients == rawIngredients:
+            riceFoodPlate = dish
+            break
+"""
     #XXX != is opposite of == 
+
+# gordon takes food request from customer(waiter) cooks then gives finished food( good or bad ) to waiter to bring out for customer
+# Example function call; foodPlate=cooks.gordon( foodOrder,cookBook )
+#   foodOrder is customer order
+#   cookBook  is recipe
+"""
 def gordon( foodOrder, cookBook ):
     #print( cookBook )
-    for dish in cookBook:
-        if foodOrder == cookBook:
+    for dish in cookBook.items():
+        if foodOrder == :
             print("ready for the waiter")
-        else: foodOrder !=cookBook
+        else: foodOrder !=
             print("iik...send it out to the customer anyway")
             
     
@@ -47,4 +59,14 @@ def gordon( foodOrder, cookBook ):
     
     #XXX  remember, cook needs to return food from appliance as a foodplate for the waiter 
     return foodPlate 
-
+"""
+def gordon(foodOrder, cookBook):
+    #outer for loop
+    for dish in cookBook.items:
+    #inner for loop
+    for recipeIngredients in foodPlate:
+        body of inner for loop
+        break
+    body of outer for loop
+    break
+return

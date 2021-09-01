@@ -28,3 +28,7 @@ finish appliances functions and calls with riceCooker microwave and dessert
     
 then work on event loop
 in gordon do 35-43
+make a nicer version of paper  function thing
+do the re labeling at least twice before thursday. on separate days
+python interpreter(CMD PROMPT)
+    notes file notes.approach( notes file)
