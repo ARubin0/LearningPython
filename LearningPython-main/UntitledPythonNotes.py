@@ -187,3 +187,19 @@ Most comomn function flow
 #   foodOrder is customer order
 #   cookBook  is recipe
 def gordon( foodOrder, cookBook ):
+    
+    
+    >>> for x in temp.getCookBook():
+...     print (x)
+...
+...
+riceCooker
+microwave
+dessert
+>>> for y in temp.getCookBook().items():
+...     print (y)
+...
+('riceCooker', {'cookedRice': ['rawRice', 'smallWater'], 'porridge': ['rawRice', 'bigWater'], 'chili': ['beans', 'meat', 'smallWater']})
+('microwave', {'bugsoup': ['bugs', 'bigWater'], 'tea': ['teaBag', 'smallWater'], 'bugs': ['bugs'], 'yesterdays special': ['teaBag', 'bugs', 'smallWater'], 'personal Pizza': ['bread', 'cheese', 'tomatoSauce']})
+('dessert', {'iceCream': ['icecream'], 'chipIceCream': ['icecream', 'chips']})
+>>>
