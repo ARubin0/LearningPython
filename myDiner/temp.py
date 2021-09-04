@@ -34,15 +34,34 @@ def getCookBook():
 
 for x in temp.getCookBook():
     print (x)
-        
-        
-for y in temp.getCookBook().items():
-    print (y)
+"""
+***riceCooker
+    microwave
+    dessert***
+"""    
 
+for y in temp.getCookBook().items():
+...     print (y)
+...
+
+"""
+***('riceCooker', {'cookedRice': ['rawRice', 'smallWater'], 'porridge': ['rawRice', 'bigWater'], 'chili': ['beans', 'meat', 'smallWater']})
+('microwave', {'bugsoup': ['bugs', 'bigWater'], 'tea': ['teaBag', 'smallWater'], 'bugs': ['bugs'], 'yesterdays special': ['teaBag', 'bugs', 'smallWater'], 'personal Pizza': ['bread', 'cheese', 'tomatoSauce']})
+('dessert', {'iceCream': ['icecream'], 'chipIceCream': ['icecream', 'chips']})***
+"""
 x=temp.getCookBook()
 for y in x.items():
     print (y)
-
+"""
+***('riceCooker', {'cookedRice': ['rawRice', 'smallWater'], 'porridge': ['rawRice', 'bigWater'], 'chili': ['beans', 'meat', 'smallWater']})
+('microwave', {'bugsoup': ['bugs', 'bigWater'], 'tea': ['teaBag', 'smallWater'], 'bugs': ['bugs'], 'yesterdays special': ['teaBag', 'bugs', 'smallWater'], 'personal Pizza': ['bread', 'cheese', 'tomatoSauce']})
+('dessert', {'iceCream': ['icecream'], 'chipIceCream': ['icecream', 'chips']})***
+"""
 
 for cookBook,recipe in x.items():
     print (cookBook,recipe)
+"""
+***riceCooker {'cookedRice': ['rawRice', 'smallWater'], 'porridge': ['rawRice', 'bigWater'], 'chili': ['beans', 'meat', 'smallWater']}
+microwave {'bugsoup': ['bugs', 'bigWater'], 'tea': ['teaBag', 'smallWater'], 'bugs': ['bugs'], 'yesterdays special': ['teaBag', 'bugs', 'smallWater'], 'personal Pizza': ['bread', 'cheese', 'tomatoSauce']}
+dessert {'iceCream': ['icecream'], 'chipIceCream': ['icecream', 'chips']}***
+"""

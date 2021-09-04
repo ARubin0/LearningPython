@@ -203,3 +203,33 @@ dessert
 ('microwave', {'bugsoup': ['bugs', 'bigWater'], 'tea': ['teaBag', 'smallWater'], 'bugs': ['bugs'], 'yesterdays special': ['teaBag', 'bugs', 'smallWater'], 'personal Pizza': ['bread', 'cheese', 'tomatoSauce']})
 ('dessert', {'iceCream': ['icecream'], 'chipIceCream': ['icecream', 'chips']})
 >>>
+
+#XXX SAT. 4
+
+cups   = ["blue cup", "red cup", "green cup"]
+dishes = ["small blue", "smaller blue", "smallest blue", "smallester blue"]
+bowls  = ["tiny pewter", "giant ceramic"]
+Careful - looks like google is playing with tabs in here.. 8*(
+
+
+kitchen = [ cups, dishes, bowls ]
+
+for container in kitchen:
+    print( container )
+
+for container in kitchen:
+    print( container )
+    for item in container:
+    print( item )
+
+for x in kitchen:
+    print( x )
+    # x will be set to       ["blue cup", "red cup", "green cup"]
+    # then, x will be set to ["small blue", "smaller blue", "smallest blue", "smallester blue"]
+    # then, x will be set to ["tiny pewter", "giant ceramic"]
+    for y in x:
+    print( y )
+
+
+for y in cups:
+    print(y)

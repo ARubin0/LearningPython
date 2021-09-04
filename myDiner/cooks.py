@@ -60,13 +60,8 @@ def gordon( foodOrder, cookBook ):
     #XXX  remember, cook needs to return food from appliance as a foodplate for the waiter 
     return foodPlate 
 """
-def gordon(foodOrder, cookBook):
-    #outer for loop
-    for dish in cookBook.items:
-    #inner for loop
-    for recipeIngredients in foodPlate:
-        body of inner for loop
-        break
-    body of outer for loop
-    break
-return
+def gordon(foodOrder,cookBook ):
+    x=myDiner.getCookBook()
+for cookBook,recipe in cookBook.items():
+    if recipe == foodOrder:
+        print ("ready for the waiter")
