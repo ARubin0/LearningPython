@@ -32,6 +32,7 @@ make a nicer version of paper  function thing
 do the re labeling at least twice before thursday. on separate days
 python interpreter(CMD PROMPT)
     notes file notes.approach( notes file)
+    
 try to understand python notes 124-127( for loop )
  take python interpreter output and add to temp.py and add to for loops as the outputs
  these should be in comments 
