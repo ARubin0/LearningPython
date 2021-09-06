@@ -7,6 +7,7 @@
 >>> x=temp.getCookBook() #when calling funct add name of file otherwise wrong/wont work
 
 """
+
 def getCookBook():
     riceCookerRecipes = {}
     riceCookerRecipes["cookedRice"] = ["rawRice", "smallWater"]
@@ -30,38 +31,58 @@ def getCookBook():
     recipes["dessert"]    = dessertRecipes
     return recipes
 
+cookBook=temp.getCookBook()
+for appliance, recipes in cookBook.items():
+    for recipe,ingredients in recipes.items():
+        print( recipe,ingredients )
+
+
+
+
+"""
+cookBook=temp.getCookBook()
+for appliance, recipes in cookBook.items():
+    for recipe in recipes:
+        print( recipe )
+
+
+
+
 
 
 for x in temp.getCookBook():
     print (x)
-"""
+
 ***riceCooker
     microwave
     dessert***
-"""    
+ 
 
 for y in temp.getCookBook().items():
-...     print (y)
-...
+    print (y)
 
-"""
+
+
 ***('riceCooker', {'cookedRice': ['rawRice', 'smallWater'], 'porridge': ['rawRice', 'bigWater'], 'chili': ['beans', 'meat', 'smallWater']})
 ('microwave', {'bugsoup': ['bugs', 'bigWater'], 'tea': ['teaBag', 'smallWater'], 'bugs': ['bugs'], 'yesterdays special': ['teaBag', 'bugs', 'smallWater'], 'personal Pizza': ['bread', 'cheese', 'tomatoSauce']})
 ('dessert', {'iceCream': ['icecream'], 'chipIceCream': ['icecream', 'chips']})***
-"""
+
 x=temp.getCookBook()
 for y in x.items():
     print (y)
-"""
+
 ***('riceCooker', {'cookedRice': ['rawRice', 'smallWater'], 'porridge': ['rawRice', 'bigWater'], 'chili': ['beans', 'meat', 'smallWater']})
 ('microwave', {'bugsoup': ['bugs', 'bigWater'], 'tea': ['teaBag', 'smallWater'], 'bugs': ['bugs'], 'yesterdays special': ['teaBag', 'bugs', 'smallWater'], 'personal Pizza': ['bread', 'cheese', 'tomatoSauce']})
 ('dessert', {'iceCream': ['icecream'], 'chipIceCream': ['icecream', 'chips']})***
-"""
+
 
 for cookBook,recipe in x.items():
     print (cookBook,recipe)
-"""
+
 ***riceCooker {'cookedRice': ['rawRice', 'smallWater'], 'porridge': ['rawRice', 'bigWater'], 'chili': ['beans', 'meat', 'smallWater']}
 microwave {'bugsoup': ['bugs', 'bigWater'], 'tea': ['teaBag', 'smallWater'], 'bugs': ['bugs'], 'yesterdays special': ['teaBag', 'bugs', 'smallWater'], 'personal Pizza': ['bread', 'cheese', 'tomatoSauce']}
 dessert {'iceCream': ['icecream'], 'chipIceCream': ['icecream', 'chips']}***
+
+
+
 """

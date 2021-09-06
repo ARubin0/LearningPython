@@ -61,7 +61,6 @@ def gordon( foodOrder, cookBook ):
     return foodPlate 
 """
 def gordon(foodOrder,cookBook ):
-    x=myDiner.getCookBook()
 for cookBook,recipe in cookBook.items():
     if recipe == foodOrder:
         print ("ready for the waiter")
