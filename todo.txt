@@ -38,3 +38,10 @@ try to understand python notes 124-127( for loop )
  these should be in comments 
  translate outer loop to work for cooks.py 
  looks through file sent. attempt to apply to cooks.py
+
+SEP 6
+ add better gordon to cooks. and im stuck word file
+ put im stuck file in a notes folder with other python notes
+work on XXX In gordon  
+    see how far i get.
+do line 31 function thing and save it 
