@@ -5,6 +5,7 @@ import time
 import os
 import logging
 import random
+import appliances
 
 """
     #examples of how to call appliances
@@ -60,7 +61,13 @@ def gordon( foodOrder, cookBook ):
     #XXX  remember, cook needs to return food from appliance as a foodplate for the waiter 
     return foodPlate 
 """
-def gordon(foodOrder,cookBook ):
-for cookBook,recipe in cookBook.items():
-    if recipe == foodOrder:
-        print ("ready for the waiter")
+def gordon (foodOrder,cookBook):
+    for appliances, recipes in cookBook.items():
+        print (appliances)
+        for recipe,ingredients in recipes.items():
+            print( recipe,ingredients )
+
+"""
+def gordon (foodOrder,cookBook):
+    print(cookBook.items())
+"""

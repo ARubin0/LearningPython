@@ -8,6 +8,9 @@
 
 """
 
+from appliances import riceCooker
+
+
 def getCookBook():
     riceCookerRecipes = {}
     riceCookerRecipes["cookedRice"] = ["rawRice", "smallWater"]
@@ -31,14 +34,32 @@ def getCookBook():
     recipes["dessert"]    = dessertRecipes
     return recipes
 
-cookBook=temp.getCookBook()
+cookBook=getCookBook()
 for appliance, recipes in cookBook.items():
     for recipe,ingredients in recipes.items():
         print( recipe,ingredients )
 
 
+def gordon (foodOrder,cookBook):
+    for appliances, recipes in cookBook.items():
+        print (appliances)
+        for recipe,ingredients in recipes.items():
+            print( recipe,ingredients )
+"""
+        # XXX cook looks up order in cookbook to find recipe
+            for appliances, recipes in cookBook.items():
+        # XXX use the cookbook to get the ingredients for the order, then
+            for recipe,ingredients in recipes.items():
+        # XXX use the cooking implement to make the food and return 
+            in appliances.riceCooker
+                if recipeIngredients == rawIngredients:
+                    print ("foodplate")
+        # XXX call the right appliance with the recipe. for example :  foodPlate = appliances.riceCooker(["beans","meat","smallWater"],cookBook)
+            z=appliances.riceCooker(["rawRice","smallWater"     ],cookBook)
+    
+        # XXX  remember, cook needs to return food from appliance as a foodplate for the waiter 
 
-
+"""
 """
 cookBook=temp.getCookBook()
 for appliance, recipes in cookBook.items():
