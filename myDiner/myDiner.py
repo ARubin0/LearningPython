@@ -221,7 +221,6 @@ def main():
 
 
 
-
     # Event loop.  The diner is always open.. loop forever
     while True:
 
