@@ -19,13 +19,6 @@ def signal_handling(signum,frame):
 sys.modules
 signal.signal(signal.SIGINT,signal_handling)
 
-#v0
-# Our first customer function just returns the first name of the customer.
-#def makeCustomer( firstName, lastName ):
-    #return firstName
-    
-#v1
-#Picking a random townsfolk and returning the first name
 
 def makeCustomer(townPeople):
     aCust=random.randint(0, len( townPeople ) - 1)
@@ -82,6 +75,26 @@ def pickFromMenus( anyTwoMenu ):
     return aFood,aDrink
     
     #This returns a random entire menu
+    
+#make chair returns a (dict) chair that will either be occupied or not
+def makeChair():
+    chair     = {"occupied" : False}
+    return chair
+    
+#get tables only returns tables/chairs for customers to sit at nothing else at this point
+def getTables():
+    table=["tableOne","tableTwo"]
+    chair=["chairOne","chairTwo"]
+    resturaunt = {table,chair}
+    x=makeChair()
+    y=makeChair()
+    z=makeChair()
+
+    return resturaunt
+    #x=makeChair()
+    y=makeChair()
+    z=makeChair()
+
 def getMenus():
     options = ["cookedRice","porridge","chili","bugs","yesterdays special"]
     drink=["oldFashoned",      "margarita",   "martini",       
@@ -204,6 +217,7 @@ def main():
     townsFolk = getTownsfolk()
     cookBook  = getCookBook()
     menu      = getMenus()
+    tables    = getTables()
 
     # init customers with 2 random people
     firstCust = makeCustomer(townsFolk)
