@@ -45,3 +45,13 @@ SEP 6
 work on XXX In gordon  
     see how far i get.
 do line 31 function thing and save it 
+
+SEP 13
+GET TABLES
+    TAKE ARGUMENTS that gettables should have # of TABLES
+        for each table make chairs
+            return a dictionary of TABLES  
+                for each dict of tables make dict of chairs
+                    for each dict of chairs make dict of occupied
+
+hint NESTED dictionary (COOKBOOK)
