@@ -90,6 +90,30 @@ def dessert( rawIngredients, cookBook ):
             break
     
     return coldFoodPlate
+
+
+def getTable():
+    riceCookerRecipes = {}
+    riceCookerRecipes["cookedRice"] = ["rawRice", "smallWater"]
+    riceCookerRecipes["porridge"]   = ["rawRice", "bigWater"]
+    riceCookerRecipes["chili"]      = ["beans", "meat","smallWater"]
+    
+    microwaveRecipes  = {}
+    microwaveRecipes["bugsoup"]            = ["bugs", "bigWater"]
+    microwaveRecipes["tea"]                = ["teaBag", "smallWater"]
+    microwaveRecipes["bugs"]               = ["bugs"]
+    microwaveRecipes["yesterdays special"] = ["teaBag", "bugs", "smallWater"]
+    microwaveRecipes["personal Pizza"]     = ["bread", "cheese", "tomatoSauce"]
+
+    dessertRecipes  = {}
+    dessertRecipes["iceCream"]             = ["icecream"]
+    dessertRecipes["chipIceCream"]         = ["icecream","chips"]
+
+    recipes ={}
+    recipes["riceCooker"] = riceCookerRecipes
+    recipes["microwave"]  = microwaveRecipes
+    recipes["dessert"]    = dessertRecipes
+    return recipes
 """
 def dishWash(dishwasher):
 #XXX this chunk needs to run only at "night" or when all of the dishes are used
