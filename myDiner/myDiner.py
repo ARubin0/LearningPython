@@ -82,70 +82,32 @@ def makeChair():
     return chair
     
 #get tables only returns tables/chairs for customers to sit at nothing else at this point
-def getTables():
-    table=["tableOne","tableTwo"]
-    chair=["chairOne","chairTwo,""chairThree","chairFour","chairFive","chairSix","chairSeven","chairEight",\
-           "chairNine","chairTen","chairEleven","chairTwelve","chairThirteen","chairFourteen","chairFifteen",\
-            "chairSixteen, chairSeventeen,chairEighteen"]
-    resturaunt = {table,chair}
-    a=makeChair() 
-    b=makeChair()
-    c=makeChair()
-    d=makeChair()
-    e=makeChair()
-    #5 chairs
-    f=makeChair()
-    g=makeChair()
-    h=makeChair()
-    i=makeChair()
-    j=makeChair()
-    #5 more chairs
-    k=makeChair()
-    l=makeChair()
-    m=makeChair()
-    n=makeChair()
-    o=makeChair()
-    #5 more chairs...
-    p=makeChair()
-    q=makeChair()
-    r=makeChair()
-    #last 3 chairs that makes 18 
-    return resturaunt
+#-tableCount- the number of small tables is the argument tableCount is the NON fixed Number of tables in the resturaunt 
+def getTables(tableCount):
+    """Create a set number of  table and chairs that 
+    the customers sit in and (occupy or dont)
+    for every table have two chairs 
+    known variables tableCount,
+    """
+    
+    tablesInUse = []
+    for  x in range(tableCount):
+        table ={}
+        table["chairOne"] = makeChair()
+        table["chairTwo"] = makeChair()
+        tablesInUse.append(table)
+
+    return  tablesInUse
     
     #20 current customers-so 10 tables+2 chairs per table= a perfect amount of seats (want less so wait time,8 tables+2 chairs=16 of 20 )
     # Deuce – A table with only two seating spaces. For example, “Seat this deuce at Table 
     #deuce["tableOne"] = ["tableOne","chairOne" ,"chairTwo"]
         #tableOne is made up of table One and two chairs and so on
 def getResturaunt():
-    deuce= {}
     
-    deuce["tableOne"]    = ["tableOne"  , "chairOne"       ,      "chairTwo"]
-    deuce["tableTwo"]    = ["tableTwo"  , "chairThree"     ,     "chairFour"]
-    deuce["tableThree"]  = ["tableThree", "chairFive"      ,      "chairSix"]
-    deuce["tableFour"]   = ["tableFour" , "chairSeven"     ,    "chairEight"]
-    deuce["tableFive"]   = ["tableFive" , "chairNine"      ,      "chairTen"]
-    deuce["tableSix"]    = ["tableSix"  , "chairEleven"    ,   "chairTwelve"]
-    deuce["tableSeven"]  = ["tableSeven", "chairThirteen"  , "chairFourteen"]
-    deuce["tableEight"]  = ["tableEight", "chairFifteen"   ,  "chairSixteen"]
-    deuce["tableNine"]   = ["tableNine" , "chairSeventeen" , "chairEighteen"]
+    return breakpoint
 
-    biggerTables  = {}
     
-    biggerTables["bigTableOne"] = ["tableOne,tableTwo"     , "chairOne"  , "chairTwo","chairThree","chairFour"]
-    biggerTables["bigTableTwo"] = ["tableThree,tableFour"  , "chairFive" , "chairSix","chairSeven","chairEight"]
-    
-    singleBigTable ={}
-    
-    singleBigTable ["annoyinglybigGroupOfPeople"]    = ["tableFive","tableSix","tableSeven","tableEight" , "chairNine","chairTen","chairEleven","chairTwelve",
-                                                        ,"chairThirteen","chairFourteen","chairFifteen","chairSixteen","chairSeventeen","chairEighteen"]
-    
-    
-
-    seating ={}
-    seating["table"] = deuce
-    seating["a bigger table"]  = biggerTables
-    seating["a biggest table"]= singleBigTable
-   
 def getMenus():
     options = ["cookedRice","porridge","chili","bugs","yesterdays special"]
     drink=["oldFashoned",      "margarita",   "martini",       
