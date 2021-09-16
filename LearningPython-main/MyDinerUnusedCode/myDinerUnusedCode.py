@@ -157,3 +157,78 @@ def pickFromDrinkMenu( anyDrinkMenu ):
     print ("this is the drink menu, what would you like?")
     print(anyDrinkMenu)
     return(random.choice(anyDrinkMenu))
+
+
+
+
+def makeChair():
+    chair     = {"occupied" : False}
+    return chair
+    
+#get tables only returns tables/chairs for customers to sit at nothing else at this point
+def getTables():
+    table=["tableOne","tableTwo"]
+    chair=["chairOne","chairTwo,""chairThree","chairFour","chairFive","chairSix","chairSeven","chairEight",\
+           "chairNine","chairTen","chairEleven","chairTwelve","chairThirteen","chairFourteen","chairFifteen",\
+            "chairSixteen, chairSeventeen,chairEighteen"]
+    resturaunt = {table,chair}
+    a=makeChair() 
+    b=makeChair()
+    c=makeChair()
+    d=makeChair()
+    e=makeChair()
+    #5 chairs
+    f=makeChair()
+    g=makeChair()
+    h=makeChair()
+    i=makeChair()
+    j=makeChair()
+    #5 more chairs
+    k=makeChair()
+    l=makeChair()
+    m=makeChair()
+    n=makeChair()
+    o=makeChair()
+    #5 more chairs...
+    p=makeChair()
+    q=makeChair()
+    r=makeChair()
+    #last 3 chairs that makes 18 
+    return resturaunt
+    
+    #20 current customers-so 10 tables+2 chairs per table= a perfect amount of seats (want less so wait time,8 tables+2 chairs=16 of 20 )
+    # Deuce – A table with only two seating spaces. For example, “Seat this deuce at Table 
+    #deuce["tableOne"] = ["tableOne","chairOne" ,"chairTwo"]
+        #tableOne is made up of table One and two chairs and so on
+def getResturaunt():
+    deuce= {}
+    
+    deuce["tableOne"]    = ["tableOne"  , "chairOne"       ,      "chairTwo"]
+    deuce["tableTwo"]    = ["tableTwo"  , "chairThree"     ,     "chairFour"]
+    deuce["tableThree"]  = ["tableThree", "chairFive"      ,      "chairSix"]
+    deuce["tableFour"]   = ["tableFour" , "chairSeven"     ,    "chairEight"]
+    deuce["tableFive"]   = ["tableFive" , "chairNine"      ,      "chairTen"]
+    deuce["tableSix"]    = ["tableSix"  , "chairEleven"    ,   "chairTwelve"]
+    deuce["tableSeven"]  = ["tableSeven", "chairThirteen"  , "chairFourteen"]
+    deuce["tableEight"]  = ["tableEight", "chairFifteen"   ,  "chairSixteen"]
+    deuce["tableNine"]   = ["tableNine" , "chairSeventeen" , "chairEighteen"]
+
+    biggerTables  = {}
+    
+    biggerTables["bigTableOne"] = ["tableOne,tableTwo"     , "chairOne"  , "chairTwo","chairThree","chairFour"]
+    biggerTables["bigTableTwo"] = ["tableThree,tableFour"  , "chairFive" , "chairSix","chairSeven","chairEight"]
+    
+    singleBigTable ={}
+    
+    singleBigTable ["annoyinglybigGroupOfPeople"]    = ["tableFive","tableSix","tableSeven","tableEight" , 
+                                                        "chairNine","chairTen","chairEleven","chairTwelve",
+                                                        "chairThirteen","chairFourteen","chairFifteen"
+                                                        ,"chairSixteen","chairSeventeen","chairEighteen"]
+    
+    
+
+    seating ={}
+    seating["table"] = deuce
+    seating["a bigger table"]  = biggerTables
+    seating["a biggest table"]= singleBigTable
+    
