@@ -98,11 +98,8 @@ def getTables(tableCount):
         tablesInUse.append(table)
 
     return  tablesInUse
-    
-    #20 current customers-so 10 tables+2 chairs per table= a perfect amount of seats (want less so wait time,8 tables+2 chairs=16 of 20 )
-    # Deuce – A table with only two seating spaces. For example, “Seat this deuce at Table 
-    #deuce["tableOne"] = ["tableOne","chairOne" ,"chairTwo"]
-        #tableOne is made up of table One and two chairs and so on
+
+
 def getResturaunt():
     
     return breakpoint
@@ -125,7 +122,6 @@ def getMenus():
 #d=drinksOnTap.append(random.choice(drink)) 
 # above doesnt work.(d) cant be set to no list. also creates more errors
 
-#XXX fixed 118-119 now (112-113) to look like 102 subtle bug prints twice doesnt save one 
 
 # XXX down the road, different cooks will have different menus
 
