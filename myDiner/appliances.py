@@ -5,32 +5,7 @@ import time
 import os
 import logging
 import random
-#from typing import NoReturn
 
-#from os import path
-
-"""
-#this is the "cook" function that is the finished product ["cooked rice"] = ["rawRice", "smallWater"]
-def riceCooker( rawIngredients ):
-    foodPlate = "cooked rice"
-    foodBowl  = "porridge"
-    bowlFood  = "chili"
-    # XXX if raw ingredients match a "riceCooker" recipe, set foodPlate to that.
-    
-    return [foodPlate, foodBowl, bowlFood]
-
-    #the other  "cook" function that is the finished product ->["bugs"] <- )) = ["rawRice", "smallWater"]
-def microWave ( rawIngredients ):
-    hotPlate    = "bugs"
-    hotBowl     = "bugsoup"
-    chunkyFood  = "yesterdays special"
-    hotLiquid   = "tea"
-    pizza       = "personal Pizza"
-
-    # XXX if raw ingredients match a "riceCooker" recipe, set foodPlate to that.
-    
-    return [hotPlate, hotBowl, chunkyFood, hotLiquid,pizza]
-"""
 
 # example function call:   foodPlate = riceCooker( ["rawRice", "smallWater","bowl"], cookBook]   will return "cookedRice"
 def riceCooker( rawIngredients, cookBook ):
@@ -90,30 +65,6 @@ def dessert( rawIngredients, cookBook ):
             break
     
     return coldFoodPlate
-
-
-def getTable():
-    riceCookerRecipes = {}
-    riceCookerRecipes["cookedRice"] = ["rawRice", "smallWater"]
-    riceCookerRecipes["porridge"]   = ["rawRice", "bigWater"]
-    riceCookerRecipes["chili"]      = ["beans", "meat","smallWater"]
-    
-    microwaveRecipes  = {}
-    microwaveRecipes["bugsoup"]            = ["bugs", "bigWater"]
-    microwaveRecipes["tea"]                = ["teaBag", "smallWater"]
-    microwaveRecipes["bugs"]               = ["bugs"]
-    microwaveRecipes["yesterdays special"] = ["teaBag", "bugs", "smallWater"]
-    microwaveRecipes["personal Pizza"]     = ["bread", "cheese", "tomatoSauce"]
-
-    dessertRecipes  = {}
-    dessertRecipes["iceCream"]             = ["icecream"]
-    dessertRecipes["chipIceCream"]         = ["icecream","chips"]
-
-    recipes ={}
-    recipes["riceCooker"] = riceCookerRecipes
-    recipes["microwave"]  = microwaveRecipes
-    recipes["dessert"]    = dessertRecipes
-    return recipes
 """
 def dishWash(dishwasher):
 #XXX this chunk needs to run only at "night" or when all of the dishes are used
@@ -127,4 +78,4 @@ def dishWash(dishwasher):
             print ("dishes are clean and ready")
             return x
             
-        """ 
+""" 
