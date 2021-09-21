@@ -1,7 +1,6 @@
 
 TODO
-# XXX clean
-# XXX build rest.
+# XXX build resturaunt .
 # XXX fix gordon
 # XXX prioritize todos
 # XXX add pythonNotes.txt, populate
