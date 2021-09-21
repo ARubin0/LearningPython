@@ -7,17 +7,7 @@ import logging
 import random
 import appliances
 
-"""
-    #example of how to call an appliance
-    #variable z is being set to the call of appliances.ricecooker with arguments of (list) and cookbook
-    z=appliances.riceCooker(["rawRice","smallWater"     ],cookBook)
 
-    for dish, recipeIngredients in riceCookerRecipes.items():
-        print("***",dish, recipeIngredients,"***")
-        if recipeIngredients == rawIngredients:
-            riceFoodPlate = dish
-            break
-"""
 
 # gordon takes food request from customer(waiter) cooks then gives finished food( good or bad ) to waiter to bring out for customer
 # Example function call; foodPlate=cooks.gordon( foodOrder,cookBook )

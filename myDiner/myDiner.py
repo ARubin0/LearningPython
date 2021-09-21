@@ -1,12 +1,11 @@
 #!/usr/bin/env python
-
+#system libraries
 import sys,os
 import signal,sys               # to check for user abort
 import random                   # to randomly select with the if/elif statements
 import time
 
-
-#from myDiner import drinkMenu                     # to sleep
+#local libraries 
 import appliances               # to do other things while keeping myDiner clean
 import cooks
 
@@ -25,7 +24,6 @@ def makeCustomer(townPeople):
     Cust=townPeople[aCust][0]
     return Cust
 
-#############################################              XXX MENU/ Recipes 
 #creates recipes and returns cookbook
 
 def getCookBook():
@@ -51,13 +49,6 @@ def getCookBook():
     recipes["dessert"]    = dessertRecipes
     return recipes
 
-#v1
-
-"""
-    random.choice(menuFood)
-    print(random.choice(menuFood))
-    y=random.choice(menuFood)
-"""
 
 #customer chooses a single food and drink from  menu
 #anyTwoMenu is a food and a drink menu being chosen by customer 
@@ -102,7 +93,7 @@ def getTables(tableCount):
 
 def getResturaunt():
     
-    return breakpoint
+    return 
 
     
 def getMenus():
@@ -118,10 +109,6 @@ def getMenus():
         #print("we  have " + random.choice(drink))
         d=drinksOnTap.append(random.choice(drink))
     return drinksOnTap,options
-
-#d=drinksOnTap.append(random.choice(drink)) 
-# above doesnt work.(d) cant be set to no list. also creates more errors
-
 
 # XXX down the road, different cooks will have different menus
 
@@ -139,13 +126,12 @@ def sendToKitchen( cookBook, foodOrder ):
 
     return foodPlate
 
-#XXX
 def waiter(Guy,Anthony):
     x=random.choice(waiter)
     g=Guy
     a=Anthony
     return g,a
-    #########################################  Menu/Recipe end
+
 
 def randCustEvent(maxNum):
     #Get Random Number 
@@ -153,7 +139,7 @@ def randCustEvent(maxNum):
 
     #based on random number choose random event
     if( eventRandom == 1 ):
-        print( "Where is everyone??" ) #use to be. where are my customers??
+        print( "Where is everyone??" ) 
 
     elif( eventRandom == 2 ):
         print( "a mouse scurries across the floor" )
@@ -216,17 +202,17 @@ def getTownsfolk(): # Currently 20 TOWNSFOLK
 
 
 # The main event loop that drives myDiner.
+#XXX clean up the constants MaxNum-tables 
 def main():
     
     print( "Alfonso's Diner is open for business!" )
     #(Initializing variables)
-    #drinkMenu = getDrinkMenu()
-    #menu     = getMenu()
+    #XXX drinkMenu = getDrinkMenu()
     maxNum    = 20 
     townsFolk = getTownsfolk()
     cookBook  = getCookBook()
     menu      = getMenus()
-    tables    = getTables()
+    tables    = getTables(10)
 
     # init customers with 2 random people
     firstCust = makeCustomer(townsFolk)
@@ -273,7 +259,6 @@ def main():
             tableOrder      = pickFromMenus(menu)
             #print (drinkOrder, foodOrder, + " thats a great dish!")
             print (tableOrder,"Great! we'll have them out for you shortly")
-            #time to make the food
             #hotFood=cookFood(cookBook,foodOrder)
             hotFood=sendToKitchen(cookBook,tableOrder)
             print (hotFood)
@@ -282,45 +267,6 @@ def main():
         print("")
         time.sleep(3)
 
-"""
-    # Event loop.  The diner is always open.. loop forever
-    while True:
-
-        # Check if we have a new customer
-        if( random.randint( 0, 10 ) < 3 ) :
-
-            newCust =makeCustomer(townsFolk)
-            print( newCust + " walks in." )
-            print( "Hi " + newCust + ".  Be right with you." )
-            customers.append( newCust )
-
-        serveCustomer = "---"
-        # Serve next customer in line, if there is one
-        if( len( customers ) > 0 ):
-            serveCustomer = customers.pop(0)
-
-        if( serveCustomer == "---" ) :
-            print( "Where are my customers??" )
-            # XXX add random event, like cook scratches his head
-            randCustEvent(maxNum)
-        else :
-            # XXX Take an order based on cooking implements.
-            print( "What can I get for you " + serveCustomer + " we currently have replaceme1 and replaceme2 as our specials" )
-            #
-            #foodOrder      = pickFromMenu(menu)
-            #drinkOrder     = pickFromDrinkMenu(drinkMenu)
-            tableOrder      = pickFromMenus(menu)
-            #print (drinkOrder, foodOrder, + " thats a great dish!")
-            print (tableOrder,"Great! we'll have them out for you shortly")
-            #time to make the food
-            #hotFood=cookFood(cookBook,foodOrder)
-            hotFood=cookFood(cookBook,tableOrder,)
-            print (hotFood)
-    
-        #wait
-        print("")
-        time.sleep(3)
-"""
 if __name__ == "__main__":
     main()
 
