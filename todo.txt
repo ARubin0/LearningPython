@@ -1,5 +1,11 @@
 
 TODO
+# XXX clean
+# XXX build rest.
+# XXX fix gordon
+# XXX prioritize todos
+# XXX add pythonNotes.txt, populate
+
 # XXX * if more townsfolk needed.https://www.name-generator.org.uk/?i=c
 # XXX add days, 24 hours, Diner closes from 1AM to 6AM.  event loop is 1 tick per hour.
 # XXX add cooks √
