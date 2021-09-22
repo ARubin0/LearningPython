@@ -18,20 +18,22 @@ import appliances
 
 def gordon (foodOrder,cookBook):
     for appliances, recipes in cookBook.items():
-        
+        #(ricecooker, cookedRice in cookbook)
         #print (appliances)
         # XXX use the cookbook to get the ingredients for the order
         # XXX cook looks up order in cookbook to find CookItem 
         # XXX use the cooking implement to make the food and return 
-        # XXX use the cookbook to get the ingredients for the order
+        
         for cookItem,ingredients in recipes.items():    
             #print( cookItem,ingredients )
             #appliances, cookItem, ingredients all combinations 
-            appliances, cookItem, ingredients 
-            if cookItem==foodOrder:
+            
+            print(cookItem,"*******************")
+            print(foodOrder,"*******************")
+            if cookItem==foodOrder[0]:             # XXX use the cooking implement to make the food and return 
+                
                 print ("gordon thinks to himself, now i can finish cooking this food" )
                 print ("im going to use", ingredients, "in", appliances," to make a" ,cookItem)
-                # XXX use the cookbook to get the ingredients for the order
             
             # x=appliances.riceCooker(["beans","meat","smallWater"],cookBook) # XXX use the cooking implement to make the food and return 
             # y=appliances.microwave(["bugs"         , "bigWater"] ,cookBook)
