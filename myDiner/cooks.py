@@ -17,25 +17,28 @@ import appliances
 #XXX CALL IN MAIN
 
 def gordon (foodOrder,cookBook):
-    for appliances, recipes in cookBook.items():
-        
+    #use the cookbook to get the ingredients for the order
+    #cook looks up order in cookbook to find CookItem 
+    for appliance, recipes in cookBook.items():
+        #(ricecooker, cookedRice in cookbook)
         #print (appliances)
-        # XXX use the cookbook to get the ingredients for the order
-        # XXX cook looks up order in cookbook to find CookItem 
-        # XXX use the cooking implement to make the food and return 
-        # XXX use the cookbook to get the ingredients for the order
+        
         for cookItem,ingredients in recipes.items():    
             #print( cookItem,ingredients )
             #appliances, cookItem, ingredients all combinations 
-            appliances, cookItem, ingredients 
-            if cookItem==foodOrder:
-                print ("gordon thinks to himself, now i can finish cooking this food" )
-                print ("im going to use", ingredients, "in", appliances," to make a" ,cookItem)
-                # XXX use the cookbook to get the ingredients for the order
             
-            # x=appliances.riceCooker(["beans","meat","smallWater"],cookBook) # XXX use the cooking implement to make the food and return 
-            # y=appliances.microwave(["bugs"         , "bigWater"] ,cookBook)
-            # z=appliances.dessert(["icecream"]                    ,cookBook)
+            if cookItem==foodOrder[0]:          
+                
+                print ("gordon thinks to himself, now i can finish cooking this food" )
+                print ("im going to use", ingredients, "in", appliance," to make a" ,cookItem)
+            
+                # XXX use the cooking implement to make the food and return 
+                if appliance[0]:
+                    x=appliance.riceCooker(["beans","meat","smallWater"],cookBook) 
+                elif appliance[1]:
+                    y=appliance.microwave(["bugs"         , "bigWater"] ,cookBook)
+                elif appliance.dessert[2]:
+                    z=appliance.dessert(["icecream"]                    ,cookBook)
             
             foodPlate="brownMush"
             
