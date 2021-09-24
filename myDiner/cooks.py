@@ -19,7 +19,9 @@ import appliances
 #XXX CALL IN MAIN
 
 def gordon (foodOrder,cookBook):
+    #foodPlate needs to be set as x,y, and z but cant print all at the same time
     foodPlate="brownMush"
+    
     #use the cookbook to get the ingredients for the order
     #cook looks up order in cookbook to find CookItem 
     for appliance, recipes in cookBook.items():
@@ -39,26 +41,17 @@ def gordon (foodOrder,cookBook):
                 #appliance might equal a string
                     #if the appliance equals ricecooker 
                 if appliance=="riceCooker":
-                    x=appliances.riceCooker(["beans","meat","smallWater"],cookBook) 
-                    print(x)
-                    #print ("****ricecooker*******")
+                    foodPlate=appliances.riceCooker(["beans","meat","smallWater"],cookBook) 
+                    print("****ricecooker******")
+
+
                 elif appliance=="microwave":
-                    y=appliances.microwave(["bugs"         , "bigWater"] ,cookBook)
-                    print(y)
-                    #print ("*****microwave******")
+                    foodPlate=appliances.microwave(["bugs"         , "bigWater"] ,cookBook)
+                    print("****microwave******")
+
                 elif appliance=="dessert":
-                    z=appliances.dessert(["icecream"]                    ,cookBook)
-                    print (z)
-                    #print ("****dessert*******")
-            
+                    foodPlate=appliances.dessert(["icecream"]                    ,cookBook)
+                    print ("****dessert******")
+                    
+                    
     return foodPlate #("finished food")?
-        
-"""
-    
-    #XXX call the right appliance with the recipe. for example : 
-    #    this goes here...z=appliances.riceCooker(["beans","meat","smallWater"],cookBook)
-    #    the line above, cook feeds raw ingredients to appliance(s)
-    
-    #XXX  remember, cook needs to return food from appliance as a foodplate for the waiter 
-    return foodPlate 
-"""

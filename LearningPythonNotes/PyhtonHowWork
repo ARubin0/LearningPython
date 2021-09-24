@@ -9,3 +9,38 @@
             riceFoodPlate = dish
             break
 """
+
+
+
+from cooks import gordon
+
+
+x=5 
+getTables(x)
+tables    = getTables("10") #string... this wont work with code below. just an example 
+tables    = getTables(10)
+#because tablecount is the argument a non fixed number, it can be set somewhere else (but doesnt have to be set)-
+# usually in a different file- above def as example
+
+def getTables(tableCount):
+    """Create a set number of  table and chairs that 
+    the customers sit in and (occupy or dont)
+    for every table have two chairs 
+    known variables tableCount,
+    """
+    
+    tablesInUse = []
+    for  x in range(tableCount):
+        table ={}
+        table["chairOne"] = makeChair()
+        table["chairTwo"] = makeChair()
+        tablesInUse.append(table)
+
+    return  tablesInUse
+
+#this is a function call. gordon is being called
+foodPlate=cooks.gordon( foodOrder,cookBook )
+other ways to call a function like gordon
+gordon( foodOrder,cookBook )
+gordon(x,y)
+gordon[a,b]

@@ -107,3 +107,5 @@ dessert {'iceCream': ['icecream'], 'chipIceCream': ['icecream', 'chips']}***
 
 
 """
+def hello(tape):
+    print (tape)
