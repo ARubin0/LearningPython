@@ -123,7 +123,7 @@ def sendToKitchen( cookBook, foodOrder ):
     #send food order to chosen cook
     if( cook=="Gordon" ):
         foodPlate=cooks.gordon( foodOrder,cookBook )
-
+    print("returning",foodPlate)
     return foodPlate
 
 def waiter(Guy,Anthony):
@@ -232,9 +232,9 @@ def main():
 
     # Event loop.  The diner is always open.. loop forever
     while True:
-
+        #
         # Check if we have a new customer
-        if( random.randint( 0, 10 ) < 3 ) :
+        if( random.randint( 0, 10 ) < 7 ) :
 
             newCust =makeCustomer(townsFolk)
             print( newCust + " walks in." )
