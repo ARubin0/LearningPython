@@ -41,17 +41,17 @@ def gordon (foodOrder,cookBook):
                 #appliance might equal a string
                     #if the appliance equals ricecooker 
                 if appliance=="riceCooker":
-                    foodPlate=appliances.riceCooker(["beans","meat","smallWater"],cookBook) 
-                    print("****ricecooker******")
+                    foodPlate=appliances.riceCooker(ingredients,cookBook) 
+                    print("****ricecooker******",foodPlate)
 
 
                 elif appliance=="microwave":
-                    foodPlate=appliances.microwave(["bugs"         , "bigWater"] ,cookBook)
-                    print("****microwave******")
+                    foodPlate=appliances.microwave(ingredients,cookBook)
+                    print("****microwave******",foodPlate)
 
                 elif appliance=="dessert":
-                    foodPlate=appliances.dessert(["icecream"]                    ,cookBook)
-                    print ("****dessert******")
+                    foodPlate=appliances.dessert(ingredients,cookBook)
+                    print ("****dessert******",foodPlate)
                     
                     
     return foodPlate #("finished food")?

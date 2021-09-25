@@ -15,16 +15,14 @@ def riceCooker( rawIngredients, cookBook ):
     #print( riceCookerRecipes)
 
     # if raw ingredients don't match a "riceCooker" recipe, iiiick
-    riceFoodPlate = "brownMush"
-    oatFoodPlate  = "brownMush"
-    chiliFoodPlate= "brownMush"
+    foodPlate = "brownMush"
     # run through riceCookerRecipes, look for rawIngredients that match a recipe, then get the food item.
     for dish, recipeIngredients in riceCookerRecipes.items():
         print("***",dish, recipeIngredients,"***")
         if recipeIngredients == rawIngredients:
-            riceFoodPlate = dish
+            foodPlate = dish
             break
-    return riceFoodPlate 
+    return foodPlate 
 
 
 def microwave( rawIngredients, cookBook ):
@@ -34,19 +32,15 @@ def microwave( rawIngredients, cookBook ):
     #print( microwaveRecipes)
 
     # if raw ingredients don't match a "microwave" recipe, iiiick
-    microFoodPlate = "brownMush"
-    teaFoodPlate   = "brownMush"
-    bugFoodPlate   = "brownMush"
-    specFoodPlate  = "brownMush"
-    pizzaFoodPlate = "brownMush"
+    foodPlate = "brownMush"
 
     # run through riceCookerRecipes, look for rawIngredients that match a recipe, then get the food item.
     for dish, recipeIngredients in microwaveRecipes.items():
         if recipeIngredients == rawIngredients:
-            microFoodPlate = dish
+            foodPlate = dish
             break
     
-    return microFoodPlate
+    return foodPlate
 
 def dessert( rawIngredients, cookBook ):
     #print( cookBook )
@@ -60,11 +54,11 @@ def dessert( rawIngredients, cookBook ):
     # run through riceCookerRecipes, look for rawIngredients that match a recipe, then get the food item.
     for dish, recipeIngredients in dessertRecipes.items():
         if recipeIngredients == rawIngredients:
-            coldFoodPlate = dish
-            chipFoodPlate = dish
+            foodPlate = dish
+
             break
     
-    return coldFoodPlate
+    return foodPlate
 """
 def dishWash(dishwasher):
 #XXX this chunk needs to run only at "night" or when all of the dishes are used
