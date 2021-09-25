@@ -116,21 +116,28 @@ def sendToKitchen( cookBook, foodOrder ):
     print ("the food is cooking");time.sleep (1) 
 
     #XXX randomly choose cook 
-    cook="Gordon"
+    cooks=["Gordon","Guy"]
+    cook=random.choice(cooks)
+    print ("****",cook)
     
     foodPlate="bronwMush"
     
     #send food order to chosen cook
     if( cook=="Gordon" ):
         foodPlate=cooks.gordon( foodOrder,cookBook )
+        print ("gordon is cooking")
+    elif( cook=="Guy" ):
+        foodPlate=cooks.guy( foodOrder,cookBook )
+        print ("guy is cooking")
+        
     print("returning",foodPlate)
     return foodPlate
 
-def waiter(Guy,Anthony):
+def waiter(Anthony):
     x=random.choice(waiter)
-    g=Guy
+    
     a=Anthony
-    return g,a
+    return a
 
 
 def randCustEvent(maxNum):
