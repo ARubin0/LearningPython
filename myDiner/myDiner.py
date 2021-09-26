@@ -110,27 +110,33 @@ def getMenus():
         d=drinksOnTap.append(random.choice(drink))
     return drinksOnTap,options
 
-# XXX down the road, different cooks will have different menus
-
+# TODO XXX down the road, different cooks will have different menus
+# sendToKitchen chooses a cook randomly to make food
 def sendToKitchen( cookBook, foodOrder ):
-    print ("the food is cooking");time.sleep (1) 
+    print( "the food is cooking" )
+    time.sleep(1) 
 
-    #XXX randomly choose cook 
-    cook="Gordon"
+    # randomly choose cook 
+    availableCooks=["Gordon", "Guy"]
+    cook=random.choice(availableCooks)
     
     foodPlate="bronwMush"
     
     #send food order to chosen cook
     if( cook=="Gordon" ):
-        foodPlate=cooks.gordon( foodOrder,cookBook )
-    print("returning",foodPlate)
+        print( "gordon is cooking" )
+        foodPlate=cooks.gordon( foodOrder, cookBook )
+    elif( cook=="Guy" ):
+        foodPlate=cooks.guy( foodOrder, cookBook )
+        print( "guy is cooking" )
+        
     return foodPlate
 
-def waiter(Guy,Anthony):
+def waiter(Anthony):
     x=random.choice(waiter)
-    g=Guy
+    
     a=Anthony
-    return g,a
+    return a
 
 
 def randCustEvent(maxNum):
