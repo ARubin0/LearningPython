@@ -8,7 +8,7 @@ import time
 #local libraries 
 import appliances               # to do other things while keeping myDiner clean
 import cooks
-
+import pprint
 
 # Abort handler
 def signal_handling(signum,frame):
@@ -112,17 +112,17 @@ def getMenus():
 
 # TODO XXX down the road, different cooks will have different menus
 # sendToKitchen chooses a cook randomly to make food
-def sendToKitchen( cookBook, foodOrder ):
+def sendToKitchen( cookBook, foodOrder, availCooks ):
     print( "the food is cooking" )
     time.sleep(1) 
 
     # randomly choose cook 
-    availableCooks=["Gordon", "Guy"]
-    cook=random.choice(availableCooks)
+    cook=random.choice(availCooks)
     
     foodPlate="bronwMush"
     
     #send food order to chosen cook
+    # XXX change to be useable with more than two cooks
     if( cook=="Gordon" ):
         print( "gordon is cooking" )
         foodPlate=cooks.gordon( foodOrder, cookBook )
@@ -132,51 +132,34 @@ def sendToKitchen( cookBook, foodOrder ):
         
     return foodPlate
 
+#XXX waiter can trip and lose the food 
 def waiter(Anthony):
     x=random.choice(waiter)
     
     a=Anthony
     return a
 
+# XXX change randcustEvent to mimic Getmenues Drink
+# XXX Next, use available COoks Wisely 
 
-def randCustEvent(maxNum):
-    #Get Random Number 
-    eventRandom = random.randint(0,maxNum)
+def randCustEvent():
 
-    #based on random number choose random event
-    if( eventRandom == 1 ):
-        print( "Where is everyone??" ) 
 
-    elif( eventRandom == 2 ):
-        print( "a mouse scurries across the floor" )
-
-    elif( eventRandom == 3 ):
-        print( "a cold wind passes bye" )
-
-    elif( eventRandom == 4 ):
-        print( "a car passes by the diner" )
-
-    elif( eventRandom == 5 ):
-        print( "a car speeds by the diner" )
-
-    elif( eventRandom == 6 ):
-        print( "Gordon coughs" )
-
-    elif( eventRandom == 7 ):
-        print( "Gordon scratches his head" )
-
-    elif( eventRandom == 8 ):
-        print( "Gordon coughs" )
-            
-    elif( eventRandom == 9 ):
-        print( "Gordon sneezes"  )
-
-    elif( eventRandom == 10 ):
-        print( "the jukebox changes songs" )
-
-    elif( eventRandom >=11 ):
-        print( "the lights flicker" )
-
+    randEvent= ["Where is everyone??",
+"a mouse scurries across the floor",
+"a cold wind passes bye",       
+"a car passes by the diner",           
+"Gordon coughs",
+"Guy coughs"
+"Gordon scratches his head",
+"Guy scratches his head",       
+"Gordon sneezes",      
+"Guy sneezes"
+"the jukebox skips a beat",
+"the lights flicker",
+]
+    r=(random.choice(randEvent))
+    return randEvent
 
 def getTownsfolk(): # Currently 20 TOWNSFOLK
     x =[ ["Sally", "Jean"],
@@ -202,6 +185,12 @@ def getTownsfolk(): # Currently 20 TOWNSFOLK
         ]
     return x
 
+def getCooks():# currently 2 
+    x =[["Gordon", "Ramsay"],
+        ["Guy"   , "fieri"]
+        ]
+    return x
+    
 # XXX deliver food from cook. 
 # XXX get customer feedback
 # XXX customer feedback 
@@ -214,11 +203,12 @@ def main():
     print( "Alfonso's Diner is open for business!" )
     #(Initializing variables)
     #XXX drinkMenu = getDrinkMenu()
-    maxNum    = 20 
-    townsFolk = getTownsfolk()
-    cookBook  = getCookBook()
-    menu      = getMenus()
-    tables    = getTables(10)
+    availableCooks = getCooks()
+    randEvent      = randCustEvent 
+    townsFolk      = getTownsfolk()
+    cookBook       = getCookBook()
+    menu           = getMenus()
+    tables         = getTables(10)
 
     # init customers with 2 random people
     firstCust = makeCustomer(townsFolk)
@@ -255,7 +245,7 @@ def main():
         if( serveCustomer == "---" ) :
             print( "Where are my customers??" )
             # XXX add random event, like cook scratches his head
-            randCustEvent(maxNum)
+            randEvent()
         else :
             # XXX Take an order based on cooking implements.
             print( "What can I get for you " + serveCustomer + " we currently have replaceme1 and replaceme2 as our specials" )
@@ -266,7 +256,7 @@ def main():
             #print (drinkOrder, foodOrder, + " thats a great dish!")
             print (tableOrder,"Great! we'll have them out for you shortly")
             #hotFood=cookFood(cookBook,foodOrder)
-            hotFood=sendToKitchen(cookBook,tableOrder)
+            hotFood=sendToKitchen(cookBook,tableOrder,availableCooks)
             print (hotFood)
     
         #wait

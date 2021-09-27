@@ -6,7 +6,21 @@ import os
 import logging
 import random
 
+# TODO XXX move to config later
+RICE_COOKER_BREAK_RATE=.05 #5%
 
+
+"""
+#XXX TODO
+i want to
+        “break” an appliance so it doesn’t work for a IE, return brown mush always
+            later, remove appliance from list of appliances
+        randomly break the appliance then
+                “set” period of time when a
+                wrong recipe
+                or a random time happens.
+
+"""
 # example function call:   foodPlate = riceCooker( ["rawRice", "smallWater","bowl"], cookBook]   will return "cookedRice"
 def riceCooker( rawIngredients, cookBook ):
     #print( cookBook )
@@ -15,12 +29,20 @@ def riceCooker( rawIngredients, cookBook ):
     #print( riceCookerRecipes)
 
     # if raw ingredients don't match a "riceCooker" recipe, iiiick
-    foodPlate = "brownMush"
+    foodPlate= "brownMush"
     # run through riceCookerRecipes, look for rawIngredients that match a recipe, then get the food item.
     for dish, recipeIngredients in riceCookerRecipes.items():
         print("***",dish, recipeIngredients,"***")
+        
         if recipeIngredients == rawIngredients:
-            foodPlate = dish
+            foodPlate = dish    
+            # XXX change this to use RC_break_rate             
+            badFood=random.randint(0,1) 
+            if badFood == 0:
+                print ("--------------------------------------------goodfood-")
+            elif badFood == 1:            
+                foodPlate = "brownMush"
+                print ("-badfoo000000000000000000000000000000000000000000000000000000000000d-")
             break
     return foodPlate 
 
@@ -34,7 +56,7 @@ def microwave( rawIngredients, cookBook ):
     # if raw ingredients don't match a "microwave" recipe, iiiick
     foodPlate = "brownMush"
 
-    # run through riceCookerRecipes, look for rawIngredients that match a recipe, then get the food item.
+    # run through microwaverecipes, look for rawIngredients that match a recipe, then get the food item.
     for dish, recipeIngredients in microwaveRecipes.items():
         if recipeIngredients == rawIngredients:
             foodPlate = dish
@@ -48,8 +70,7 @@ def dessert( rawIngredients, cookBook ):
     dessertRecipes = cookBook["dessert"]
     #print( dessertRecipes)
 
-    # if raw ingredients don't match a "dessert" recipe, its not "good" but not bad
-    coldFoodPlate = "this isnt what the customer ordered"
+
 
     # run through riceCookerRecipes, look for rawIngredients that match a recipe, then get the food item.
     for dish, recipeIngredients in dessertRecipes.items():
@@ -59,17 +80,13 @@ def dessert( rawIngredients, cookBook ):
             break
     
     return foodPlate
+
+
+
+
+
 """
 def dishWash(dishwasher):
 #XXX this chunk needs to run only at "night" or when all of the dishes are used
-    while True:
-        random.randit(1,5)
-        x = dish
-        if x <= 2:
-            print ("dishes are being washed")
-            time.sleep(1)
-        if x == 1:
-            print ("dishes are clean and ready")
-            return x
-            
+
 """ 
