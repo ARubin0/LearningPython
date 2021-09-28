@@ -139,26 +139,23 @@ def waiter(Anthony):
     a=Anthony
     return a
 
-# XXX change randcustEvent to mimic Getmenues Drink
-# XXX Next, use available COoks Wisely 
+# XXX Next, use  COoks Wisely 
 
 def randCustEvent():
 
-
-    randEvent= ["Where is everyone??",
-"a mouse scurries across the floor",
-"a cold wind passes bye",       
-"a car passes by the diner",           
-"Gordon coughs",
-"Guy coughs"
-"Gordon scratches his head",
-"Guy scratches his head",       
-"Gordon sneezes",      
-"Guy sneezes"
-"the jukebox skips a beat",
-"the lights flicker",
-]
-    r=(random.choice(randEvent))
+    r= ["Where is everyone??",
+                "a mouse scurries across the floor",
+                "a cold wind passes bye",       
+                "a car passes by the diner",           
+                "Gordon coughs",
+                "Guy coughs"
+                "Gordon scratches his head",
+                "Guy scratches his head",       
+                "Gordon sneezes",      
+                "Guy sneezes"
+                "the jukebox skips a beat",
+                "the lights flicker",]
+    randEvent=(random.choice(r))
     return randEvent
 
 def getTownsfolk(): # Currently 20 TOWNSFOLK
@@ -184,10 +181,12 @@ def getTownsfolk(): # Currently 20 TOWNSFOLK
         ["Sammi", "Jones"],
         ]
     return x
-
+ #Bobby Flay,Jamie Oliver, Rachael Ray,Paula Deen
 def getCooks():# currently 2 
     x =[["Gordon", "Ramsay"],
-        ["Guy"   , "fieri"]
+        ["Bobby"   , "Flay"],
+        ["Guy"   , "fieri"],
+        ["Jamie"   , "Oliver"]
         ]
     return x
     
@@ -204,7 +203,6 @@ def main():
     #(Initializing variables)
     #XXX drinkMenu = getDrinkMenu()
     availableCooks = getCooks()
-    randEvent      = randCustEvent 
     townsFolk      = getTownsfolk()
     cookBook       = getCookBook()
     menu           = getMenus()
@@ -229,8 +227,8 @@ def main():
     # Event loop.  The diner is always open.. loop forever
     while True:
         #
-        # Check if we have a new customer
-        if( random.randint( 0, 10 ) < 7 ) :
+        # Check if we have a new customer the normal number should be set to 4 (<4)
+        if( random.randint( 0, 10 ) < 1 ) :
 
             newCust =makeCustomer(townsFolk)
             print( newCust + " walks in." )
@@ -244,8 +242,9 @@ def main():
 
         if( serveCustomer == "---" ) :
             print( "Where are my customers??" )
-            # XXX add random event, like cook scratches his head
-            randEvent()
+            # add random event, like cook scratches his head
+            randEvent = randCustEvent()
+            print ( randEvent )
         else :
             # XXX Take an order based on cooking implements.
             print( "What can I get for you " + serveCustomer + " we currently have replaceme1 and replaceme2 as our specials" )
