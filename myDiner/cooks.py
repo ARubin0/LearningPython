@@ -9,12 +9,12 @@ import random
 from appliances import dessert, microwave, riceCooker
 import appliances
 
-
+#cooks will be similar too cookbook
+# (gordon is ricecooker and attributes as the recipe names /skilled appliances)(name. skill cook proficiency.with errror %)
 
 # gordon takes food request from customer(waiter) cooks then gives finished food( good or bad ) to waiter to bring out for customer
 #   foodOrder is customer order
 #   cookBook  is recipe
-
 def gordon (foodOrder,cookBook):
     foodPlate="brownMush"
     
