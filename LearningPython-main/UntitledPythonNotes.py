@@ -234,3 +234,14 @@ for x in kitchen:
 for y in cups:
     print(y)
     
+Square Brackets
+square brackets alone make a list ; [1,2] ,[a,b]
+square brackets next to a name means a modifier gordon["FirstName"] This is not a list
+                                                    ^defintion   ^word
+    meaning get the value of the first name of gordon 
+    a normal  non code dictionary has a word then definition 
+    a python dictionary also has a word then definition 
+    word: "firstName" 
+    a word is a "Key" in python
+    get the Definition:gordon["FirstName"]
+    

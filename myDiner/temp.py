@@ -7,8 +7,12 @@
 >>> x=temp.getCookBook() #when calling funct add name of file otherwise wrong/wont work
 
 """
+import pprint
 
-from appliances import riceCooker
+
+
+from cooks import gordon, guy
+
 
 
 def getCookBook():
@@ -33,79 +37,66 @@ def getCookBook():
     recipes["microwave"]  = microwaveRecipes
     recipes["dessert"]    = dessertRecipes
     return recipes
-
 cookBook=getCookBook()
-for appliance, recipes in cookBook.items():
-    for recipe,ingredients in recipes.items():
-        print( recipe,ingredients )
-
-
-def gordon (foodOrder,cookBook):
-    for appliances, recipes in cookBook.items():
-        print (appliances)
-        for recipe,ingredients in recipes.items():
-            print( recipe,ingredients )
 """
-        # XXX cook looks up order in cookbook to find recipe
-            for appliances, recipes in cookBook.items():
-        # XXX use the cookbook to get the ingredients for the order, then
-            for recipe,ingredients in recipes.items():
-        # XXX use the cooking implement to make the food and return 
-            in appliances.riceCooker
-                if recipeIngredients == rawIngredients:
-                    print ("foodplate")
-        # XXX call the right appliance with the recipe. for example :  foodPlate = appliances.riceCooker(["beans","meat","smallWater"],cookBook)
-            z=appliances.riceCooker(["rawRice","smallWater"     ],cookBook)
+def kitchenCooks():
+    gordon={}
+    #gordon# gets gordon object
+    gordon["firstName"]"# returns "gordon"
+    gordon["lastName"]# returns "Ramsay"
+    gordon["appliances"]# returns list of appliances gordon can cook with
+    gordon["skillLevel"]# returns a Dictionary with numbers and appliances from 1-10 indicating cooking errors % wise
+    gordon["skillLevel"]["riceCooker"]# returns a number from the above dictionary
+    gordon["pizzazz"]# returns a number from 1-10 on if the food is super great or normal
+
+    getOneCook= {}
+    getOneCook =["Gordon"]
+    getOneCook =["temp1"]
+    return getOneCook
+    """
+
+def kitchenCooks():
+    applianceSkills={}
+    applianceSkills["riceCooker"]= 1
+    applianceSkills["microwave"] = 3
+    applianceSkills["dessert"]   = 5
     
-        # XXX  remember, cook needs to return food from appliance as a foodplate for the waiter 
+    gordon={}
+    #gordon=getACook("Ramsay")# gets gordon object
+    gordon["firstName"] ="Gordon"# returns "gordon"
+    gordon["lastName"]  ="Ramsay"# returns "Ramsay"
+    gordon["appliances"]= ["ricecooker","microwave","dessert"]# returns list of appliances gordon can cook with
+    gordon["skillLevel"] = applianceSkills # returns a Dictionary with numbers and appliances from 1-10 indicating cooking errors % wise
+    gordon["pizzazz"] = 6 #  returns a number from 1-10 on if the food is super great or normal
+    #pprint.pp(gordon)
+   
+
+    gordon={}
+    #gordon# gets gordon object
+    gordon["firstName"]"# returns "gordon"
+    gordon["lastName"]# returns "Ramsay"
+    gordon["appliances"]# returns list of appliances gordon can cook with
+    gordon["skillLevel"]# returns a Dictionary with numbers and appliances from 1-10 indicating cooking errors % wise
+    gordon["skillLevel"]["riceCooker"]# returns a number from the above dictionary
+    gordon["pizzazz"]# returns a number from 1-10 on if the food is super great or normal
+    return guy,gordon
 
 """
-"""
-cookBook=temp.getCookBook()
-for appliance, recipes in cookBook.items():
-    for recipe in recipes:
-        print( recipe )
-
-
-
-
-
-
-for x in temp.getCookBook():
-    print (x)
-
-***riceCooker
-    microwave
-    dessert***
+#what Cooks could look like when similar to the cookBook
+def inStockCooks():#tempname 
+    Gordon = {}
+    Gordon["Skilled in using ricecooker"] = ["Percent of errors cooking and making mush 5% of 100%", "percent of Errors with equipment 9% of 100%"]
  
+    
+    Guy  = {}
+    Guy["skillled in"]            = ["Cook Errors % of % ", "Equipment Errors % of %"]
 
-for y in temp.getCookBook().items():
-    print (y)
+    otherCook  = {}
+    otherCook["ok with"]             = ["Cook Error % of % , Equipment Error % of % "]
 
-
-
-***('riceCooker', {'cookedRice': ['rawRice', 'smallWater'], 'porridge': ['rawRice', 'bigWater'], 'chili': ['beans', 'meat', 'smallWater']})
-('microwave', {'bugsoup': ['bugs', 'bigWater'], 'tea': ['teaBag', 'smallWater'], 'bugs': ['bugs'], 'yesterdays special': ['teaBag', 'bugs', 'smallWater'], 'personal Pizza': ['bread', 'cheese', 'tomatoSauce']})
-('dessert', {'iceCream': ['icecream'], 'chipIceCream': ['icecream', 'chips']})***
-
-x=temp.getCookBook()
-for y in x.items():
-    print (y)
-
-***('riceCooker', {'cookedRice': ['rawRice', 'smallWater'], 'porridge': ['rawRice', 'bigWater'], 'chili': ['beans', 'meat', 'smallWater']})
-('microwave', {'bugsoup': ['bugs', 'bigWater'], 'tea': ['teaBag', 'smallWater'], 'bugs': ['bugs'], 'yesterdays special': ['teaBag', 'bugs', 'smallWater'], 'personal Pizza': ['bread', 'cheese', 'tomatoSauce']})
-('dessert', {'iceCream': ['icecream'], 'chipIceCream': ['icecream', 'chips']})***
-
-
-for cookBook,recipe in x.items():
-    print (cookBook,recipe)
-
-***riceCooker {'cookedRice': ['rawRice', 'smallWater'], 'porridge': ['rawRice', 'bigWater'], 'chili': ['beans', 'meat', 'smallWater']}
-microwave {'bugsoup': ['bugs', 'bigWater'], 'tea': ['teaBag', 'smallWater'], 'bugs': ['bugs'], 'yesterdays special': ['teaBag', 'bugs', 'smallWater'], 'personal Pizza': ['bread', 'cheese', 'tomatoSauce']}
-dessert {'iceCream': ['icecream'], 'chipIceCream': ['icecream', 'chips']}***
-
-
-
+    freeCooks ={}
+    freeCooks["Gordon"]      = Gordon
+    freeCooks["Guy"]         = Guy
+    freeCooks["otherCook"]   = otherCook
+    return freeCooks
 """
-def hello(tape):
-    print (tape)

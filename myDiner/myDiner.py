@@ -138,9 +138,9 @@ def waiter(Anthony):
     
     a=Anthony
     return a
-
 # XXX Next, use  COoks Wisely 
 
+ 
 def randCustEvent():
 
     r= ["Where is everyone??",
@@ -159,35 +159,68 @@ def randCustEvent():
     return randEvent
 
 def getTownsfolk(): # Currently 20 TOWNSFOLK
-    x =[ ["Sally", "Jean"],
-        ["Billy", "Rae"],
-        ["Samantha", "Johnson"],
-        ["Jessica", "Wilson"],
-        ["Ashley", "Williams"],
-        ["Amber", "Moore"],
-        ["Albert", "Hodge"],
-        ["Benjamin", "Nash"],
-        ["Samuel", "White"],
-        ["James", "Torres"],
-        ["Megan", "Rodriguez"],
-        ["Lucky", "Miller"],
-        ["Georgia", "Brown"],
-        ["Charlotte", "Smith"],
-        ["George", "Michael"],
-        ["Carlos", "Santana"],
-        ["Goob", "Banner"],
-        ["Zack", "Felt"],
-        ["Bobby", "Smith"],
-        ["Sammi", "Jones"],
-        ]
+    x =[ ["Sally", "Jean"]      ,["Billy", "Rae"],
+        ["Samantha", "Johnson"] ,["Jessica", "Wilson"],
+        ["Ashley", "Williams"]  ,["Amber", "Moore"],
+        ["Albert", "Hodge"]     ,["Benjamin", "Nash"],
+        ["Samuel", "White"]     ,["James", "Torres"],
+        ["Megan", "Rodriguez"]  ,["Lucky", "Miller"],
+        ["Georgia","Brown"]     ,["Charlotte", "Smith"],
+        ["George", "Michael"]   ,["Carlos", "Santana"],
+        ["Goob", "Banner"]      ,["Zack", "Felt"],
+        ["Bobby", "Smith"]      ,["Sammi", "Jones"],
+        ["Josephine", "Goodman"],["Poppy, Trejo"],
+        ["Cooper,", "Luna"]     ,["Angelo, Ward"],
+        ["Eileen", "Gardiner"]  ,["Milena" ,"Walmsley"],
+        ["Marcelina", "Mccall"] ,["Daniella" ,"Pemberton"],
+        ["Whitney", "Hooper"]   ,["Ezra","Hickman"],
+        ["Colleen", "Wilson"]   ,["Rae"," Lawson"],
+        ["Mylie", "Zimmerman"]  ,["Tye","Larson"],
+        ["Merryn", "Andrade"]   ,["Lacey"," Ellison"],
+        ["Kiri"," Burn"]        ,["Felicity","Bain"],
+        ["Taybah", "Norton"]    ,["Sean","Rivers"],
+        ["Paisley", "Goulding"] ,["Tahlia Russo"],
+        ["Lucy"," Garner"]      ,["Stuart","Faulkner"],
+        ["Alissia ", "Lennon"]  ,["Amy"," Mills"],
+        ["Brendan"," Mcgill"]   ,["Summer","Kirkland"],
+        ["Zach"," Davie"]       ,["Zack","Bautista"],
+        ["Mason"," Prince"]     ,["Jonah","Tanner"],
+        ["Aidan"," Newman"]     ,["Gracie","Mill"],
+        ["Carmen ", "Mccallum"] ,["Macsen","Snider"],
+        ["Momina"," Feeney"]    ,["Rick","Vang"],
+        ["Tristan ", "Dowling"] ,["David","Lamb"],
+        ["Alexander", "Aguilar"],["Dru","Weston"],
+        ["Kaitlin ", "Robins"]  ,["Fay","Peralta"],
+        ["Yasin ", "Davila"]    ,["Giselle ","Armita"],
+        ["Grace"," Baldwin"]    ,["Rafe","Perkins"],
+        ["Dean"," Dudley"]      ,["Naomi","Bate"],
+        ["Eduard ","Finch"]     ,["Patric","Schneider"]]
+
+
     return x
- #Bobby Flay,Jamie Oliver, Rachael Ray,Paula Deen
+#Bobby Flay,Jamie Oliver, Rachael Ray,Paula Deen
 def getCooks():# currently 2 
     x =[["Gordon", "Ramsay"],
         ["Bobby"   , "Flay"],
         ["Guy"   , "fieri"],
         ["Jamie"   , "Oliver"]
         ]
+    """
+    # this will turn into something like below
+    x={}
+    x["Ramsay"] = cooks.makeCook()
+    cooks.setFirstName(x["Ramsay"], "Gordon")
+    cooks.setLastName(x["Ramsay"] , "Ramsay")
+    cooks.setSkilllevel(x["Ramsay"],"riceCooker",7 )
+    cooks.setPizzazz(x["Ramsay"],   4)
+    
+    # Need a Set last name 
+    # set appliance Skill level
+    # and Flair/pizzazz level
+    
+    
+    x["Fieri"]  = cooks.makeCook()
+    """
     return x
     
 # XXX deliver food from cook. 
@@ -207,7 +240,7 @@ def main():
     cookBook       = getCookBook()
     menu           = getMenus()
     tables         = getTables(10)
-
+    
     # init customers with 2 random people
     firstCust = makeCustomer(townsFolk)
     secCust   = makeCustomer(townsFolk) 
@@ -264,4 +297,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+#
+
 
