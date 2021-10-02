@@ -138,9 +138,9 @@ def waiter(Anthony):
     
     a=Anthony
     return a
-
 # XXX Next, use  COoks Wisely 
 
+ 
 def randCustEvent():
 
     r= ["Where is everyone??",
@@ -196,14 +196,31 @@ def getTownsfolk(): # Currently 20 TOWNSFOLK
         ["Dean"," Dudley"]      ,["Naomi","Bate"],
         ["Eduard ","Finch"]     ,["Patric","Schneider"]]
 
+
     return x
- #Bobby Flay,Jamie Oliver, Rachael Ray,Paula Deen
+#Bobby Flay,Jamie Oliver, Rachael Ray,Paula Deen
 def getCooks():# currently 2 
     x =[["Gordon", "Ramsay"],
         ["Bobby"   , "Flay"],
         ["Guy"   , "fieri"],
         ["Jamie"   , "Oliver"]
         ]
+    """
+    # this will turn into something like below
+    x={}
+    x["Ramsay"] = cooks.makeCook()
+    cooks.setFirstName(x["Ramsay"], "Gordon")
+    cooks.setLastName(x["Ramsay"] , "Ramsay")
+    cooks.setSkilllevel(x["Ramsay"],"riceCooker",7 )
+    cooks.setPizzazz(x["Ramsay"],   4)
+    
+    # Need a Set last name 
+    # set appliance Skill level
+    # and Flair/pizzazz level
+    
+    
+    x["Fieri"]  = cooks.makeCook()
+    """
     return x
     
 # XXX deliver food from cook. 
@@ -223,7 +240,7 @@ def main():
     cookBook       = getCookBook()
     menu           = getMenus()
     tables         = getTables(10)
-
+    
     # init customers with 2 random people
     firstCust = makeCustomer(townsFolk)
     secCust   = makeCustomer(townsFolk) 
@@ -280,4 +297,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+#
+
 

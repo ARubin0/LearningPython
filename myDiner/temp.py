@@ -69,7 +69,18 @@ def kitchenCooks():
     gordon["skillLevel"] = applianceSkills # returns a Dictionary with numbers and appliances from 1-10 indicating cooking errors % wise
     gordon["pizzazz"] = 6 #  returns a number from 1-10 on if the food is super great or normal
     #pprint.pp(gordon)
-    return gordon
+   
+
+    gordon={}
+    #gordon# gets gordon object
+    gordon["firstName"]"# returns "gordon"
+    gordon["lastName"]# returns "Ramsay"
+    gordon["appliances"]# returns list of appliances gordon can cook with
+    gordon["skillLevel"]# returns a Dictionary with numbers and appliances from 1-10 indicating cooking errors % wise
+    gordon["skillLevel"]["riceCooker"]# returns a number from the above dictionary
+    gordon["pizzazz"]# returns a number from 1-10 on if the food is super great or normal
+    return guy,gordon
+
 """
 #what Cooks could look like when similar to the cookBook
 def inStockCooks():#tempname 
