@@ -74,7 +74,6 @@ def guy (foodOrder,cookBook):
                     foodPlate=appliances.dessert(ingredients,cookBook)
                     print ("****dessert******",foodPlate)
 
-                    
     return foodPlate #("finished food")
 
 def kitchenCooksTemp():
@@ -130,8 +129,8 @@ def setLastName(aCook,lName):
     #cooks.setSkilllevel(x["Ramsay"],"riceCooker",7 ) 
     # cook is makeCook() / ricecooker(appliance)/ pizzazz number 
 def setSkillLevel(cook,appliance,num):
-    x["tramwaysErectersskillLevel"]=cook,appliance,num
-    return 
+    cook["skillLevel"][appliance]=num
+    return  
 
 
     cooks.setLastName(x["Ramsay"] , "Ramsay")

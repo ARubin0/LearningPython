@@ -1,4 +1,5 @@
 
+dont forget to save the result of the function x=hello()
 
 
 Difference between  # A and B is 8 and 13 heads tabbed in when it shouldnt be otherwise it "breaks" the code otherwise code continues to print 
@@ -245,3 +246,30 @@ square brackets next to a name means a modifier gordon["FirstName"] This is not 
     a word is a "Key" in python
     get the Definition:gordon["FirstName"]
     
+    
+DICT #
+#code speak : getting the entry firstName in the gordon dictionary 
+gordon["firstName"]
+
+# code speak : setting the first name entry in gordon, to john
+gordon["firstName"] ="john"
+
+# code speak : we set gordon to makeCook 
+gordon = makeCook()
+
+get riceCooker skillLevel of Cook
+>>> cook["skillLevel"]
+{'riceCooker': 1, 'microwave': 3, 'dessert': 5, 'appliance': 1}
+>>> cook["skillLevel"]["riceCooker"]
+1
+>>>
+#?IM STUCK SIMPLIFIED
+1. Write down exactly what you want to do
+
+
+2: Write down what you know
+
+
+3: Divide & Conquer: Break the problem into smaller pieces
+
+
