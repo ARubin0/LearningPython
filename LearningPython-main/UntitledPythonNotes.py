@@ -248,6 +248,14 @@ square brackets next to a name means a modifier gordon["FirstName"] This is not 
     
     
 DICT #
+# everything within square brackets has to evaluate to be a string
+cheese="firstName"
+gordon[cheese]      # works because cheese evaluates to become string firstname  
+gordon["firstName"] # works because string evaluates to be a string
+cheese=1            #
+gordon[cheese]      # does not work because it does not evaluate to be a string
+
+
 #code speak : getting the entry firstName in the gordon dictionary 
 gordon["firstName"]
 
@@ -262,7 +270,7 @@ get riceCooker skillLevel of Cook
 {'riceCooker': 1, 'microwave': 3, 'dessert': 5, 'appliance': 1}
 >>> cook["skillLevel"]["riceCooker"]
 1
->>>
+
 #?IM STUCK SIMPLIFIED
 1. Write down exactly what you want to do
 
@@ -272,4 +280,5 @@ get riceCooker skillLevel of Cook
 
 3: Divide & Conquer: Break the problem into smaller pieces
 
+4. use Python Interpreter 
 

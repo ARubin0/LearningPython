@@ -117,21 +117,25 @@ def makeCook():
     #pprint.pp(aCook)
     return aCook
 
-# XXX Pass by value Pass by Refrence
+
 def setFirstName(aCook,aName):
     aCook["firstName"] = aName
     return
-    
+
+
 def setLastName(aCook,lName):
     aCook["lastName"] = lName
     return
 
-    #cooks.setSkilllevel(x["Ramsay"],"riceCooker",7 ) 
-    # cook is makeCook() / ricecooker(appliance)/ pizzazz number 
+# cook is makeCook() / ricecooker(appliance)/ pizzazz number 
+# cooks.setSkilllevel(x["Ramsay"],"riceCooker",7 ) 
+# XXX TODO fix appliance if not in appliance to not do anything and return -1...or  Assert instead
 def setSkillLevel(cook,appliance,num):
     cook["skillLevel"][appliance]=num
     return  
 
 
-    cooks.setLastName(x["Ramsay"] , "Ramsay")
-    cooks.setPizzazz(x["Ramsay"],   4)
+def setPizzazz(aCook,num):
+    # code speak : setting the pizzazz entry in aCook, to num
+    aCook["pizzazz"]=num
+    return

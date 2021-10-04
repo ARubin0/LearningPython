@@ -58,10 +58,10 @@ def pickFromMenus( anyTwoMenu ):
     menuDrink=anyTwoMenu[0]
     
     aFood=random.choice(menuFood)
-    #print(afood)
+    #print(aFood)
 
     aDrink=random.choice(menuDrink)
-    #print(adrink)
+    #print(aFrink)
 
     return aFood,aDrink
     
@@ -198,20 +198,78 @@ def getTownsfolk(): # Currently 20 TOWNSFOLK
 
 
     return x
-#Bobby Flay,Jamie Oliver, Rachael Ray,Paula Deen
-def getCooks():# currently 2 
+
+
+
+# TODO setup cooks using cooks.set* interface
+def getCooks():# currently 6
     x =[["Gordon", "Ramsay"],
         ["Bobby"   , "Flay"],
         ["Guy"   , "fieri"],
         ["Jamie"   , "Oliver"]
+        ["Rachael"   , "Ray"]
+        ["Paula"   , "Deen"]
         ]
     """
+Gordon=makeCook()
+setFirstName(Gordon,"Gordon")
+setLastName(Gordon,"Ramsay")
+setPizzazz(Gordon,3)
+setSkillLevel(Gordon,"riceCooker"5)
+setSkillLevel(Gordon,"microwave"5)
+setSkillLevel(Gordon,"dessert"5)
+
+
+Bobby=makeCook()
+setFirstName(Bobby,"Bobby")
+setLastName(Bobby,"Flay")
+setPizzazz(Bobby,3)
+setSkillLevel(Bobby,"riceCooker"5)
+setSkillLevel(Bobby,"microwave"5)
+setSkillLevel(Bobby,"dessert"5)
+
+Guy=makeCook()
+setFirstName(Guy,"Guy")
+setLastName(Guy,"Fieri")
+setPizzazz(Guy,3)
+setSkillLevel(Guy,"riceCooker"5)
+setSkillLevel(Guy,"microwave"5)
+setSkillLevel(Guy,"dessert"5)
+
+Jamie=makeCook()
+setFirstName(Jamie,"Jamie")
+setLastName(Jamie,"Oliver")
+setPizzazz(Jamie,5)
+setSkillLevel(Jamie,"riceCooker"5)
+setSkillLevel(Jamie,"microwave"5)
+setSkillLevel(Jamie,"dessert"5)
+
+
+Rachel=makeCook()
+setFirstName(Rachel,"Rachel")
+setLastName(Rachel,"Ray")
+setPizzazz(Rachel,5)
+setSkillLevel(Rachel,"riceCooker"5)
+setSkillLevel(Rachel,"microwave"5)
+setSkillLevel(Rachel,"dessert"5)
+
+Paula=makeCook()
+setFirstName(Paula,"Paula")
+setLastName(Paula,"Deen")
+setPizzazz(Paula,5)
+setSkillLevel(Paula,"riceCooker"5)
+setSkillLevel(Paula,"microwave"5)
+setSkillLevel(Paula,"dessert"5)
+
+
+
+
     # this will turn into something like below
     x={}
     x["Ramsay"] = cooks.makeCook()
-    cooks.setFirstName(x["Ramsay"], "Gordon")
-    cooks.setLastName(x["Ramsay"] , "Ramsay")
-    cooks.setSkilllevel(x["Ramsay"],"riceCooker",7 )
+    cooks.setFirstName(x["Ramsay"],     "Gordon")
+    cooks.setLastName(x["Ramsay"] ,     "Ramsay")
+    cooks.setSkilllevel(x["Ramsay"],    "riceCooker",   7   )
     cooks.setPizzazz(x["Ramsay"],   4)
     
     # Need a Set last name 
@@ -298,5 +356,3 @@ def main():
 if __name__ == "__main__":
     main()
 #
-
-
