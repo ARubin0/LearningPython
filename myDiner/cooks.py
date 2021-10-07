@@ -100,12 +100,12 @@ def kitchenCooksTemp():
     #pprint.pp(guy)
 
     return guy,gordon
-
+#1 is worst 10 is best
 def makeCook():
     applianceSkills={}
-    applianceSkills["riceCooker"]= 1
-    applianceSkills["microwave"] = 3
-    applianceSkills["dessert"]   = 5
+    applianceSkills["riceCooker"]= 3
+    applianceSkills["microwave"] = 6
+    applianceSkills["dessert"]   = 8
     
     aCook={}# to be changed later
     #gordon=getACook("Ramsay")# gets gordon object
@@ -113,7 +113,7 @@ def makeCook():
     aCook["lastName"]  ="aCook"# returns "Ramsay"
     aCook["appliances"]= ["::ricecooker::","::microwave::","::dessert::"]# returns list of appliances gordon can cook with
     aCook["skillLevel"] = applianceSkills # returns a Dictionary with numbers and appliances from 1-10 indicating cooking errors % wise
-    aCook["pizzazz"] = 6 #  returns a number from 1-10 on if the food is super great or normal
+    aCook["pizzazz"] = 1 #  returns a number from 1-10 on if the food is super great or normal
     #pprint.pp(aCook)
     return aCook
 

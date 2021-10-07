@@ -27,3 +27,12 @@ finish appliances functions and calls with riceCooker microwave and dessert
 
 SEP 13
 
+
+
+TODO
+        MYDINER
+                make sendtokitchen work for all of the cooks, dict.items() makes it looks nice 
+                
+        cooks
+                combine GORDON AND GUY that takes the cook dict and does the cooking
+

@@ -117,18 +117,24 @@ def sendToKitchen( cookBook, foodOrder, availCooks ):
     time.sleep(1) 
 
     # randomly choose cook 
-    cook=random.choice(availCooks)
-    
+    #cook=random.choice(availCooks)
+    cook = random.choice(list(availCooks.values()))
     foodPlate="bronwMush"
     
     #send food order to chosen cook
     # XXX change to be useable with more than two cooks
+    if( cook["firstName"]=="Gordon" ): 
+        print( "gordon is cooking" )
+        foodPlate=cooks.gordon( foodOrder, cookBook )
+    """
     if( cook=="Gordon" ):
         print( "gordon is cooking" )
         foodPlate=cooks.gordon( foodOrder, cookBook )
     elif( cook=="Guy" ):
         foodPlate=cooks.guy( foodOrder, cookBook )
         print( "guy is cooking" )
+        
+"""
         
     return foodPlate
 
@@ -203,84 +209,49 @@ def getTownsfolk(): # Currently 20 TOWNSFOLK
 
 # TODO setup cooks using cooks.set* interface
 def getCooks():# currently 6
-    x =[["Gordon", "Ramsay"],
-        ["Bobby"   , "Flay"],
-        ["Guy"   , "fieri"],
-        ["Jamie"   , "Oliver"]
-        ["Rachael"   , "Ray"]
-        ["Paula"   , "Deen"]
-        ]
-    """
-Gordon=makeCook()
-setFirstName(Gordon,"Gordon")
-setLastName(Gordon,"Ramsay")
-setPizzazz(Gordon,3)
-setSkillLevel(Gordon,"riceCooker"5)
-setSkillLevel(Gordon,"microwave"5)
-setSkillLevel(Gordon,"dessert"5)
+    x ={}
 
-
-Bobby=makeCook()
-setFirstName(Bobby,"Bobby")
-setLastName(Bobby,"Flay")
-setPizzazz(Bobby,3)
-setSkillLevel(Bobby,"riceCooker"5)
-setSkillLevel(Bobby,"microwave"5)
-setSkillLevel(Bobby,"dessert"5)
-
-Guy=makeCook()
-setFirstName(Guy,"Guy")
-setLastName(Guy,"Fieri")
-setPizzazz(Guy,3)
-setSkillLevel(Guy,"riceCooker"5)
-setSkillLevel(Guy,"microwave"5)
-setSkillLevel(Guy,"dessert"5)
-
-Jamie=makeCook()
-setFirstName(Jamie,"Jamie")
-setLastName(Jamie,"Oliver")
-setPizzazz(Jamie,5)
-setSkillLevel(Jamie,"riceCooker"5)
-setSkillLevel(Jamie,"microwave"5)
-setSkillLevel(Jamie,"dessert"5)
-
-
-Rachel=makeCook()
-setFirstName(Rachel,"Rachel")
-setLastName(Rachel,"Ray")
-setPizzazz(Rachel,5)
-setSkillLevel(Rachel,"riceCooker"5)
-setSkillLevel(Rachel,"microwave"5)
-setSkillLevel(Rachel,"dessert"5)
-
-Paula=makeCook()
-setFirstName(Paula,"Paula")
-setLastName(Paula,"Deen")
-setPizzazz(Paula,5)
-setSkillLevel(Paula,"riceCooker"5)
-setSkillLevel(Paula,"microwave"5)
-setSkillLevel(Paula,"dessert"5)
-
-
-
-
-    # this will turn into something like below
-    x={}
-    x["Ramsay"] = cooks.makeCook()
-    cooks.setFirstName(x["Ramsay"],     "Gordon")
-    cooks.setLastName(x["Ramsay"] ,     "Ramsay")
-    cooks.setSkilllevel(x["Ramsay"],    "riceCooker",   7   )
-    cooks.setPizzazz(x["Ramsay"],   4)
-    
-    # Need a Set last name 
-    # set appliance Skill level
-    # and Flair/pizzazz level
-    
-    
-    x["Fieri"]  = cooks.makeCook()
-    """
+    Gordon=cooks.makeCook()
+    cooks.setFirstName(Gordon,"Gordon")
+    cooks.setLastName(Gordon,"Ramsay")
+    cooks.setPizzazz(Gordon,3)
+    cooks.setSkillLevel(Gordon,"riceCooker",5)
+    cooks.setSkillLevel(Gordon,"microwave",5)
+    cooks.setSkillLevel(Gordon,"dessert",5)
+    x["Gordon"]= Gordon
     return x
+
+
+    Bobby=cooks.makeCook()
+    cooks.setFirstName(Bobby,"Bobby")
+    cooks.setLastName(Bobby,"Flay")
+    x["Bobby"]= Bobby
     
+    Guy=cooks.makeCook()
+    cooks.setFirstName(Guy,"Guy")
+    cooks.setLastName(Guy,"Fieri")
+    x["Guy"]=Guy
+    
+    Jamie= {}
+    Jamie=cooks.makeCook()
+    cooks.setFirstName(Jamie,"Jamie")
+    cooks.setLastName(Jamie,"Oliver")
+    x["Jamie"]= Jamie
+    
+    Rachel= {}
+    Rachel=cooks.makeCook()
+    cooks.setFirstName(Rachel,"Rachel")
+    cooks.setLastName(Rachel,"Ray")
+    x["Rachel"]=Rachel
+
+    Paula = {}
+    Paula=cooks.makeCook()
+    cooks.setFirstName(Paula,"Paula")
+    cooks.setLastName(Paula,"Deen")
+    x["Paula"]=Paula
+
+    return x
+
 # XXX deliver food from cook. 
 # XXX get customer feedback
 # XXX customer feedback 
