@@ -58,10 +58,10 @@ def pickFromMenus( anyTwoMenu ):
     menuDrink=anyTwoMenu[0]
     
     aFood=random.choice(menuFood)
-    #print(afood)
+    #print(aFood)
 
     aDrink=random.choice(menuDrink)
-    #print(adrink)
+    #print(aFrink)
 
     return aFood,aDrink
     
@@ -117,18 +117,57 @@ def sendToKitchen( cookBook, foodOrder, availCooks ):
     time.sleep(1) 
 
     # randomly choose cook 
-    cook=random.choice(availCooks)
-    
+    #cook=random.choice(availCooks)
+    cook = random.choice(list(availCooks.values()))
     foodPlate="bronwMush"
-    
+    # cook dictionary
+    if( getCooks.items()["firstName"]=="Gordon" ): 
+        print( ["firstName"], "is cooking" )
+        foodPlate=cooks.gordon( foodOrder, cookBook )
+    if( getCooks.items()["firstName"]=="Guy" ): 
+        print( ["firstName"],"is cooking" )
+        foodPlate=cooks.gordon( foodOrder, cookBook )
+    if( getCooks.items()["firstName"]=="Paula" ): 
+        print( ["firstName"]," is cooking" )
+        foodPlate=cooks.gordon( foodOrder, cookBook )
+    if( getCooks.items()["firstName"]=="Jamie" ): 
+        print( ["firstName"]," is cooking" )
+        foodPlate=cooks.gordon( foodOrder, cookBook )
+    if( getCooks.items()["firstName"]=="Rachel" ): 
+        print( ["firstName"]," is cooking" )
+        foodPlate=cooks.gordon( foodOrder, cookBook )
+    if( getCooks.items()["firstName"]=="Bobby" ): 
+        print( ["firstName"] ,"is cooking" )
+        foodPlate=cooks.gordon( foodOrder, cookBook )
+
+def hyperinsulinismJasperises():
+
+    c= ["Gordon",
+        "Guy",
+        "Paula",       
+        "Jamie",           
+        "Rachel",
+        "Jamie"
+        "Bobby",]
+    cookRand=(random.choice(c))
+    return cookRand
+
     #send food order to chosen cook
     # XXX change to be useable with more than two cooks
+    if( cook["firstName"]=="Gordon" ): 
+        print( "gordon is cooking" )
+        foodPlate=cooks.gordon( foodOrder, cookBook )
+        
+
+    """
     if( cook=="Gordon" ):
         print( "gordon is cooking" )
         foodPlate=cooks.gordon( foodOrder, cookBook )
     elif( cook=="Guy" ):
         foodPlate=cooks.guy( foodOrder, cookBook )
         print( "guy is cooking" )
+        
+"""
         
     return foodPlate
 
@@ -198,31 +237,53 @@ def getTownsfolk(): # Currently 20 TOWNSFOLK
 
 
     return x
-#Bobby Flay,Jamie Oliver, Rachael Ray,Paula Deen
-def getCooks():# currently 2 
-    x =[["Gordon", "Ramsay"],
-        ["Bobby"   , "Flay"],
-        ["Guy"   , "fieri"],
-        ["Jamie"   , "Oliver"]
-        ]
-    """
-    # this will turn into something like below
-    x={}
-    x["Ramsay"] = cooks.makeCook()
-    cooks.setFirstName(x["Ramsay"], "Gordon")
-    cooks.setLastName(x["Ramsay"] , "Ramsay")
-    cooks.setSkilllevel(x["Ramsay"],"riceCooker",7 )
-    cooks.setPizzazz(x["Ramsay"],   4)
+
+
+
+# TODO setup cooks using cooks.set* interface
+def getCooks():# currently 6
+    x ={}
+
+    Gordon=cooks.makeCook()
+    cooks.setFirstName(Gordon,"Gordon")
+    cooks.setLastName(Gordon,"Ramsay")
+    cooks.setPizzazz(Gordon,3)
+    cooks.setSkillLevel(Gordon,"riceCooker",5)
+    cooks.setSkillLevel(Gordon,"microwave",5)
+    cooks.setSkillLevel(Gordon,"dessert",5)
+    x["Gordon"]= Gordon
+   
+
+    Bobby=cooks.makeCook()
+    cooks.setFirstName(Bobby,"Bobby")
+    cooks.setLastName(Bobby,"Flay")
+    x["Bobby"]= Bobby
     
-    # Need a Set last name 
-    # set appliance Skill level
-    # and Flair/pizzazz level
+    Guy=cooks.makeCook()
+    cooks.setFirstName(Guy,"Guy")
+    cooks.setLastName(Guy,"Fieri")
+    x["Guy"]=Guy
     
+    Jamie= {}
+    Jamie=cooks.makeCook()
+    cooks.setFirstName(Jamie,"Jamie")
+    cooks.setLastName(Jamie,"Oliver")
+    x["Jamie"]= Jamie
     
-    x["Fieri"]  = cooks.makeCook()
-    """
+    Rachel= {}
+    Rachel=cooks.makeCook()
+    cooks.setFirstName(Rachel,"Rachel")
+    cooks.setLastName(Rachel,"Ray")
+    x["Rachel"]=Rachel
+
+    Paula = {}
+    Paula=cooks.makeCook()
+    cooks.setFirstName(Paula,"Paula")
+    cooks.setLastName(Paula,"Deen")
+    x["Paula"]=Paula
+
     return x
-    
+
 # XXX deliver food from cook. 
 # XXX get customer feedback
 # XXX customer feedback 
@@ -298,5 +359,3 @@ def main():
 if __name__ == "__main__":
     main()
 #
-
-
