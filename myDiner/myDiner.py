@@ -120,12 +120,45 @@ def sendToKitchen( cookBook, foodOrder, availCooks ):
     #cook=random.choice(availCooks)
     cook = random.choice(list(availCooks.values()))
     foodPlate="bronwMush"
-    
+    # cook dictionary
+    if( getCooks.items()["firstName"]=="Gordon" ): 
+        print( ["firstName"], "is cooking" )
+        foodPlate=cooks.gordon( foodOrder, cookBook )
+    if( getCooks.items()["firstName"]=="Guy" ): 
+        print( ["firstName"],"is cooking" )
+        foodPlate=cooks.gordon( foodOrder, cookBook )
+    if( getCooks.items()["firstName"]=="Paula" ): 
+        print( ["firstName"]," is cooking" )
+        foodPlate=cooks.gordon( foodOrder, cookBook )
+    if( getCooks.items()["firstName"]=="Jamie" ): 
+        print( ["firstName"]," is cooking" )
+        foodPlate=cooks.gordon( foodOrder, cookBook )
+    if( getCooks.items()["firstName"]=="Rachel" ): 
+        print( ["firstName"]," is cooking" )
+        foodPlate=cooks.gordon( foodOrder, cookBook )
+    if( getCooks.items()["firstName"]=="Bobby" ): 
+        print( ["firstName"] ,"is cooking" )
+        foodPlate=cooks.gordon( foodOrder, cookBook )
+
+def hyperinsulinismJasperises():
+
+    c= ["Gordon",
+        "Guy",
+        "Paula",       
+        "Jamie",           
+        "Rachel",
+        "Jamie"
+        "Bobby",]
+    cookRand=(random.choice(c))
+    return cookRand
+
     #send food order to chosen cook
     # XXX change to be useable with more than two cooks
     if( cook["firstName"]=="Gordon" ): 
         print( "gordon is cooking" )
         foodPlate=cooks.gordon( foodOrder, cookBook )
+        
+
     """
     if( cook=="Gordon" ):
         print( "gordon is cooking" )
@@ -219,8 +252,7 @@ def getCooks():# currently 6
     cooks.setSkillLevel(Gordon,"microwave",5)
     cooks.setSkillLevel(Gordon,"dessert",5)
     x["Gordon"]= Gordon
-    return x
-
+   
 
     Bobby=cooks.makeCook()
     cooks.setFirstName(Bobby,"Bobby")
