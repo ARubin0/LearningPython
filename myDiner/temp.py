@@ -54,7 +54,7 @@ def kitchenCooks():
     getOneCook =["temp1"]
     return getOneCook
     """
-
+"""
 def kitchenCooks():
     applianceSkills={}
     applianceSkills["riceCooker"]= 1
@@ -81,7 +81,7 @@ def kitchenCooks():
     gordon["pizzazz"]# returns a number from 1-10 on if the food is super great or normal
     return guy,gordon
 
-"""
+
 #what Cooks could look like when similar to the cookBook
 def inStockCooks():#tempname 
     Gordon = {}

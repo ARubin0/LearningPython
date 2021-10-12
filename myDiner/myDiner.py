@@ -31,7 +31,7 @@ def getCookBook():
     riceCookerRecipes["cookedRice"] = ["rawRice", "smallWater"]
     riceCookerRecipes["porridge"]   = ["rawRice", "bigWater"]
     riceCookerRecipes["chili"]      = ["beans", "meat","smallWater"]
-    
+
     microwaveRecipes  = {}
     microwaveRecipes["bugsoup"]            = ["bugs", "bigWater"]
     microwaveRecipes["tea"]                = ["teaBag", "smallWater"]
@@ -113,7 +113,7 @@ def getMenus():
 # TODO XXX down the road, different cooks will have different menus
 # sendToKitchen chooses a cook randomly to make food
 def sendToKitchen( cookBook, foodOrder, availCooks ):
-    print( "the food is cooking" )
+    print( "the food is co000000000000000000000000000000000000000000000oking" )
     time.sleep(1) 
 
     # randomly choose cook 
@@ -121,28 +121,31 @@ def sendToKitchen( cookBook, foodOrder, availCooks ):
     cook = random.choice(list(availCooks.values()))
     foodPlate="bronwMush"
     # cook dictionary
-    if( getCooks.items()["firstName"]=="Gordon" ): 
-        print( ["firstName"], "is cooking" )
+    if( getCooks().items()=="Gordon" ): 
+        print(  "is cooking" )
         foodPlate=cooks.gordon( foodOrder, cookBook )
-    if( getCooks.items()["firstName"]=="Guy" ): 
-        print( ["firstName"],"is cooking" )
+    if( getCooks().items()=="Guy" ): 
+        print( "is cooking" )
         foodPlate=cooks.gordon( foodOrder, cookBook )
-    if( getCooks.items()["firstName"]=="Paula" ): 
+    if( getCooks().items()=="Paula" ): 
+        print( " is cooking" )
+        foodPlate=cooks.gordon( foodOrder, cookBook )
+    if( getCooks().items()=="Jamie" ): 
+        print(" is cooking" )
+        foodPlate=cooks.gordon( foodOrder, cookBook )
+    if( getCooks().items()=="Rachel" ): 
         print( ["firstName"]," is cooking" )
         foodPlate=cooks.gordon( foodOrder, cookBook )
-    if( getCooks.items()["firstName"]=="Jamie" ): 
-        print( ["firstName"]," is cooking" )
+    if( getCooks().items()=="Bobby" ): 
+        print( "is cooking" )
         foodPlate=cooks.gordon( foodOrder, cookBook )
-    if( getCooks.items()["firstName"]=="Rachel" ): 
-        print( ["firstName"]," is cooking" )
-        foodPlate=cooks.gordon( foodOrder, cookBook )
-    if( getCooks.items()["firstName"]=="Bobby" ): 
-        print( ["firstName"] ,"is cooking" )
-        foodPlate=cooks.gordon( foodOrder, cookBook )
+    print ("SEND BACK FROM KITCHEN/*/*/*/*/*/*/*/*/*/*/*")
+    return 
+
 
 def hyperinsulinismJasperises():
-
-    c= ["Gordon",
+    
+    c =["Gordon",
         "Guy",
         "Paula",       
         "Jamie",           
@@ -151,6 +154,7 @@ def hyperinsulinismJasperises():
         "Bobby",]
     cookRand=(random.choice(c))
     return cookRand
+
 
     #send food order to chosen cook
     # XXX change to be useable with more than two cooks
@@ -243,7 +247,7 @@ def getTownsfolk(): # Currently 20 TOWNSFOLK
 # TODO setup cooks using cooks.set* interface
 def getCooks():# currently 6
     x ={}
-
+    
     Gordon=cooks.makeCook()
     cooks.setFirstName(Gordon,"Gordon")
     cooks.setLastName(Gordon,"Ramsay")
@@ -252,8 +256,8 @@ def getCooks():# currently 6
     cooks.setSkillLevel(Gordon,"microwave",5)
     cooks.setSkillLevel(Gordon,"dessert",5)
     x["Gordon"]= Gordon
-   
-
+    
+    
     Bobby=cooks.makeCook()
     cooks.setFirstName(Bobby,"Bobby")
     cooks.setLastName(Bobby,"Flay")
@@ -275,14 +279,15 @@ def getCooks():# currently 6
     cooks.setFirstName(Rachel,"Rachel")
     cooks.setLastName(Rachel,"Ray")
     x["Rachel"]=Rachel
-
+    
     Paula = {}
     Paula=cooks.makeCook()
     cooks.setFirstName(Paula,"Paula")
     cooks.setLastName(Paula,"Deen")
     x["Paula"]=Paula
-
-    return x
+    cookGet=(random.choice(x))
+    return cookGet
+    
 
 # XXX deliver food from cook. 
 # XXX get customer feedback

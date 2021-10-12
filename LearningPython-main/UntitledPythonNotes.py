@@ -1,147 +1,74 @@
+### Correct Layout For Python Code File name is  fileName.py
 
-dont forget to save the result of the function x=hello()
+# XXX  dont forget to save the result of the function x=hello()
+    even if a list is set to a name. set it to anothe name for it to work 
+    
+    
+    def example():
+
+    e= ["1",
+                "2",
+                "3",       
+                "4",           
+                ]
+    cammelExample=(random.choice(e))
+    return cammelExample # return what is on the left side of the = and dont forget to import random 
+    
 
 
 Difference between  # A and B is 8 and 13 heads tabbed in when it shouldnt be otherwise it "breaks" the code otherwise code continues to print 
 coin without looking at if function. in A heads is only incramented if less than 5 , in b it is incramented every time
 
-#A
+    #A
     if coin   <= 5 :
         print("Heads")
     	  heads += 1
  
-#B
+    #B
     if coin   <= 5 :
         print("Heads")
     heads += 1
 
- #   Boolean logic… basically means and or not and combos of them.
-#   example
-   if( coin >= 6 and coin <= 10 )    #means
-   if( (coin >= 6) and (coin <= 10) )  #which evaluates to
-   if( true and true )  # which evaluates to 
-   If ( true )
-#  a List is a collection which is ordered and changeable. Allows duplicate members-
+# XXX Boolean logic… basically means and or not and combos of them.
+
+    if( coin >= 6 and coin <= 10 )    #means
+    if( (coin >= 6) and (coin <= 10) )  #which evaluates to
+    if( true and true )  # which evaluates to 
+    If ( true )
+
+
+# XXX a List
+# -is a collection which is ordered and changeable. Allows duplicate members-
     ( members are words/numbers in the list [ie] Number (1),(1) or names/words [ie] (james),(james) 
 
 
-Calling a Function
-To call a function, use the function name followed by parenthesis
+#XXX CALLING A FUNCTION
+    To call a function, use the function name followed by parenthesis
 
 ###Function V Function Call
  # line 30 is correct. Variable 'Coin' is being set to the call to 'getflip'.
     coin = GetFlip(HeadNum,TailNum,EdgeNum) 
     #line 32 is Wrong. variable 'coin' is being set to the  GetFlip Funciton. (which is just a function. not the call to the function)
     #coin = GetFlip 
-  
-
-make another function more complicated than coinflip 3 numbers less than or = heads greater than or = tails greater than or equal to the third number it is edge
 
 
 
-### Correct Layout For Python Code File name is  CoinFlip3GetFlipFunction.py
-"""
-#!/usr/bin/env python
-
-import random #Library
-
-
-#GetFlip returns a number from 0 to EdgeNum
-def GetFlip(HeadNum,TailNum, EdgeNum):
-    #HeadNum and TailNum are Used later
-    return random.randint(0,EdgeNum)
-
-
-if __name__ == "__main__":  
-
-    flips = 1 #initaializing flips
-    heads = 0
-    tails = 0
-    edge = 0
-    HeadNum=5
-    TailNum=10
-    EdgeNum=11
-    while flips  <= 10:  
-        
-        # line below is correct. Variable 'Coin' is being set to the call to 'getflip'.
-        coin = GetFlip(HeadNum,TailNum,EdgeNum) 
-        flips +=1 #incramenting
-        if  coin   <= HeadNum :
-            print("Heads")
-            heads += 1
-        elif coin  <= TailNum :
-            print("tails")
-            tails += 1
-        elif coin == EdgeNum:
-            print ("edge")
-            edge +=1
-        
-
-    print("You got " + str(heads) +  " heads, " + str(tails) + " tails, and " + "on its edge " + str(edge))
-
-
-
-("Exit")
-"""
-XXX 0443148 Kahoot pin 
-
-double check UR diner and get all code out that i want to keep and put it into myDIner then delete UR diner
-Check myDiner into MyGithub Branch 
-commit to main branch 
-FOR THURSDAY 
-ADD MORE FUNCTIONS
-DO KAHOOT THING WITH SLIDE
-SWITCH CASE 
-XXX
 Function  (   anything   ) #
 
 
-# method 1 for returning a list
+# XXX method 1 for returning a list
 def hiDad():
     x = [["a", "b"], ["c", "d"]]
     return x
 
-FOr thursday add 5 lines of comments 
-move order stuff into a function
-try to use rice cooker function
+# XXX KEYWORD  -- reserved words that canNOT be used as a variable name AKA statement makers(if, elif, and,return,etc)
+    #XXX variables created inside functions belong to those functions only
+    and can only be used inside the function it was created in UNLESS -- global -- keyword is used 
+    get element from list x ... x[0] for first x[1] for seccond and so on
 
-
-
-FOR MONDAY
-EXPLAIN RICE COOKER FUNCTION
-# Give good raw ingredients, get good food back.
-# example function call:   foodPlate = riceCooker( ["rawRice", "smallWater","bowl"], cookBook]   will return "cookedRice"
-def riceCooker( rawIngredients, cookBook ):
-    #print( cookBook )
-
-    #variable ricecooker recipes is beeing set to what is in cookbook
-    riceCookerRecipes = cookBook["riceCooker"]
-    #print( riceCookerRecipes)
-    # if raw ingredients don't match a "riceCooker" recipe, iiiick
-    foodPlate = "brownMush"
-
-    #iterating through riceCookerRecipes for when recipe ingredients = raw incredients sets foodplate to dish
-    # run through riceCookerRecipes, look for rawIngredients that match a recipe, then get the food item.
-    for dish, recipeIngredients in riceCookerRecipes.items():
-        if recipeIngredients == rawIngredients:
-            foodPlate = dish
-            break
-   
-    return foodPlate global
-write microwave function
-
-PULL CORRECTLY FROM GITHUB
-dont forget to write stuff on paper if stuck and use python CMD
-
-IF BROKEN RELOAD INCASE ERROR WITH visual studio
-#KEYWORD  -- reserved words that canNOT be used as a variable name AKA statement makers(if, elif, and,return,etc)
--   XXX variables created inside functions belong to those functions only
-- and can only be used inside the function it was created in UNLESS -- global -- keyword is used 
-get element from list x ... x[0] for first x[1] for seccond and so on
-
-Most comomn function flow
- pass an argument to a function, compute something in the function, save result,then return result 
-   #y=random.choice(x)
+# XXX Most comomn function flow
+    pass an argument to a function, compute something in the function, save result,then return result 
+    #y=random.choice(x)
     random.choice(menuDrink)
     print(random.choice(menuDrink))
     z=random.choice(menuDrink)
@@ -151,8 +78,8 @@ Most comomn function flow
         print("***",dish, recipeIngredients,"***")
 
     *** cookedRice ['rawRice', 'smallWater', 'bowl'] ***
-*** porridge ['rawRice', 'bigWater', 'bowl'] ***
-*** chili ['beans', 'meat', 'smallWater', 'bowl'] ***
+    *** porridge ['rawRice', 'bigWater', 'bowl'] ***
+    *** chili ['beans', 'meat', 'smallWater', 'bowl'] ***
 
 
 
@@ -170,7 +97,7 @@ Most comomn function flow
         for example.     # cook looks up order in cookbook to find recipe
     4. open python interpriter and look at components of code, then, try to access the part that is needed
         for ex, create temp file in myDiner, import temp to python interpreter (CMD), temp.getCookBook 
->           CB=temp.getCookBook()
+            CB=temp.getCookBook()
             for x,y in CB.items():
 
 
@@ -183,6 +110,8 @@ Most comomn function flow
 
 
     BOILER PLATE FUNCTION TEMPLATE
+
+
 # gordon takes food request from customer(waiter) cooks then gives finished food( good or bad ) to waiter to bring out for customer
 # Example function call; foodPlate=cooks.gordon( foodOrder,cookBook )
 #   foodOrder is customer order
@@ -203,82 +132,60 @@ dessert
 ('riceCooker', {'cookedRice': ['rawRice', 'smallWater'], 'porridge': ['rawRice', 'bigWater'], 'chili': ['beans', 'meat', 'smallWater']})
 ('microwave', {'bugsoup': ['bugs', 'bigWater'], 'tea': ['teaBag', 'smallWater'], 'bugs': ['bugs'], 'yesterdays special': ['teaBag', 'bugs', 'smallWater'], 'personal Pizza': ['bread', 'cheese', 'tomatoSauce']})
 ('dessert', {'iceCream': ['icecream'], 'chipIceCream': ['icecream', 'chips']})
->>>
-
-#XXX SAT. 4
-
-cups   = ["blue cup", "red cup", "green cup"]
-dishes = ["small blue", "smaller blue", "smallest blue", "smallester blue"]
-bowls  = ["tiny pewter", "giant ceramic"]
-Careful - looks like google is playing with tabs in here.. 8*(
 
 
-kitchen = [ cups, dishes, bowls ]
+# XXX Square Brackets
+    square brackets alone make a list ; [1,2] ,[a,b]
+    square brackets next to a name means a modifier gordon["FirstName"] This is not a list
+                                                        ^defintion   ^word
+        meaning get the value of the first name of gordon 
+        a normal  non code dictionary has a word then definition 
+        a python dictionary also has a word then definition 
+        word: "firstName" 
+        a word is a "Key" in python
+        get the Definition:gordon["FirstName"]
 
-for container in kitchen:
-    print( container )
-
-for container in kitchen:
-    print( container )
-    for item in container:
-    print( item )
-
-for x in kitchen:
-    print( x )
-    # x will be set to       ["blue cup", "red cup", "green cup"]
-    # then, x will be set to ["small blue", "smaller blue", "smallest blue", "smallester blue"]
-    # then, x will be set to ["tiny pewter", "giant ceramic"]
-    for y in x:
-    print( y )
-
-
-for y in cups:
-    print(y)
     
-Square Brackets
-square brackets alone make a list ; [1,2] ,[a,b]
-square brackets next to a name means a modifier gordon["FirstName"] This is not a list
-                                                    ^defintion   ^word
-    meaning get the value of the first name of gordon 
-    a normal  non code dictionary has a word then definition 
-    a python dictionary also has a word then definition 
-    word: "firstName" 
-    a word is a "Key" in python
-    get the Definition:gordon["FirstName"]
-    
-    
-DICT #
-# everything within square brackets has to evaluate to be a string
-cheese="firstName"
-gordon[cheese]      # works because cheese evaluates to become string firstname  
-gordon["firstName"] # works because string evaluates to be a string
-cheese=1            #
-gordon[cheese]      # does not work because it does not evaluate to be a string
+# XXX DICT 
+    # everything within square brackets has to evaluate to be a string
+    cheese="firstName"
+    gordon[cheese]      # works because cheese evaluates to become string firstname  
+    gordon["firstName"] # works because string evaluates to be a string
+    cheese=1            #
+    gordon[cheese]      # does not work because it does not evaluate to be a string
 
+# XXX Code Speaking
+    #code speak : getting the entry firstName in the gordon dictionary 
+    gordon["firstName"]
 
-#code speak : getting the entry firstName in the gordon dictionary 
-gordon["firstName"]
+    # code speak : setting the first name entry in gordon, to john
+    gordon["firstName"] ="john"
 
-# code speak : setting the first name entry in gordon, to john
-gordon["firstName"] ="john"
+    # code speak : we set gordon to makeCook 
+    gordon = makeCook()
 
-# code speak : we set gordon to makeCook 
-gordon = makeCook()
-
-get riceCooker skillLevel of Cook
->>> cook["skillLevel"]
-{'riceCooker': 1, 'microwave': 3, 'dessert': 5, 'appliance': 1}
->>> cook["skillLevel"]["riceCooker"]
-1
+    get riceCooker skillLevel of Cook
+    >>> cook["skillLevel"]
+    {'riceCooker': 1, 'microwave': 3, 'dessert': 5, 'appliance': 1}
+    >>> cook["skillLevel"]["riceCooker"]
+    1
 
 #?IM STUCK SIMPLIFIED
-1. Write down exactly what you want to do
+    1. Write down exactly what you want to do
 
 
-2: Write down what you know
+    2: Write down what you know
 
 
-3: Divide & Conquer: Break the problem into smaller pieces
+    3: Divide & Conquer: Break the problem into smaller pieces
 
-4. use Python Interpreter 
+    4. use Python Interpreter 
 
+
+# XXX MODULES...
+    import temp # imports temp module
+    # cookbook is defined in temp. if using cookbook where imported temp as a module, as above, do this;
+    temp.cookBook # cookbook is the name inside of temp. temp.cookBook is the FULL name outside of temp
+
+    # below imports one function from myDiner and gives it the name getCooks, so myDiner.getCooks is not needed 
+    from myDiner import getCooks # 
