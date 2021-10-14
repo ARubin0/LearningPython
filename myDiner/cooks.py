@@ -79,66 +79,6 @@ def guy (foodOrder,cookBook):
                     
 #TODO cooks : combine GORDON AND GUY that takes the cook dict and does the cooking
 
-def Cook (foodOrder,cookBook):
-    foodPlate="brownMush"
-    if( getCooks.items()["firstName"]=="Gordon" ): 
-        print( ["firstName"], "is cooking" )
-    elif( getCooks.items()["firstName"]=="Guy" ): 
-        print( ["firstName"], "is cooking" )
-    #use the cookbook to get the ingredients for the order
-    #cook looks up order in cookbook to find CookItem 
-    for appliance, recipes in cookBook.items():
-        #(ricecooker, cookedRice in cookbook)
-        #print (appliances)
-        
-        for cookItem,ingredients in recipes.items():    
-            # cookItem, ingredients all combinations 
-            
-            if cookItem==foodOrder[0]:
-                
-                print (["firstName"], "thinks to himself, now i can finish cooking this food" )
-                print ("im going to use", ingredients, "in", appliance," to make a" ,cookItem) 
-                
-                if appliance=="riceCooker":
-                    foodPlate=appliances.riceCooker(ingredients,cookBook) 
-                    print("****ricecooker******",foodPlate)
-                    
-                elif appliance=="microwave":
-                    foodPlate=appliances.microwave(ingredients,cookBook)
-                    print("****microwave******",foodPlate)
-                    
-                elif appliance=="dessert":
-                    foodPlate=appliances.dessert(ingredients,cookBook)
-                    print ("****dessert******",foodPlate)
-
-
-
-    return foodPlate #("finished food")
-
-def kitchenCooksTemp():
-    applianceSkills={}
-    applianceSkills["riceCooker"]= 1
-    applianceSkills["microwave"] = 3
-    applianceSkills["dessert"]   = 5
-    
-    gordon={}
-    #gordon=getACook("Ramsay")# gets gordon object
-    gordon["firstName"] ="Gordon"# returns "gordon"
-    gordon["lastName"]  ="Ramsay"# returns "Ramsay"
-    gordon["appliances"]= ["ricecooker","microwave","dessert"]# returns list of appliances gordon can cook with
-    gordon["skillLevel"] = applianceSkills # returns a Dictionary with numbers and appliances from 1-10 indicating cooking errors % wise
-    gordon["pizzazz"] = 6 #  returns a number from 1-10 on if the food is super great or normal
-    #pprint.pp(gordon)
-    guy={}
-    #guy# gets guy object
-    guy["firstName"] ="Guy"# returns "guy"
-    guy["lastName"]  ="Fieri" # returns "Fieri"
-    guy["appliances"]=["ricecooker","microwave","dessert"]# returns list of appliances guy can cook with
-    guy["skillLevel"]=applianceSkills# returns a Dictionary with numbers and appliances from 1-10 indicating cooking errors % wise
-    guy["pizzazz"]   = 10# returns a number from 1-10 on if the food is super great or normal
-    #pprint.pp(guy)
-
-    return guy,gordon
 #1 is worst 10 is best
 def makeCook():
     applianceSkills={}

@@ -121,23 +121,23 @@ def sendToKitchen( cookBook, foodOrder, availCooks ):
     cook = random.choice(list(availCooks.values()))
     foodPlate="bronwMush"
     # cook dictionary
-    if( getCooks().items()=="Gordon" ): 
-        print(  "is cooking" )
+    if(  cook["firstName"] =="Gordon" ): 
+        print(  "is----------- cooking"  )
         foodPlate=cooks.gordon( foodOrder, cookBook )
-    if( getCooks().items()=="Guy" ): 
-        print( "is cooking" )
+    if( cook["firstName"] == "Guy" ): 
+        print( "is----------- cooking"  )
         foodPlate=cooks.gordon( foodOrder, cookBook )
-    if( getCooks().items()=="Paula" ): 
-        print( " is cooking" )
+    if( cook["firstName"] =="Paula" ): 
+        print( "is----------- cooking"  )
         foodPlate=cooks.gordon( foodOrder, cookBook )
-    if( getCooks().items()=="Jamie" ): 
-        print(" is cooking" )
+    if(cook["firstName"] =="Jamie" ): 
+        print("is----------- cooking"  )
         foodPlate=cooks.gordon( foodOrder, cookBook )
-    if( getCooks().items()=="Rachel" ): 
-        print( ["firstName"]," is cooking" )
+    if( cook["firstName"] =="Rachel" ): 
+        print( "is----------- cooking"  )
         foodPlate=cooks.gordon( foodOrder, cookBook )
-    if( getCooks().items()=="Bobby" ): 
-        print( "is cooking" )
+    if( cook["firstName"]=="Bobby" ): 
+        print( "is----------- cooking" )
         foodPlate=cooks.gordon( foodOrder, cookBook )
     print ("SEND BACK FROM KITCHEN/*/*/*/*/*/*/*/*/*/*/*")
     return 
@@ -162,18 +162,6 @@ def hyperinsulinismJasperises():
         print( "gordon is cooking" )
         foodPlate=cooks.gordon( foodOrder, cookBook )
         
-
-    """
-    if( cook=="Gordon" ):
-        print( "gordon is cooking" )
-        foodPlate=cooks.gordon( foodOrder, cookBook )
-    elif( cook=="Guy" ):
-        foodPlate=cooks.guy( foodOrder, cookBook )
-        print( "guy is cooking" )
-        
-"""
-        
-    return foodPlate
 
 #XXX waiter can trip and lose the food 
 def waiter(Anthony):
@@ -245,6 +233,7 @@ def getTownsfolk(): # Currently 20 TOWNSFOLK
 
 
 # TODO setup cooks using cooks.set* interface
+# retuns a dictionary of cooks
 def getCooks():# currently 6
     x ={}
     
@@ -285,8 +274,8 @@ def getCooks():# currently 6
     cooks.setFirstName(Paula,"Paula")
     cooks.setLastName(Paula,"Deen")
     x["Paula"]=Paula
-    cookGet=(random.choice(x))
-    return cookGet
+    
+    return x
     
 
 # XXX deliver food from cook. 

@@ -15,9 +15,9 @@
     return cammelExample # return what is on the left side of the = and dont forget to import random 
     
 
-
-Difference between  # A and B is 8 and 13 heads tabbed in when it shouldnt be otherwise it "breaks" the code otherwise code continues to print 
-coin without looking at if function. in A heads is only incramented if less than 5 , in b it is incramented every time
+# XXX incramenting code
+    Difference between  # A and B is 8 and 13 heads tabbed in when it shouldnt be otherwise it "breaks" the code otherwise code continues to print 
+    coin without looking at if function. in A heads is only incramented if less than 5 , in b it is incramented every time
 
     #A
     if coin   <= 5 :
@@ -35,11 +35,11 @@ coin without looking at if function. in A heads is only incramented if less than
     if( (coin >= 6) and (coin <= 10) )  #which evaluates to
     if( true and true )  # which evaluates to 
     If ( true )
-
+ 
 
 # XXX a List
-# -is a collection which is ordered and changeable. Allows duplicate members-
-    ( members are words/numbers in the list [ie] Number (1),(1) or names/words [ie] (james),(james) 
+    # -is a collection which is ordered and changeable. Allows duplicate members-
+        ( members are words/numbers in the list [ie] Number (1),(1) or names/words [ie] (james),(james) 
 
 
 #XXX CALLING A FUNCTION
@@ -147,12 +147,27 @@ dessert
 
     
 # XXX DICT 
-    # everything within square brackets has to evaluate to be a string
-    cheese="firstName"
-    gordon[cheese]      # works because cheese evaluates to become string firstname  
-    gordon["firstName"] # works because string evaluates to be a string
-    cheese=1            #
-    gordon[cheese]      # does not work because it does not evaluate to be a string
+        # everything within square brackets has to evaluate to be a string
+        cheese="firstName"
+        gordon[cheese]      # works because cheese evaluates to become string firstname  
+        gordon["firstName"] # works because string evaluates to be a string
+        cheese=1            #
+        gordon[cheese]      # does not work because it does not evaluate to be a string
+
+
+# XXX DICT CONTINUED
+    # defined x to be Guy cook 
+    >>> pprint.pp (x)
+    {'firstName': 'Guy',
+     'lastName': 'Fieri',
+     'appliances': ['::ricecooker::', '::microwave::', '::dessert::'],
+     'skillLevel': {'riceCooker': 1, 'microwave': 3, 'dessert': 5},
+     'pizzazz': 1}
+    
+    # how can i check if x is Guy Fieri???
+    #  check the firstname / down the road if two cooks have the same firstname Check last name aswell
+     x["firstName"]=="Guy"
+
 
 # XXX Code Speaking
     #code speak : getting the entry firstName in the gordon dictionary 
