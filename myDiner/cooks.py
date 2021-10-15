@@ -46,6 +46,7 @@ def gordon (foodOrder,cookBook):
 
     return foodPlate #("finished food")
 
+# 
 
 def guy (foodOrder,cookBook):
     foodPlate="brownMush"
@@ -77,6 +78,56 @@ def guy (foodOrder,cookBook):
                     print ("****dessert******",foodPlate)
                     
                     
+                    
+                    
+def theCooks (foodOrder,cookBook,availCooks):
+    foodPlate="brownMush"
+    cook = random.choice(list(availCooks.values()))
+    #use the cookbook to get the ingredients for the order
+    #cook looks up order in cookbook to find CookItem 
+    for appliance, recipes in cookBook.items():
+        #(ricecooker, cookedRice in cookbook)
+        #print (appliances)
+        
+        for cookItem,ingredients in recipes.items():    
+            # cookItem, ingredients all combinations 
+            
+            if cookItem==foodOrder[0]:
+                if(  cook["firstName"] =="Gordon" ): 
+                    foodPlate=theCooks (foodOrder,cookBook,availCooks)
+                    
+                if( cook["firstName"] == "Guy" ): 
+                    foodPlate=theCooks (foodOrder,cookBook,availCooks)
+                    
+                if( cook["firstName"] =="Paula" ): 
+                    foodPlate=theCooks (foodOrder,cookBook,availCooks)
+                    
+                if(cook["firstName"] =="Jamie" ): 
+                    foodPlate=theCooks (foodOrder,cookBook,availCooks)
+                    
+                if( cook["firstName"] =="Rachel" ): 
+                    foodPlate=theCooks (foodOrder,cookBook,availCooks)
+                    
+                if( cook["firstName"]=="Bobby" ): 
+                    foodPlate=theCooks (foodOrder,cookBook,availCooks)
+                    
+                    #print statements need to be seperate from the if(cook) statements as to allow them to work for each one.
+                print (cook["firstName"]," thinks to themselves, now i can finish cooking this food" ) # *cook["firstName"] will not work find another way to call specific cook
+                print ("im going to use", ingredients, "in", appliance," to make a" ,cookItem) 
+                
+            if appliance=="riceCooker":
+                foodPlate=appliances.riceCooker(ingredients,cookBook) 
+                print("****ricecooker******",foodPlate)
+                
+            elif appliance=="microwave":
+                foodPlate=appliances.microwave(ingredients,cookBook)
+                print("****microwave******",foodPlate)
+                
+            elif appliance=="dessert":
+                foodPlate=appliances.dessert(ingredients,cookBook)
+                print ("****dessert******",foodPlate)
+    print("*******************WORKING*****************")
+    
 #TODO cooks : combine GORDON AND GUY that takes the cook dict and does the cooking
 
 #1 is worst 10 is best

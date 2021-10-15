@@ -122,7 +122,7 @@ def sendToKitchen( cookBook, foodOrder, availCooks ):
     foodPlate="bronwMush"
     # cook dictionary
     if(  cook["firstName"] =="Gordon" ): 
-        print(  "is----------- cooking"  )
+        print(  ["firstName"],"is----------- cooking"  )
         foodPlate=cooks.gordon( foodOrder, cookBook )
     if( cook["firstName"] == "Guy" ): 
         print( "is----------- cooking"  )
@@ -143,6 +143,39 @@ def sendToKitchen( cookBook, foodOrder, availCooks ):
     return 
 
 
+#sendtokitchen coppied below with cooks.theCooks instead of cooks.Gordon because of TODO. may need to delete later
+#TODO cooks : combine GORDON AND GUY that takes the cook dict and does the cooking
+"""
+def sendToKitchen( cookBook, foodOrder, availCooks ):
+    print( "the food is co000000000000000000000000000000000000000000000oking" )
+    time.sleep(1) 
+
+    # randomly choose cook 
+    #cook=random.choice(availCooks)
+    cook = random.choice(list(availCooks.values()))
+    foodPlate="bronwMush"
+    # cook dictionary
+    if(  cook["firstName"] =="Gordon" ): 
+        print(  "is----------- cooking"  )
+        foodPlate=cooks.theCooks( foodOrder, cookBook )
+    if( cook["firstName"] == "Guy" ): 
+        print( "is----------- cooking"  )
+        foodPlate=cooks.theCooks( foodOrder, cookBook )
+    if( cook["firstName"] =="Paula" ): 
+        print( "is----------- cooking"  )
+        foodPlate=cooks.theCooks( foodOrder, cookBook )
+    if(cook["firstName"] =="Jamie" ): 
+        print("is----------- cooking"  )
+        foodPlate=cooks.theCooks( foodOrder, cookBook )
+    if( cook["firstName"] =="Rachel" ): 
+        print( "is----------- cooking"  )
+        foodPlate=cooks.theCooks( foodOrder, cookBook )
+    if( cook["firstName"]=="Bobby" ): 
+        print( "is----------- cooking" )
+        foodPlate=cooks.theCooks( foodOrder, cookBook )
+    print ("SEND BACK FROM KITCHEN/*/*/*/*/*/*/*/*/*/*/*")
+    return 
+"""
 def hyperinsulinismJasperises():
     
     c =["Gordon",
