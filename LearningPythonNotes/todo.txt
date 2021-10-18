@@ -36,3 +36,8 @@ TODO
         cooks
                 combine GORDON AND GUY that takes the cook dict and does the cooking
 
+
+finish sendtokitchen + revise function notes 
+                        add details on calls vs deffinitions
+                        explain passing arguments to a function inside functions
+                        "black boxes"

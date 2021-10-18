@@ -109,7 +109,7 @@ def getMenus():
         #print("we  have " + random.choice(drink))
         d=drinksOnTap.append(random.choice(drink))
     return drinksOnTap,options
-
+"""
 # TODO XXX down the road, different cooks will have different menus
 # sendToKitchen chooses a cook randomly to make food
 def sendToKitchen( cookBook, foodOrder, availCooks ):
@@ -141,11 +141,13 @@ def sendToKitchen( cookBook, foodOrder, availCooks ):
         foodPlate=cooks.gordon( foodOrder, cookBook )
     print ("SEND BACK FROM KITCHEN/*/*/*/*/*/*/*/*/*/*/*")
     return 
-
-
-#sendtokitchen coppied below with cooks.theCooks instead of cooks.Gordon because of TODO. may need to delete later
-#TODO cooks : combine GORDON AND GUY that takes the cook dict and does the cooking
 """
+
+
+
+
+# sendToKitchen chooses a cook randomly to make food and returns a foodPlate
+# foodOrder is pickFromMenu aFOod+aDrink ("cookedRice","Coke")
 def sendToKitchen( cookBook, foodOrder, availCooks ):
     print( "the food is co000000000000000000000000000000000000000000000oking" )
     time.sleep(1) 
@@ -156,45 +158,26 @@ def sendToKitchen( cookBook, foodOrder, availCooks ):
     foodPlate="bronwMush"
     # cook dictionary
     if(  cook["firstName"] =="Gordon" ): 
-        print(  "is----------- cooking"  )
-        foodPlate=cooks.theCooks( foodOrder, cookBook )
+        print(  "Gordon is cooking"  )
+        foodPlate=cooks.theCooks( foodOrder, cookBook,cook )
     if( cook["firstName"] == "Guy" ): 
-        print( "is----------- cooking"  )
-        foodPlate=cooks.theCooks( foodOrder, cookBook )
+        print( " Guy is cooking"  )
+        foodPlate=cooks.theCooks( foodOrder, cookBook,cook )
     if( cook["firstName"] =="Paula" ): 
-        print( "is----------- cooking"  )
-        foodPlate=cooks.theCooks( foodOrder, cookBook )
+        print( " Paula is cooking"  )
+        foodPlate=cooks.theCooks( foodOrder, cookBook,cook )
     if(cook["firstName"] =="Jamie" ): 
-        print("is----------- cooking"  )
-        foodPlate=cooks.theCooks( foodOrder, cookBook )
+        print(" Jamie is cooking"  )
+        foodPlate=cooks.theCooks( foodOrder, cookBook,cook )
     if( cook["firstName"] =="Rachel" ): 
-        print( "is----------- cooking"  )
-        foodPlate=cooks.theCooks( foodOrder, cookBook )
+        print( " Rachel is cooking"  )
+        foodPlate=cooks.theCooks( foodOrder, cookBook,cook )
     if( cook["firstName"]=="Bobby" ): 
-        print( "is----------- cooking" )
-        foodPlate=cooks.theCooks( foodOrder, cookBook )
+        print( " Bobby is cooking" )
+        foodPlate=cooks.theCooks( foodOrder, cookBook,cook )
     print ("SEND BACK FROM KITCHEN/*/*/*/*/*/*/*/*/*/*/*")
-    return 
-"""
-def hyperinsulinismJasperises():
-    
-    c =["Gordon",
-        "Guy",
-        "Paula",       
-        "Jamie",           
-        "Rachel",
-        "Jamie"
-        "Bobby",]
-    cookRand=(random.choice(c))
-    return cookRand
+    return foodPlate
 
-
-    #send food order to chosen cook
-    # XXX change to be useable with more than two cooks
-    if( cook["firstName"]=="Gordon" ): 
-        print( "gordon is cooking" )
-        foodPlate=cooks.gordon( foodOrder, cookBook )
-        
 
 #XXX waiter can trip and lose the food 
 def waiter(Anthony):

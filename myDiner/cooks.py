@@ -77,12 +77,14 @@ def guy (foodOrder,cookBook):
                     foodPlate=appliances.dessert(ingredients,cookBook)
                     print ("****dessert******",foodPlate)
                     
-                    
-                    
-                    
-def theCooks (foodOrder,cookBook,availCooks):
+
+
+# theCooks takes food request from customer(stoKitchen) - then returns finished food( good or bad )
+# foodOrder is pickFromMenu aFOod+aDrink ("cookedRice","Coke")
+# cookBook  is recipes                   {{'riceCooker': { 'cookedRice': ["rawRice", "smallWater"] },... }
+#* availCooks is the dictionary of cooks with the skill level *AKA MakeCook* 
+def theCooks (foodOrder,cookBook,cook):
     foodPlate="brownMush"
-    cook = random.choice(list(availCooks.values()))
     #use the cookbook to get the ingredients for the order
     #cook looks up order in cookbook to find CookItem 
     for appliance, recipes in cookBook.items():
@@ -93,23 +95,23 @@ def theCooks (foodOrder,cookBook,availCooks):
             # cookItem, ingredients all combinations 
             
             if cookItem==foodOrder[0]:
-                if(  cook["firstName"] =="Gordon" ): 
-                    foodPlate=theCooks (foodOrder,cookBook,availCooks)
+                if( cook["firstName"] =="Gordon" ): 
+                    foodPlate=theCooks (foodOrder,cookBook,cook)
                     
                 if( cook["firstName"] == "Guy" ): 
-                    foodPlate=theCooks (foodOrder,cookBook,availCooks)
+                    foodPlate=theCooks (foodOrder,cookBook,cook)
                     
                 if( cook["firstName"] =="Paula" ): 
-                    foodPlate=theCooks (foodOrder,cookBook,availCooks)
+                    foodPlate=theCooks (foodOrder,cookBook,cook)
                     
                 if(cook["firstName"] =="Jamie" ): 
-                    foodPlate=theCooks (foodOrder,cookBook,availCooks)
+                    foodPlate=theCooks (foodOrder,cookBook,cook)
                     
                 if( cook["firstName"] =="Rachel" ): 
-                    foodPlate=theCooks (foodOrder,cookBook,availCooks)
+                    foodPlate=theCooks (foodOrder,cookBook,cook)
                     
                 if( cook["firstName"]=="Bobby" ): 
-                    foodPlate=theCooks (foodOrder,cookBook,availCooks)
+                    foodPlate=theCooks (foodOrder,cookBook,cook)
                     
                     #print statements need to be seperate from the if(cook) statements as to allow them to work for each one.
                 print (cook["firstName"]," thinks to themselves, now i can finish cooking this food" ) # *cook["firstName"] will not work find another way to call specific cook
@@ -128,7 +130,7 @@ def theCooks (foodOrder,cookBook,availCooks):
                 print ("****dessert******",foodPlate)
     print("*******************WORKING*****************")
     
-#TODO cooks : combine GORDON AND GUY that takes the cook dict and does the cooking
+
 
 #1 is worst 10 is best
 def makeCook():
