@@ -78,7 +78,7 @@ def guy (foodOrder,cookBook):
                     print ("****dessert******",foodPlate)
                     
 
-
+# change TheCOOks int the IF STATEment
 # theCooks takes food request from customer(stoKitchen) - then returns finished food( good or bad )
 # foodOrder is pickFromMenu aFOod+aDrink ("cookedRice","Coke")
 # cookBook  is recipes                   {{'riceCooker': { 'cookedRice': ["rawRice", "smallWater"] },... }

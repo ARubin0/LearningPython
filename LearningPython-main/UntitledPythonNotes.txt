@@ -54,19 +54,35 @@
 
     Function Definition
 
+# cant change rEmember OUTSIDE OF FUNCT A IS NOT DEFINED EVEN AFTER returning
 def funct ():
     a = "Hello "
     return a
     
-    
+# cant change
 def function ():
-    b= "world"
+    b = "world"
     return b
     
-def whole(a,b,):
-	y =(a + b)
+# this works somewhat. doesnt use Parameters A or B
+def whole(a,b):
+    y =(funct()+ function())
     print (y)
-    return 
+    return y
+
+# redefining whole whithout using words funct or function in the definition
+def whole(a,b):
+    y = (a+b)
+    print (y)
+    return y
+
+>>> whole(funct(),function())
+
+# redefine whole without parameters but ok with funct and function
+def whole():
+    y =(funct()+ function())
+    print (y)
+    return y
     
         function Definitions are defined with def and () which can have multiple arguments inside the()
 
