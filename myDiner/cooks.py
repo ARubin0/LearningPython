@@ -78,11 +78,16 @@ def guy (foodOrder,cookBook):
                     print ("****dessert******",foodPlate)
                     
 
-# change TheCOOks int the IF STATEment
+# XXX change TheCOOks IF STATEment... currently loops over itself
 # theCooks takes food request from customer(stoKitchen) - then returns finished food( good or bad )
+# in myDiner-sendToKitchen -            foodPlate=cooks.theCooks( foodOrder, cookBook,cook )
+# ----
 # foodOrder is pickFromMenu aFOod+aDrink ("cookedRice","Coke")
 # cookBook  is recipes                   {{'riceCooker': { 'cookedRice': ["rawRice", "smallWater"] },... }
+# cook dict of  one cook                  {'firstName': 'Gordon', .... 'appliances': ['ricecooker',...], 'skillLevel': {'riceCooker': 5,... '} 'pizzazz': 3}
 #* availCooks is the dictionary of cooks with the skill level *AKA MakeCook* 
+
+#* theCooks will be the one to cook the food and returns the food for the function that needs it
 def theCooks (foodOrder,cookBook,cook):
     foodPlate="brownMush"
     #use the cookbook to get the ingredients for the order
@@ -143,7 +148,7 @@ def makeCook():
     #gordon=getACook("Ramsay")# gets gordon object
     aCook["firstName"] ="aCook"# returns "gordon"
     aCook["lastName"]  ="aCook"# returns "Ramsay"
-    aCook["appliances"]= ["::ricecooker::","::microwave::","::dessert::"]# returns list of appliances gordon can cook with
+    aCook["appliances"]= ["ricecooker","microwave","dessert"]# returns list of appliances gordon can cook with
     aCook["skillLevel"] = applianceSkills # returns a Dictionary with numbers and appliances from 1-10 indicating cooking errors % wise
     aCook["pizzazz"] = 1 #  returns a number from 1-10 on if the food is super great or normal
     #pprint.pp(aCook)
@@ -171,3 +176,8 @@ def setPizzazz(aCook,num):
     # code speak : setting the pizzazz entry in aCook, to num
     aCook["pizzazz"]=num
     return
+
+
+appliances.microwave
+appliances.dessert
+appliances.riceCooker

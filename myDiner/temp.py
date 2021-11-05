@@ -14,14 +14,7 @@ import pprint
 from cooks import gordon, guy
 
 
-def a (one):
-    one=print("three")
-    return
-        
-def b ():
-    print(one)
-    return
-    
+
     
 def getCookBook():
     riceCookerRecipes = {}

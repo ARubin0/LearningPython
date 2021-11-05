@@ -42,24 +42,18 @@ finish sendtokitchen + revise function notes
                         explain passing arguments to a function inside functions
                         "black boxes"
 
-def funct ():
-    a = "Hello "
-    return a
-    
-    
-def function ():
-    b= "world"
-    return b
-    
-def whole(a,b,):
-        y =(a + b)
-        print (y)
+
 
  
 
  
 make a list of object known in python. describe what they are how to create them and access parts or all of them
-in logs-
+in -notForGitHub-folder
 what is the process i use to start codeing,. 
 in logs-
 
+RON-TODO
+        Binary
+        bytes
+        HEX
+        

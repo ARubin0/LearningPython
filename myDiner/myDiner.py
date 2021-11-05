@@ -147,7 +147,10 @@ def sendToKitchen( cookBook, foodOrder, availCooks ):
 
 
 # sendToKitchen chooses a cook randomly to make food and returns a foodPlate
+# then sends the cook to -theCoks- function to make and return the cooked food-cookItem-
 # foodOrder is pickFromMenu aFOod+aDrink ("cookedRice","Coke")
+# XXX What happens if USER adds another Cook what to do with IF statement
+
 def sendToKitchen( cookBook, foodOrder, availCooks ):
     print( "the food is co000000000000000000000000000000000000000000000oking" )
     time.sleep(1) 
@@ -156,28 +159,27 @@ def sendToKitchen( cookBook, foodOrder, availCooks ):
     #cook=random.choice(availCooks)
     cook = random.choice(list(availCooks.values()))
     foodPlate="bronwMush"
+    foodPlate=cooks.theCooks( foodOrder, cookBook,cook )
     # cook dictionary
     if(  cook["firstName"] =="Gordon" ): 
-        print(  "Gordon is cooking"  )
-        foodPlate=cooks.theCooks( foodOrder, cookBook,cook )
-    if( cook["firstName"] == "Guy" ): 
-        print( " Guy is cooking"  )
-        foodPlate=cooks.theCooks( foodOrder, cookBook,cook )
-    if( cook["firstName"] =="Paula" ): 
-        print( " Paula is cooking"  )
-        foodPlate=cooks.theCooks( foodOrder, cookBook,cook )
-    if(cook["firstName"] =="Jamie" ): 
-        print(" Jamie is cooking"  )
-        foodPlate=cooks.theCooks( foodOrder, cookBook,cook )
-    if( cook["firstName"] =="Rachel" ): 
-        print( " Rachel is cooking"  )
-        foodPlate=cooks.theCooks( foodOrder, cookBook,cook )
-    if( cook["firstName"]=="Bobby" ): 
-        print( " Bobby is cooking" )
-        foodPlate=cooks.theCooks( foodOrder, cookBook,cook )
+        print(  "Gordon has finished cooking" + foodPlate )
+        
+    elif( cook["firstName"] == "Guy" ): 
+        print( " Guy has finished  cooking" + foodPlate   )
+        
+    elif( cook["firstName"] =="Paula" ): 
+        print( " Paula has finished  cooking" + foodPlate  )
+        
+    elif(cook["firstName"] =="Jamie" ):
+        print(" Jamie has finished  cooking" + foodPlate  )
+    
+    elif( cook["firstName"] =="Rachel" ):    
+        print( " Rachel has finished  cooking" + foodPlate  )
+        
+    elif( cook["firstName"]=="Bobby" ): 
+        print( " Bobby has finished cooking" + foodPlate  )
     print ("SEND BACK FROM KITCHEN/*/*/*/*/*/*/*/*/*/*/*")
     return foodPlate
-
 
 #XXX waiter can trip and lose the food 
 def waiter(Anthony):
